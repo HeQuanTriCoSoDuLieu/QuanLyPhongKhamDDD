@@ -11,3 +11,6 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.exe
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.fTiepNhanBenhNhan.resources
+D:\quanlyphongkham\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Winform.exe.config
+D:\quanlyphongkham\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.exe
+D:\quanlyphongkham\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.pdb
