@@ -96,13 +96,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Images\lock-icon.png" />
     <Content Include="Assets\Images\user-icon.png" />
     <Content Include="Assets\Images\User-Interface-Password-icon.png" />
     <Content Include="Assets\Images\user_male2-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">
+      <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
+      <Name>QuanLyPhongKham.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyPhongKham.Model.csproj">
+      <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
+      <Name>QuanLyPhongKham.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyPhongKham.Services\QuanLyPhongKham.Services.csproj">
+      <Project>{ab92071c-43ad-4e01-8023-88ca313e9f3b}</Project>
+      <Name>QuanLyPhongKham.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

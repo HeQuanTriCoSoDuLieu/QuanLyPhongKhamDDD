@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLyPhongKham.Repository.EF</RootNamespace>
     <AssemblyName>QuanLyPhongKham.Repository.EF</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,125 +52,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BENHNHAN.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CANLAMSANG.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CHITIETCL.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CHITIETDONTHUOC.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CHITIETNHAPVATTU.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CHITIETPHIEUNHAPTHUOC.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CHUCDANH.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CHUCVU.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DICHVUCL.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DONTHUOC.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DONVITINH.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HANGSANXUAT.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HINHTHUCKHAM.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HOADON.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KHOA.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOAICANLAMSANG.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOAITHUOC.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NHACUNGCAP.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NHANVIEN.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PHANQUYEN.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PHIEUKHAM.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PHIEUNHAP.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="EF\BENHNHAN.cs" />
+    <Compile Include="EF\CANLAMSANG.cs" />
+    <Compile Include="EF\CHITIETCL.cs" />
+    <Compile Include="EF\CHITIETDONTHUOC.cs" />
+    <Compile Include="EF\CHITIETNHAPVATTU.cs" />
+    <Compile Include="EF\CHITIETPHIEUNHAPTHUOC.cs" />
+    <Compile Include="EF\CHUCDANH.cs" />
+    <Compile Include="EF\CHUCVU.cs" />
+    <Compile Include="EF\DICHVUCL.cs" />
+    <Compile Include="EF\DONTHUOC.cs" />
+    <Compile Include="EF\DONVITINH.cs" />
+    <Compile Include="EF\HANGSANXUAT.cs" />
+    <Compile Include="EF\HINHTHUCKHAM.cs" />
+    <Compile Include="EF\HOADON.cs" />
+    <Compile Include="EF\KHOA.cs" />
+    <Compile Include="EF\LOAICANLAMSANG.cs" />
+    <Compile Include="EF\LOAITHUOC.cs" />
+    <Compile Include="EF\NHACUNGCAP.cs" />
+    <Compile Include="EF\NHANVIEN.cs" />
+    <Compile Include="EF\PHANQUYEN.cs" />
+    <Compile Include="EF\PHIEUKHAM.cs" />
+    <Compile Include="EF\PHIEUNHAP.cs" />
+    <Compile Include="EF\QuanLyPhongKhamDbContext.cs" />
+    <Compile Include="EF\QUOCGIA.cs" />
+    <Compile Include="EF\TAIKHOAN.cs" />
+    <Compile Include="EF\THUOC.cs" />
+    <Compile Include="EF\VATTUYTE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyPhongKhamModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyPhongKhamModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyPhongKhamModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyPhongKhamModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyPhongKhamModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="QUOCGIA.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TAIKHOAN.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="THUOC.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VATTUYTE.cs">
-      <DependentUpon>QuanLyPhongKhamModel.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="QuanLyPhongKhamModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyPhongKhamModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="QuanLyPhongKhamModel.edmx.diagram">
-      <DependentUpon>QuanLyPhongKhamModel.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="QuanLyPhongKhamModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyPhongKhamModel.edmx</DependentUpon>
-      <LastGenOutput>QuanLyPhongKhamModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="QuanLyPhongKhamModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyPhongKhamModel.edmx</DependentUpon>
-      <LastGenOutput>QuanLyPhongKhamModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

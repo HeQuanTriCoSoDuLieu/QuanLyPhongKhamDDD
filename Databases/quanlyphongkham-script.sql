@@ -479,12 +479,7 @@ BEGIN
 	        )
 END
 GO
-EXEC dbo.SP_INSERT_TAIKHOAN @TENDANGNHAP = 'D', -- varchar(50)
-    @MATKHAU = 'D', -- varchar(50)
-    @TENHIENTHI =  N'ĂN', -- nvarchar(50)
-    @MAPHANQUYEN = 0, -- int
-    @TRANGTHAI = 1 -- bit
-	GO
+
 
 
 --1.2 SP_UPDATE_TAIKHOAN
@@ -1422,7 +1417,7 @@ EXEC dbo.SP_INSERT_TAIKHOAN @TENDANGNHAP = 'admin', -- varchar(50)
     @TRANGTHAI = 1 -- bit
 GO
 
-
+select * from TAIKHOAN
 
  
 

@@ -8,8 +8,8 @@ namespace QuanLyPhongKham.Model.DTO
 {
     class ChucVu
     {
-        public int MACHUCVU { get; set; }
-        public string TENCHUCVU { get; set; }
+        public int MaChucVu { get; set; }
+        public string TenChucVu { get; set; }
 
     }
 }

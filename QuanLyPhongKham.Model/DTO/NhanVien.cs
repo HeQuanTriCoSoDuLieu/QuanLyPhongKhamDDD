@@ -9,12 +9,19 @@ namespace QuanLyPhongKham.Model.DTO
     public class NhanVien
     {
         public int MaNV {get;set;}
-        public string HOTEN { get; set; }
-        public bool GIOITINH { get; set; }
-        public string SODT { get; set; }
-        public string EMAIL { get; set; }
-        public int MAKHOA { get; set; }
-        public int MACHUCDANH { get; set; }
-        public int MACHUCVU { get; set; }
+
+        public string HoTeN { get; set; }
+
+        public bool GioiTinh { get; set; }
+
+        public string SoDT { get; set; }
+
+        public string Email { get; set; }
+
+        public int MaKhoa { get; set; }
+
+        public int MaChucDanh { get; set; }
+
+        public int MaChucVu { get; set; }
     }
 }

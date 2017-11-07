@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>ab92071c-43ad-4e01-8023-88ca313e9f3b</ProjectGuid>
+    <ProjectGuid>{AB92071C-43AD-4E01-8023-88CA313E9F3B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLyPhongKham.Services</RootNamespace>
@@ -30,24 +30,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">
+      <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
+      <Name>QuanLyPhongKham.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyPhongKham.Model.csproj">
+      <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
+      <Name>QuanLyPhongKham.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyPhongKham.Repository.ADO\QuanLyPhongKham.Repository.ADO.csproj">
+      <Project>{c65934fe-6246-4391-a9aa-55dbac3287db}</Project>
+      <Name>QuanLyPhongKham.Repository.ADO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyPhongKham.Repository.EF\QuanLyPhongKham.Repository.EF.csproj">
+      <Project>{9bc1078f-47e7-4474-bd56-2698c89545b7}</Project>
+      <Name>QuanLyPhongKham.Repository.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

@@ -9,8 +9,8 @@ namespace QuanLyPhongKham.Model.DTO
     class PhieuNhap
     
     {
-        public int MAPHIEUNHAP { get; set; }
-        public int MANV { get; set; }
-        public DateTime NGAYNHAP { get; set; }
+        public int MaPhieuNhap { get; set; }
+        public int MaNV { get; set; }
+        public DateTime NgayNhap { get; set; }
     }
 }

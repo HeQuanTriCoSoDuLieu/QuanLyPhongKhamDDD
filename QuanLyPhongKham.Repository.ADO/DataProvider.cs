@@ -29,10 +29,6 @@ namespace QuanLyPhongKham.Repository.ADO
                 return instance;
             }
 
-            private set
-            {
-                instance = value;
-            }
 
         }
 

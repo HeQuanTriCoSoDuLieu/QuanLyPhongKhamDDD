@@ -8,14 +8,14 @@ namespace QuanLyPhongKham.Model.DTO
 {
     class ChiTietPhieuNhapThuoc
     {
-        public int MAPHIEUNHAP { get; set; }
-        public int MATHUOC { get; set; }
-        public int SOLUONG { get; set; }
-        public DateTime NGAYSX { get; set; }
-        public DateTime NGAYHETHAN { get; set; }
-        public decimal GIANHAP { get; set; }
-        public decimal GIABANLE { get; set; }
-        public int MAHSX { get; set; }
-        public int MANHACC { get; set; }
+        public int MaPhieuNhap { get; set; }
+        public int MaThuoc { get; set; }
+        public int SoLuong { get; set; }
+        public DateTime NgaySX { get; set; }
+        public DateTime NgayHetHan { get; set; }
+        public decimal GiaNhap { get; set; }
+        public decimal GiaBanLe { get; set; }
+        public int MaHSX { get; set; }
+        public int MaNhaCC { get; set; }
     }
 }

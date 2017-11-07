@@ -107,7 +107,7 @@
             this.txbPassWord.MaxLength = 32767;
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.PasswordChar = '●';
-            this.txbPassWord.PromptText = "Mật khẩu";
+            //this.txbPassWord.PromptText = "Mật khẩu";
             this.txbPassWord.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbPassWord.SelectedText = "";
             this.txbPassWord.SelectionLength = 0;
@@ -144,7 +144,7 @@
             this.txbUserName.MaxLength = 32767;
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.PasswordChar = '\0';
-            this.txbUserName.PromptText = "Tên đăng nhập";
+            //this.txbUserName.PromptText = "Tên đăng nhập";
             this.txbUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbUserName.SelectedText = "";
             this.txbUserName.SelectionLength = 0;

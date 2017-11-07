@@ -8,11 +8,11 @@ namespace QuanLyPhongKham.Model.DTO
 {
     class NhaCungCap
     {
-        public int MANHACC { get; set; }
-        public string TENNHACC { get; set; }
-        public string DIACHI { get; set; }
-        public string SODT { get; set; }
-        public string EMAIL { get; set; }
-        public int MAQUOCGIA { get; set; }
+        public int MaNhaCC { get; set; }
+        public string TenNhaCC { get; set; }
+        public string DiaChi { get; set; }
+        public string SoDT { get; set; }
+        public string Email { get; set; }
+        public int MaQuocGia { get; set; }
     }
 }

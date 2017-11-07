@@ -43,5 +43,15 @@
     <Compile Include="DataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">
+      <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
+      <Name>QuanLyPhongKham.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyPhongKham.Model.csproj">
+      <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
+      <Name>QuanLyPhongKham.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
