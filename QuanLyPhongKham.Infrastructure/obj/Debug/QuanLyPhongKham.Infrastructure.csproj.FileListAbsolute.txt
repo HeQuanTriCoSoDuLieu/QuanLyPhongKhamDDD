@@ -1,5 +1,5 @@
-D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Infrastructure\obj\Debug\QuanLyPhongKham.Infrastructure.csprojResolveAssemblyReference.cache
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Infrastructure\bin\Debug\QuanLyPhongKham.Infrastructure.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Infrastructure\bin\Debug\QuanLyPhongKham.Infrastructure.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Infrastructure\obj\Debug\QuanLyPhongKham.Infrastructure.csproj.CoreCompileInputs.cache
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Infrastructure\obj\Debug\QuanLyPhongKham.Infrastructure.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Infrastructure\obj\Debug\QuanLyPhongKham.Infrastructure.pdb

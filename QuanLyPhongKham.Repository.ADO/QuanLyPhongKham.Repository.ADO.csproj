@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">

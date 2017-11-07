@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyPhongKham.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -52,7 +53,7 @@ namespace QuanLyPhongKham.Repository.ADO
         /// <summary>
         /// Connection String dùng để kết nối db
         /// </summary>
-        private string connectionString = @"Data Source=.;Initial Catalog=quanlyphongkhamV1.0;Integrated Security=True";
+        private string connectionString = LibraryParameter.connectionstring;
 
 
         /// <summary>

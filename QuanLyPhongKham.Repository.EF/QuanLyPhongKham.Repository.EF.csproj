@@ -80,6 +80,7 @@
     <Compile Include="EF\THUOC.cs" />
     <Compile Include="EF\VATTUYTE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -87,6 +88,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">
+      <Project>{6276c72f-08d5-41ec-be81-89032dccc9c8}</Project>
+      <Name>QuanLyPhongKham.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyPhongKham.Model\QuanLyPhongKham.Model.csproj">
+      <Project>{bcb820b0-53ed-4949-aea9-b96d6817987a}</Project>
+      <Name>QuanLyPhongKham.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
