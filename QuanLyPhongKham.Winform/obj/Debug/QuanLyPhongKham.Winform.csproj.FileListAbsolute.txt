@@ -28,6 +28,12 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Winform.exe.config
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Winform.pdb
+<<<<<<< HEAD
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Model.dll.config
+=======
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Winform.exe.config
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.exe
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.pdb
+>>>>>>> be899e8718439c0c0fc3a188c1734df6c8baa017
