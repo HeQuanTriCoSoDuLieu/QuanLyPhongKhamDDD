@@ -20,3 +20,6 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Services.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.exe
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.pdb
+C:\Users\User\Documents\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Winform.exe.config
+C:\Users\User\Documents\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.exe
+C:\Users\User\Documents\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.pdb

@@ -40,13 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ChiTietNhapVatTu.cs" />
     <Compile Include="DTO\ChiTietPhieuNhapThuoc.cs" />
     <Compile Include="DTO\ChucDanh.cs" />
     <Compile Include="DTO\ChucVu.cs" />
+    <Compile Include="DTO\DanhSachKham.cs" />
+    <Compile Include="DTO\HangSanXuat.cs" />
+    <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\PhieuNhap.cs" />
+    <Compile Include="DTO\QuocGia.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\VatTuYTe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
