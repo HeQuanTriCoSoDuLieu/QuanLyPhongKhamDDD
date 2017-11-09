@@ -15,3 +15,4 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKha
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.csproj.CoreCompileInputs.cache
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Model.dll.config

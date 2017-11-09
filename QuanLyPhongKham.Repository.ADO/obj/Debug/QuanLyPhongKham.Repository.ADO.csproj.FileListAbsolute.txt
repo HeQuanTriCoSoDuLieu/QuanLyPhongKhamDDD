@@ -8,3 +8,4 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPh
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.csproj.CoreCompileInputs.cache
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Model.dll.config

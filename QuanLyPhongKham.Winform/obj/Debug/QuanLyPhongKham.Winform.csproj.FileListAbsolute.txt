@@ -28,3 +28,6 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Winform.exe.config
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Winform.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Model.dll.config

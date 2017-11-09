@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9BC1078F-47E7-4474-BD56-2698C89545B7}</ProjectGuid>
+    <ProjectGuid>{87F4267A-2D65-463A-B090-E1AB7DF6E142}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLyPhongKham.Repository.EF</RootNamespace>
@@ -32,18 +32,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,42 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EF\BENHNHAN.cs" />
-    <Compile Include="EF\CANLAMSANG.cs" />
-    <Compile Include="EF\CHITIETCL.cs" />
-    <Compile Include="EF\CHITIETDONTHUOC.cs" />
-    <Compile Include="EF\CHITIETNHAPVATTU.cs" />
-    <Compile Include="EF\CHITIETPHIEUNHAPTHUOC.cs" />
-    <Compile Include="EF\CHUCDANH.cs" />
-    <Compile Include="EF\CHUCVU.cs" />
-    <Compile Include="EF\DICHVUCL.cs" />
-    <Compile Include="EF\DONTHUOC.cs" />
-    <Compile Include="EF\DONVITINH.cs" />
-    <Compile Include="EF\HANGSANXUAT.cs" />
-    <Compile Include="EF\HINHTHUCKHAM.cs" />
-    <Compile Include="EF\HOADON.cs" />
-    <Compile Include="EF\KHOA.cs" />
-    <Compile Include="EF\LOAICANLAMSANG.cs" />
-    <Compile Include="EF\LOAITHUOC.cs" />
-    <Compile Include="EF\NHACUNGCAP.cs" />
-    <Compile Include="EF\NHANVIEN.cs" />
-    <Compile Include="EF\PHANQUYEN.cs" />
-    <Compile Include="EF\PHIEUKHAM.cs" />
-    <Compile Include="EF\PHIEUNHAP.cs" />
-    <Compile Include="EF\QuanLyPhongKhamDbContext.cs" />
-    <Compile Include="EF\QUOCGIA.cs" />
-    <Compile Include="EF\TAIKHOAN.cs" />
-    <Compile Include="EF\THUOC.cs" />
-    <Compile Include="EF\VATTUYTE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyPhongKhamDbContext.cs" />
     <Compile Include="TaiKhoanRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">
@@ -100,11 +67,4 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

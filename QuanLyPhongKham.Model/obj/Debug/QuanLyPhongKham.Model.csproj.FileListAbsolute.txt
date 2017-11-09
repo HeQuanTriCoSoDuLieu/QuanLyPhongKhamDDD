@@ -3,3 +3,9 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\bin\Debug\QuanLyPhongKham.M
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\obj\Debug\QuanLyPhongKham.Model.csproj.CoreCompileInputs.cache
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\obj\Debug\QuanLyPhongKham.Model.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\obj\Debug\QuanLyPhongKham.Model.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\obj\Debug\QuanLyPhongKham.Model.csprojResolveAssemblyReference.cache
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\bin\Debug\QuanLyPhongKham.Model.dll.config
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\bin\Debug\EntityFramework.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\bin\Debug\EntityFramework.xml
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Model\bin\Debug\EntityFramework.SqlServer.xml
