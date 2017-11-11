@@ -13,7 +13,7 @@ namespace QuanLyPhongKham.Infrastructure
         {
             get
             {
-                return ConfigurationManager.ConnectionStrings["quanlyphongkhamdbcontext"].ToString();
+                return ConfigurationManager.ConnectionStrings["QuanLyPhongKhamDbContext"].ToString();
             }
         }
 
@@ -21,7 +21,7 @@ namespace QuanLyPhongKham.Infrastructure
         {
             get
             {
-                return ConfigurationManager.AppSettings["persistancestrategy"].ToString();
+                return ConfigurationManager.AppSettings["PersistanceStrategy"].ToString();
             }
         }
 

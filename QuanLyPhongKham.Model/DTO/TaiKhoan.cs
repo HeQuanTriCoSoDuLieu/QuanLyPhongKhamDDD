@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace QuanLyPhongKham.Model.DTO
 {
     public class TaiKhoan
@@ -22,10 +24,13 @@ namespace QuanLyPhongKham.Model.DTO
             TrangThai = trangThai;
         }
 
+        [Key]
         public int MaTK { get; set; }
 
+        [Required]
         public string TenDangNhap { get; set; }
 
+        [Required]
         public string MatKhau { get; set; }
 
         public string TenHienThi { get; set; }

@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LibraryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">
@@ -56,7 +58,7 @@
       <Name>QuanLyPhongKham.Repository.ADO</Name>
     </ProjectReference>
     <ProjectReference Include="..\QuanLyPhongKham.Repository.EF\QuanLyPhongKham.Repository.EF.csproj">
-      <Project>{9bc1078f-47e7-4474-bd56-2698c89545b7}</Project>
+      <Project>{87f4267a-2d65-463a-b090-e1ab7df6e142}</Project>
       <Name>QuanLyPhongKham.Repository.EF</Name>
     </ProjectReference>
   </ItemGroup>

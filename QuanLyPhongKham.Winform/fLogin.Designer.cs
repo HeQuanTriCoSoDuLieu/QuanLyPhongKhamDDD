@@ -71,6 +71,7 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // chkRememberMe
             // 
@@ -92,7 +93,7 @@
             // 
             // 
             this.txbPassWord.CustomButton.Image = null;
-            this.txbPassWord.CustomButton.Location = new System.Drawing.Point(240, 1);
+            this.txbPassWord.CustomButton.Location = new System.Drawing.Point(231, 1);
             this.txbPassWord.CustomButton.Name = "";
             this.txbPassWord.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txbPassWord.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -107,7 +108,7 @@
             this.txbPassWord.MaxLength = 32767;
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.PasswordChar = '●';
-            //this.txbPassWord.PromptText = "Mật khẩu";
+            this.txbPassWord.PromptText = "Mật khẩu";
             this.txbPassWord.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbPassWord.SelectedText = "";
             this.txbPassWord.SelectionLength = 0;
@@ -129,7 +130,7 @@
             // 
             // 
             this.txbUserName.CustomButton.Image = null;
-            this.txbUserName.CustomButton.Location = new System.Drawing.Point(240, 1);
+            this.txbUserName.CustomButton.Location = new System.Drawing.Point(231, 1);
             this.txbUserName.CustomButton.Name = "";
             this.txbUserName.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txbUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -144,7 +145,7 @@
             this.txbUserName.MaxLength = 32767;
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.PasswordChar = '\0';
-            //this.txbUserName.PromptText = "Tên đăng nhập";
+            this.txbUserName.PromptText = "Tên đăng nhập";
             this.txbUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbUserName.SelectedText = "";
             this.txbUserName.SelectionLength = 0;

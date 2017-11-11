@@ -1,4 +1,3 @@
-D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.csprojResolveAssemblyReference.cache
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Services.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Services.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Infrastructure.dll
@@ -12,5 +11,8 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKha
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Repository.EF.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Repository.EF.dll.config
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\EntityFramework.xml
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.csprojResolveAssemblyReference.cache
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.csproj.CoreCompileInputs.cache
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Model.dll.config

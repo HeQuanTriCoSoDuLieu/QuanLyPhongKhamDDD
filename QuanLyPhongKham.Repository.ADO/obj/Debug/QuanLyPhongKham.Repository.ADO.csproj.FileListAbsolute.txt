@@ -1,9 +1,11 @@
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Repository.ADO.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Repository.ADO.pdb
-D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.csprojResolveAssemblyReference.cache
-D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.dll
-D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Infrastructure.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Model.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Infrastructure.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Model.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.csprojResolveAssemblyReference.cache
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.csproj.CoreCompileInputs.cache
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Model.dll.config
