@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    class DanhSachKham
+    public class DanhSachKham
     {
         public int MaDSK { get; set; }
         public int MaPhieuKham { get; set; }

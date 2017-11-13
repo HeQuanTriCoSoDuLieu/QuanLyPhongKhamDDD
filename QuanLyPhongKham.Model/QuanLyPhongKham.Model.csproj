@@ -59,11 +59,9 @@
     <Compile Include="DTO\PhieuNhap.cs" />
     <Compile Include="DTO\QuocGia.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
-<<<<<<< HEAD
-    <Compile Include="DTO\VatTuYTe.cs" />
-=======
-    <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
->>>>>>> dc2eddad14f319e2bd574039e3cd812c5cd4cc68
+
+   
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
