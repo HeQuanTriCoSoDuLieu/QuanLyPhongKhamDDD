@@ -51,7 +51,7 @@ CREATE TABLE PHIEUKHAM(
 	MANV int NULL,
 	CHUANDOAN nvarchar(250) NULL,
 	MAHINHTHUCKHAM int NULL,
-	NGAYKHAM date NULL,
+	NGAYKHAM date NULL DEFAULT GETDATE(),
 	KETLUAN nvarchar(50) NULL,
 	HOANTHANH bit NULl,
 	DATHANHTOAN bit NULL
@@ -450,85 +450,5 @@ GO
 
 
 
---------------------------------------------STORE PROCEDURE ---------------------------------------------------------------------------------------
-
---NOTE: STORE PROCEDURE CHO BẢNG NÀO THÌ GHI BẢNG ĐÓ, NHỚ GHI THỨ TỰ VÀ GHI TÊN
-
---1. BẢNG TAIKHOAN
---1.1 SP_INSERT_TAIKHOAN
-CREATE PROC SP_INSERT_TAIKHOAN
-	@TENDANGNHAP VARCHAR(50),
-	@MATKHAU VARCHAR(50),
-	@TENHIENTHI NVARCHAR(50),
-	@MAPHANQUYEN INT,
-	@TRANGTHAI BIT
-AS
-BEGIN
-	INSERT INTO dbo.TAIKHOAN 
-	        ( TENDANGNHAP ,
-	          MATKHAU ,
-	          TENHIENTHI ,
-	          MAPHANQUYEN ,
-	          TRANGTHAI
-	        )
-	VALUES  ( @TENDANGNHAP , -- TENDANGNHAP - varchar(50)
-	          @MATKHAU , -- MATKHAU - varchar(50)
-	         N''+ @TENHIENTHI , -- TENHIENTHI - nvarchar(50)
-	          @MAPHANQUYEN , -- MAPHANQUYEN - int
-	          @TRANGTHAI  -- TRANGTHAI - bit
-	        )
-END
-GO
-
-
-
---1.2 SP_UPDATE_TAIKHOAN
-CREATE PROC SP_UPDATE_TAIKHOAN
-	@MATK INT,
-	@MATKHAU VARCHAR(50),
-	@TENHIENTHI NVARCHAR(50),
-	@MAPHANQUYEN INT,
-	@TRANGTHAI BIT
-AS
-BEGIN 
-	UPDATE dbo.TAIKHOAN SET MATKHAU = @MATKHAU , TENHIENTHI = @TENHIENTHI , MAPHANQUYEN=@MAPHANQUYEN, TRANGTHAI = @TRANGTHAI
-	WHERE MATK = @MATK
-END
-GO
-
-
-
---1.3 SP_LOGIN
-
-
-CREATE PROC SP_Login
-	@TenDangNhap NVARCHAR(50),
-	@MatKhau NVARCHAR(50)
-AS
-BEGIN
-	SELECT COUNT(*) FROM dbo.TAIKHOAN WHERE TENDANGNHAP=@TenDangNhap AND MATKHAU=@MatKhau
-END
-GO
-
-
-
-------- login code 
---1. BẢNG PHANQUYEN
-INSERT INTO dbo.PHANQUYEN
-        ( QUYEN, GHICHU )
-VALUES  ( 1, -- QUYEN - int
-          N'Admin'  -- GHICHU - nvarchar(250)
-          )
-SELECT * FROM dbo.PHANQUYEN
-GO
-
-
---2. BẢNG TAIKHOAN
-EXEC dbo.SP_INSERT_TAIKHOAN @TENDANGNHAP = 'admin', -- varchar(50)
-    @MATKHAU = '1', -- varchar(50)
-    @TENHIENTHI = N'Admin', -- nvarchar(50)
-    @MAPHANQUYEN = 1, -- int
-    @TRANGTHAI = 1 -- bit
-GO
 
 

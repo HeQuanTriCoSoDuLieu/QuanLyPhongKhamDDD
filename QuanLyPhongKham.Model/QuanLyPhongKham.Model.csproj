@@ -47,13 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\BenhNhan.cs" />
+    <Compile Include="DTO\ChiTietCLS.cs" />
+    <Compile Include="DTO\Chitietdonthuoc.cs" />
     <Compile Include="DTO\ChiTietPhieuNhapThuoc.cs" />
     <Compile Include="DTO\ChucDanh.cs" />
     <Compile Include="DTO\ChucVu.cs" />
+    <Compile Include="DTO\Dichvucls.cs" />
+    <Compile Include="DTO\Donthuoc.cs" />
+    <Compile Include="DTO\Donvitinh.cs" />
+    <Compile Include="DTO\HinhThucKham.cs" />
+    <Compile Include="DTO\Khoa.cs" />
+    <Compile Include="DTO\LoaiCanLamSang.cs" />
+    <Compile Include="DTO\Loaithuoc.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\PhanQuyen.cs" />
+    <Compile Include="DTO\PhieuKham.cs" />
     <Compile Include="DTO\PhieuNhap.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\Thuoc.cs" />
     <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
