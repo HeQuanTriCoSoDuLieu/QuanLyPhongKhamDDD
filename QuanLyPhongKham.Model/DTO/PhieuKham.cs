@@ -21,7 +21,9 @@ namespace QuanLyPhongKham.Model.DTO
         public PhieuKham()
         {
         }
-        public PhieuKham(int MaPhieuKham, int MaBN, int MaNV, string ChuanDoan, int MaHinhThucKham, string NgayKham, string KetLuan, int HoanThanh, int DaThanhToan)
+
+
+        public PhieuKham(int MaPhieuKham, int MaBN, int MaNV, string ChuanDoan, int MaHinhThucKham, DateTime NgayKham, string KetLuan, int HoanThanh, int DaThanhToan)
         {
             this.MaPhieuKham = MaPhieuKham;
             this.MaBN = MaBN;
@@ -33,5 +35,9 @@ namespace QuanLyPhongKham.Model.DTO
             this.HoanThanh = HoanThanh;
             this.DaThanhToan = DaThanhToan;
         }
+
+       
+
+
     }
 }

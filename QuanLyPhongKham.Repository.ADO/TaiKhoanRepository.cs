@@ -14,7 +14,7 @@ namespace QuanLyPhongKham.Repository.ADO
         {
             int result;
 
-            result = DataProvider.Instane.ExecuteScalar("EXEC dbo.SP_Login @TenDangNhap , @MatKhau", new object[] { userName, passWord });
+            result = DataProvider.Instane.ExecuteScalar("EXEC dbo.SP_Login @TenDangNhap , @MatKhau ", new object[] { userName, passWord });
 
             return result > 0;
         }

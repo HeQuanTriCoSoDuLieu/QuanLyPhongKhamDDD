@@ -21,5 +21,6 @@ namespace QuanLyPhongKham.Winform
         {
 
         }
+
     }
 }

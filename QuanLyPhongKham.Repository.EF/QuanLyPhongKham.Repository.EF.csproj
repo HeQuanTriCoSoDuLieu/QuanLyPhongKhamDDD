@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,8 +50,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EF\BENHNHAN.cs" />
+    <Compile Include="EF\CANLAMSANG.cs" />
+    <Compile Include="EF\CHITIETCL.cs" />
+    <Compile Include="EF\CHITIETDONTHUOC.cs" />
+    <Compile Include="EF\CHITIETNHAPVATTU.cs" />
+    <Compile Include="EF\CHITIETPHIEUNHAPTHUOC.cs" />
+    <Compile Include="EF\CHUCDANH.cs" />
+    <Compile Include="EF\CHUCVU.cs" />
+    <Compile Include="EF\DICHVUCL.cs" />
+    <Compile Include="EF\DONTHUOC.cs" />
+    <Compile Include="EF\DONVITINH.cs" />
+    <Compile Include="EF\HANGSANXUAT.cs" />
+    <Compile Include="EF\HINHTHUCKHAM.cs" />
+    <Compile Include="EF\HOADON.cs" />
+    <Compile Include="EF\KHOA.cs" />
+    <Compile Include="EF\LOAICANLAMSANG.cs" />
+    <Compile Include="EF\LOAITHUOC.cs" />
+    <Compile Include="EF\NHACUNGCAP.cs" />
+    <Compile Include="EF\NHANVIEN.cs" />
+    <Compile Include="EF\PHANQUYEN.cs" />
+    <Compile Include="EF\PHIEUKHAM.cs" />
+    <Compile Include="EF\PHIEUNHAP.cs" />
+    <Compile Include="EF\QuanLyPhongKhamDbContext.cs" />
+    <Compile Include="EF\QUOCGIA.cs" />
+    <Compile Include="EF\TAIKHOAN.cs" />
+    <Compile Include="EF\THUOC.cs" />
+    <Compile Include="EF\VATTUYTE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyPhongKhamDbContext.cs" />
     <Compile Include="TaiKhoanRepository.cs" />
   </ItemGroup>
   <ItemGroup>
