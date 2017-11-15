@@ -20,8 +20,8 @@ namespace QuanLyPhongKham.Model.DTO
         {
             MaDSK = (int)row["MaDSK"];
             MaPhieuKham = (int)row["MaPhieuKham"];
-            //NgayKham =
-            //HoanThanh =  
+            NgayKham = (DateTime)row["NgayKham"];
+            HoanThanh = (bool)row["HoanThanh"];  
             
         }
         public int MaDSK { get; set; }

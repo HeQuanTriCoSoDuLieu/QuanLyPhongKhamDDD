@@ -27,8 +27,8 @@ namespace QuanLyPhongKham.Model.DTO
             MaVTYT = (int)row["MaVTYT"];
             SoLuong = (int)row["SoLuong"];
             MaNHSX = (int)row["MaNHSX"];
-            // NgaySX
-            // NgayHetHan
+            NgaySX = (DateTime)row["NgaySX"];
+            NgayHetHan = (DateTime)row["NgayHetHan"];
             GiaNhap = (int)row["GiaNhap"];
             GiaBanLe = (int)row["GiaBanLe"];
             MaNCC = (int)row["MaNCC"];
