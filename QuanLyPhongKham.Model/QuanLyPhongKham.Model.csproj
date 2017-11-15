@@ -76,15 +76,13 @@
     <Compile Include="DTO\QuocGia.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
 
-<<<<<<< HEAD
-   
-=======
+
     <Compile Include="DTO\Thuoc.cs" />
 
     <Compile Include="DTO\VatTuYTe.cs" />
 
     <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
->>>>>>> 7c8147d23e63bcd6c4bcc6475e0973021f097565
+
 
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
