@@ -22,6 +22,7 @@ namespace QuanLyPhongKham.Winform
             
         }
 
+
         private void fTiepNhanBenhNhan_Load(object sender, EventArgs e)
         {
 

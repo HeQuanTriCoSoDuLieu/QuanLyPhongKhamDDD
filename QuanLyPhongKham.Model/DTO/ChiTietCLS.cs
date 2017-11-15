@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,12 @@ namespace QuanLyPhongKham.Model.DTO
             this.MaDichVuCLS = MaDichVuCLS;
             this.MaCLS = MaCLS;
             this.KetQua = KetQua;
+        }
+        public ChiTietCLS(DataRow row)
+        {
+            this.MaDichVuCLS = (int)row["MADICHVUCLS"];
+            this.MaCLS = (int)row["MACLS"];
+            this.KetQua = row["KETQUA"].ToString();
         }
     }
 }

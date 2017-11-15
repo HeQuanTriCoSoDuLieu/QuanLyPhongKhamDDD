@@ -6,11 +6,30 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    class VatTuYTe
+    public class VatTuYTe
     {
-        public int MaVTYT { get; set; }
-        public string TenVTYT { get; set; }
-        public int MaDVT { get; set; }
-        public int SoLuongTon { get; set; }
+        public int MAVTYT { get; set; }
+        public string TENVTYT { get; set; }
+        public int MADVT { get; set; }
+        public int SOLUONGTON { get; set; }
+
+        public VatTuYTe() { }
+
+        public VATTUYTE(int mAVATTUYTE, string tENVTYT, int mADVT, int sOLUONGTON)
+        {
+            MAVTYT = mAVATTUYTE;
+            TENVTYT = tENVTYT;
+            MADVT = mADVT;
+            SOLUONGTON = sOLUONGTON;
+        }
+        public VatTuYTe(DataRow row)
+        {
+            MAVTYT = (int)row["MAVTYT"];
+            TENVTYT = row["TENVTYT"].ToString();
+            MADVT = (int)row["MADVT"];
+            SOLUONGTON = (int)row["SOLUONGTON"]; 
+        }
+
+        
     }
 }
