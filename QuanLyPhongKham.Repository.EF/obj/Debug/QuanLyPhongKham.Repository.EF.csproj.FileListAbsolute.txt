@@ -1,0 +1,16 @@
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Repository.EF.dll.config
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Repository.EF.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Repository.EF.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\EntityFramework.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Infrastructure.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Model.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Infrastructure.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Model.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\EntityFramework.xml
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.csprojResolveAssemblyReference.cache
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.csproj.CoreCompileInputs.cache
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.dll
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Model.dll.config

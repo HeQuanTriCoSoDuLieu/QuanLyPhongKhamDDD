@@ -15,8 +15,6 @@ namespace QuanLyPhongKham.Winform
         public fKhamBenhNhan()
         {
             InitializeComponent();
-<<<<<<< HEAD
-=======
             panellamsang.Parent = panelchinh;
             panelsieuam.Parent = panelchinh;
             panelxquang.Parent = panelchinh;
@@ -105,7 +103,6 @@ namespace QuanLyPhongKham.Winform
             panelxquang.Visible = false;
             panelsieuam.Visible = false;
             panellamsang.Visible = true;
->>>>>>> 85218178d0ba91f076873c2ce072247d0df9cb00
         }
     }
 }

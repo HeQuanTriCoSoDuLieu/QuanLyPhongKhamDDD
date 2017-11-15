@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace QuanLyPhongKham.Model.DTO
 
         public VatTuYTe() { }
 
-        public VATTUYTE(int mAVATTUYTE, string tENVTYT, int mADVT, int sOLUONGTON)
+        public VatTuYTe(int mAVATTUYTE, string tENVTYT, int mADVT, int sOLUONGTON)
         {
             MAVTYT = mAVATTUYTE;
             TENVTYT = tENVTYT;

@@ -25,3 +25,4 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\EntityFramework
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\bin\Debug\QuanLyPhongKham.Repository.ADO.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.exe
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.pdb
+D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Winform\obj\Debug\QuanLyPhongKham.Winform.fKhamBenhNhan.resources

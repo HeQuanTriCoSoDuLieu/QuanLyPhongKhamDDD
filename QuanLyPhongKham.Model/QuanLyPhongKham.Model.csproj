@@ -60,18 +60,12 @@
     <Compile Include="DTO\DanhSachKham.cs" />
     <Compile Include="DTO\HangSanXuat.cs" />
     <Compile Include="DTO\HoaDon.cs" />
-    <Compile Include="DTO\NhaCungCap.cs" />
-    <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\PhanQuyen.cs" />
     <Compile Include="DTO\PhieuKham.cs" />
     <Compile Include="DTO\PhieuNhap.cs" />
     <Compile Include="DTO\QuocGia.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
-    <Compile Include="DTO\Thuoc.cs" />
     <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="DTO\Thuoc.cs" />
     <Compile Include="DTO\VatTuYTe.cs" />
     <Compile Include="Interfaces\IBenhNhanRepository.cs" />
@@ -97,7 +91,6 @@
     <Compile Include="Interfaces\IPhieuKhamRepository.cs" />
     <Compile Include="Interfaces\IPhieuNhapRepository.cs" />
     <Compile Include="Interfaces\IQuocGiaRepository.cs" />
-    <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
     <Compile Include="Interfaces\IThuocRepository.cs" />
     <Compile Include="Interfaces\IVatTuYTeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
