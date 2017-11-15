@@ -113,7 +113,7 @@ namespace QuanLyPhongKham.Repository.ADO
                 connection.Close();
             }
 
-            return (int)data;
+            return (int) data;
         }
 
 
@@ -151,7 +151,12 @@ namespace QuanLyPhongKham.Repository.ADO
             return row;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="values"></param>
+        /// <returns></returns>
         public DataTable ExecuteReader(string query, object[] values = null)
         {
             DataTable table = new DataTable();

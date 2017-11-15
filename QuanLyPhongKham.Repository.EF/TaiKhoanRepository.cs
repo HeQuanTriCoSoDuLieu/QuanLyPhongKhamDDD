@@ -1,4 +1,5 @@
 ﻿using QuanLyPhongKham.Model.Interfaces;
+using QuanLyPhongKham.Repository.EF.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace QuanLyPhongKham.Repository.EF
     {
         public bool Login(string userName, string passWord)
         {
-            return QuanLyPhongKhamDbContext.Instance.TAIKHOAN.Where(a => a.TenDangNhap == userName && a.MatKhau == passWord).Count() > 0;
+            int result = QuanLyPhongKhamDbContext.Instance.TAIKHOANs.Count(); //p=>p.TenDangNhap==userName && p.MatKhau == passWord
+            return result > 0;
         }
     }
 }

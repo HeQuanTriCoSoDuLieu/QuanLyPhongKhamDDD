@@ -17,5 +17,13 @@ namespace QuanLyPhongKham.Winform
             InitializeComponent();
         }
 
+<<<<<<< HEAD
+=======
+        private void fTiepNhanBenhNhan_Load(object sender, EventArgs e)
+        {
+
+        }
+
+>>>>>>> 8db1b5f1d56729d8a3fbffc4333d584f27c376f2
     }
 }

@@ -1,43 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 namespace QuanLyPhongKham.Model.DTO
 {
     public class TaiKhoan
     {
 
-        
+        /// <summary>
+        /// làm thêm cái này 
+        /// </summary>
         public TaiKhoan() { }
 
-        public TaiKhoan(int maTK, string tenDangNhap, string matKhau, string tenHienThi, int? maPhanQuyen, bool? trangThai)
+        /// <summary>
+        /// làm thêm cái này 
+        /// </summary>
+        public TaiKhoan(int mATK, string tENDANGNHAP, string mATKHAU, string tENHIENTHI, int mAPHANQUYEN, bool tRANGTHAI)
         {
-            MaTK = maTK;
-            TenDangNhap = tenDangNhap;
-            MatKhau = matKhau;
-            TenHienThi = tenHienThi;
-            MaPhanQuyen = maPhanQuyen;
-            TrangThai = trangThai;
+            MATK = mATK;
+            TENDANGNHAP = tENDANGNHAP;
+            MATKHAU = mATKHAU;
+            TENHIENTHI = tENHIENTHI;
+            MAPHANQUYEN = mAPHANQUYEN;
+            TRANGTHAI = tRANGTHAI;
+        }
+        /// <summary>
+        /// dùng cho query data từ database
+        /// </summary>
+        /// <param name="row"></param>
+        public TaiKhoan(DataRow row)
+        {
+            MATK = (int)row["MATK"];
+            TENDANGNHAP = row["TENDANGNHAP"].ToString();
+            MATKHAU = row["MATKHAU"].ToString();
+            TENHIENTHI = row["TENHIENTHI"].ToString();
+            MAPHANQUYEN = (int)row["MAPHANQUYEN"];
+            TRANGTHAI = (bool)row["TRANGTHAI"];
         }
 
-        [Key]
-        public int MaTK { get; set; }
 
-        [Required]
-        public string TenDangNhap { get; set; }
+        public int MATK { get; set; }
 
-        [Required]
-        public string MatKhau { get; set; }
+        public string TENDANGNHAP { get; set; }
 
-        public string TenHienThi { get; set; }
+        public string MATKHAU { get; set; }
 
-        public int? MaPhanQuyen { get; set; }
+        public string TENHIENTHI { get; set; }
 
-        public bool? TrangThai { get; set; }
+        public int MAPHANQUYEN { get; set; }
+
+        public bool TRANGTHAI { get; set; }
 
     }
 }

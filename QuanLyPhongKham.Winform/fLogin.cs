@@ -22,16 +22,25 @@ namespace QuanLyPhongKham.Winform
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
         }
 
+        
+
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+            txbUserName.Focus();
+        }
+
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string userName = txbUserName.Text.Trim();
             string passWord = txbPassWord.Text.Trim();
-            if (libraryService.Login(userName,passWord))
+            if (libraryService.Login(userName, passWord))
             {
                 Hide();
                 fTiepNhanBenhNhan f = new fTiepNhanBenhNhan();
                 f.ShowDialog();
-            }else
+            }
+            else
             {
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Thông báo");
             }
