@@ -22,11 +22,17 @@ namespace QuanLyPhongKham.Winform
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
         }
 
-        
+
 
         private void fLogin_Load(object sender, EventArgs e)
         {
             txbUserName.Focus();
+            if (Properties.Settings.Default.rememberMe)
+            {
+                txbUserName.Text = Properties.Settings.Default.username;
+                txbPassWord.Text = Properties.Settings.Default.password;
+                chkRememberMe.Checked = true;
+            }
         }
 
 
@@ -34,16 +40,62 @@ namespace QuanLyPhongKham.Winform
         {
             string userName = txbUserName.Text.Trim();
             string passWord = txbPassWord.Text.Trim();
-            if (libraryService.Login(userName, passWord))
+            int result = libraryService.Login(userName, passWord);
+            switch (result)
             {
-                Hide();
-                fTiepNhanBenhNhan f = new fTiepNhanBenhNhan();
-                f.ShowDialog();
+                case 1:
+                    fAdmin  admin = new fAdmin();
+                    Hide();
+                    admin.ShowDialog();
+                    Show();
+                    break;
+                case 2:
+                    fKhamBenhNhan khamBenhNhan = new fKhamBenhNhan();
+                    Hide();
+                    khamBenhNhan.ShowDialog();
+                    Show();
+                    break;
+                case 3:
+                    fTiepNhanBenhNhan tiepNhanBenhNhan  = new fTiepNhanBenhNhan();
+                    Hide();
+                    tiepNhanBenhNhan.ShowDialog();
+                    Show();
+                    break;
+                case 4:
+                    fThuNgan thuNgan = new fThuNgan();
+                    Hide();
+                    thuNgan.ShowDialog();
+                    Show();
+                    break;
+                default:
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    break;
             }
-            else
+
+            if (result!=0 && chkRememberMe.Checked)
             {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Thông báo");
+                Properties.Settings.Default.username = txbUserName.Text;
+                Properties.Settings.Default.password = txbPassWord.Text;
+                Properties.Settings.Default.rememberMe = true;
+                Properties.Settings.Default.Save();
+            }else
+            {
+                Properties.Settings.Default.username = "";
+                Properties.Settings.Default.password = "";
+                Properties.Settings.Default.rememberMe = false;
+                Properties.Settings.Default.Save();
             }
+
+        }
+
+        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+            {
+                e.Cancel = true;
+
+            }
+
         }
     }
 }
