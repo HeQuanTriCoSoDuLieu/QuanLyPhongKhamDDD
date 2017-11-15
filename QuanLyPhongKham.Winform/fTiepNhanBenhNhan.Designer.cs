@@ -87,15 +87,17 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1350, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1350, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
-            this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuToolStripMenuItem.Checked = true;
+            this.menuToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(53, 21);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(66, 25);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // groupBox1
@@ -271,7 +273,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(288, 77);
+            this.label10.Location = new System.Drawing.Point(309, 77);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 16);
             this.label10.TabIndex = 29;
@@ -318,6 +320,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button2);
@@ -329,7 +332,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(373, 6);
+            this.button4.Location = new System.Drawing.Point(359, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 25);
             this.button4.TabIndex = 17;
@@ -338,7 +341,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(166, 7);
+            this.button6.Location = new System.Drawing.Point(152, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(110, 25);
             this.button6.TabIndex = 16;
@@ -347,7 +350,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(282, 7);
+            this.button2.Location = new System.Drawing.Point(268, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 25);
             this.button2.TabIndex = 15;
@@ -356,7 +359,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(464, 7);
+            this.button3.Location = new System.Drawing.Point(450, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 25);
             this.button3.TabIndex = 13;
@@ -373,7 +376,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 77);
+            this.label7.Location = new System.Drawing.Point(5, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 16);
             this.label7.TabIndex = 22;
@@ -389,7 +392,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 49);
+            this.label6.Location = new System.Drawing.Point(5, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 20;
@@ -397,6 +400,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(392, 46);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(170, 22);
@@ -405,7 +409,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(288, 52);
+            this.label5.Location = new System.Drawing.Point(309, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 16);
             this.label5.TabIndex = 18;
@@ -414,7 +418,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(288, 21);
+            this.label4.Location = new System.Drawing.Point(309, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 17;
@@ -443,7 +447,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 130);
+            this.label3.Location = new System.Drawing.Point(5, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 16);
             this.label3.TabIndex = 8;
@@ -476,7 +480,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 24);
+            this.label1.Location = new System.Drawing.Point(5, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 16);
             this.label1.TabIndex = 4;
@@ -506,7 +510,6 @@
             this.Name = "fTiepNhanBenhNhan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phòng khám đa khoa";
-            this.Load += new System.EventHandler(this.fTiepNhanBenhNhan_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

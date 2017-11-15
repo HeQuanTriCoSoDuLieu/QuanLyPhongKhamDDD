@@ -16,3 +16,18 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKha
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Model.dll.config
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Services.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Services.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Infrastructure.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Model.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Repository.ADO.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Repository.EF.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\EntityFramework.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Infrastructure.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Model.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Repository.ADO.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\QuanLyPhongKham.Repository.EF.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\bin\Debug\EntityFramework.xml
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.csprojResolveAssemblyReference.cache
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Services\obj\Debug\QuanLyPhongKham.Services.pdb

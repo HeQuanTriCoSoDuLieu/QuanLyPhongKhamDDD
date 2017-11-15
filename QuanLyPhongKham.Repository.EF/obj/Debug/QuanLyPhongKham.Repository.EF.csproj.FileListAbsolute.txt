@@ -14,3 +14,15 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPho
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Model.dll.config
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Repository.EF.dll.config
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Repository.EF.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Repository.EF.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Infrastructure.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Model.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Infrastructure.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\QuanLyPhongKham.Model.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\EntityFramework.xml
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\bin\Debug\EntityFramework.SqlServer.xml
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.csprojResolveAssemblyReference.cache
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.EF\obj\Debug\QuanLyPhongKham.Repository.EF.pdb

@@ -47,19 +47,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\BenhNhan.cs" />
+    <Compile Include="DTO\ChiTietCLS.cs" />
+    <Compile Include="DTO\Chitietdonthuoc.cs" />
     <Compile Include="DTO\ChiTietPhieuNhapThuoc.cs" />
     <Compile Include="DTO\ChucDanh.cs" />
     <Compile Include="DTO\ChucVu.cs" />
+    <Compile Include="DTO\Dichvucls.cs" />
+    <Compile Include="DTO\Donthuoc.cs" />
+    <Compile Include="DTO\Donvitinh.cs" />
+    <Compile Include="DTO\HinhThucKham.cs" />
+    <Compile Include="DTO\Khoa.cs" />
+    <Compile Include="DTO\LoaiCanLamSang.cs" />
+    <Compile Include="DTO\Loaithuoc.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\PhieuKham.cs" />
     <Compile Include="DTO\PhieuNhap.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\Thuoc.cs" />
     <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\QuanLyPhongKham.Model.dll.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\QuanLyPhongKham.Model.csproj.CopyComplete" />
+    <None Include="obj\Debug\QuanLyPhongKham.Model.csprojResolveAssemblyReference.cache" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\QuanLyPhongKham.Model.dll" />
+    <Content Include="bin\Debug\QuanLyPhongKham.Model.pdb" />
+    <Content Include="obj\Debug\QuanLyPhongKham.Model.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\QuanLyPhongKham.Model.dll" />
+    <Content Include="obj\Debug\QuanLyPhongKham.Model.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

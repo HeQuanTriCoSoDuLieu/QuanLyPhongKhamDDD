@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fKhamBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fKhamBenhNhan.Designer.cs">
+      <DependentUpon>fKhamBenhNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fKhamBenhNhan.resx">
+      <DependentUpon>fKhamBenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +121,7 @@
     <Content Include="Assets\Images\user-icon.png" />
     <Content Include="Assets\Images\User-Interface-Password-icon.png" />
     <Content Include="Assets\Images\user_male2-64.png" />
+    <None Include="Resources\TEST.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">

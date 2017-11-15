@@ -9,3 +9,12 @@ D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPh
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.dll
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.pdb
 D:\Projects\QuanLyPhongKhamDDD\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Model.dll.config
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Repository.ADO.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Repository.ADO.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Infrastructure.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Model.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Infrastructure.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\bin\Debug\QuanLyPhongKham.Model.pdb
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.csprojResolveAssemblyReference.cache
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.dll
+F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\QuanLyPhongKham.Repository.ADO\obj\Debug\QuanLyPhongKham.Repository.ADO.pdb
