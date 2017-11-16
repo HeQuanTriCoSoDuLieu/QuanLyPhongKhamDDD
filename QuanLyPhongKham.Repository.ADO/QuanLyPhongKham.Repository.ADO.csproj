@@ -40,9 +40,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BenhNhanRepository.cs" />
+    <Compile Include="CanLamSanRepository.cs" />
+    <Compile Include="ChiTietCLSRepository.cs" />
+    <Compile Include="ChiTietDonThuocRepository.cs" />
+    <Compile Include="ChiTietNhapVatTuRepository.cs" />
+    <Compile Include="ChiTietNhapThuocRepository.cs" />
+    <Compile Include="ChucDanhRepository.cs" />
+    <Compile Include="ChucVuRepository.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DichVuCLSRepository.cs" />
+    <Compile Include="DonThuocRepository.cs" />
+    <Compile Include="DonViTinhRepository.cs" />
+    <Compile Include="HangSanXuatRepository.cs" />
+    <Compile Include="HinhThucKhamRepository.cs" />
+    <Compile Include="HoaDonRepository.cs" />
+    <Compile Include="KhoaRepository.cs" />
+    <Compile Include="LoaiCanLamSangRepository.cs" />
+    <Compile Include="LoaiThuocRepository.cs" />
+    <Compile Include="NhaCungCapRepository.cs" />
+    <Compile Include="NhanVienRepository.cs" />
+    <Compile Include="PhanQuyenRepository.cs" />
+    <Compile Include="PhieuKhamRepository.cs" />
+    <Compile Include="PhieuNhapRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuocGiaRepository.cs" />
     <Compile Include="TaiKhoanRepository.cs" />
+    <Compile Include="ThuocRepository.cs" />
+    <Compile Include="VatTuYTeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyPhongKham.Infrastructure\QuanLyPhongKham.Infrastructure.csproj">

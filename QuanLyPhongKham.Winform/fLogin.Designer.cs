@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -108,7 +109,7 @@
             this.txbPassWord.MaxLength = 32767;
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.PasswordChar = '●';
-            this.txbPassWord.PromptText = "Mật khẩu";
+            //this.txbPassWord.PromptText = "Mật khẩu";
             this.txbPassWord.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbPassWord.SelectedText = "";
             this.txbPassWord.SelectionLength = 0;
@@ -166,9 +167,11 @@
             this.ClientSize = new System.Drawing.Size(459, 254);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "fLogin";
             this.Text = "Đăng Nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.Load += new System.EventHandler(this.fLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

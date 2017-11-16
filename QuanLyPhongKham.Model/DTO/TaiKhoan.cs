@@ -26,6 +26,8 @@ namespace QuanLyPhongKham.Model.DTO
             MAPHANQUYEN = mAPHANQUYEN;
             TRANGTHAI = tRANGTHAI;
         }
+
+
         /// <summary>
         /// dùng cho query data từ database
         /// </summary>
@@ -40,17 +42,11 @@ namespace QuanLyPhongKham.Model.DTO
             TRANGTHAI = (bool)row["TRANGTHAI"];
         }
 
-
         public int MATK { get; set; }
-
         public string TENDANGNHAP { get; set; }
-
         public string MATKHAU { get; set; }
-
         public string TENHIENTHI { get; set; }
-
         public int MAPHANQUYEN { get; set; }
-
         public bool TRANGTHAI { get; set; }
 
     }

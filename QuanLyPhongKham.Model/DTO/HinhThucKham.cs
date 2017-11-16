@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,11 @@ namespace QuanLyPhongKham.Model.DTO
         {
             this.MaHinhThucKham = MaHinhThucKham;
             this.TenHinhThucKham = TenHinhThucKham;
+        }
+        public HinhThucKham (DataRow row)
+        {
+            this.MaHinhThucKham = (int)row["MAHINHTHUCKHAM"];
+            this.TenHinhThucKham = row["TENHINHTHUCKHAM"].ToString();
         }
     }
 }

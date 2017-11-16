@@ -8,6 +8,6 @@ namespace QuanLyPhongKham.Model.Interfaces
 {
     public interface ITaiKhoanRepository
     {
-        bool Login(string userName, string passWord);
+        int Login(string userName, string passWord);
     }
 }

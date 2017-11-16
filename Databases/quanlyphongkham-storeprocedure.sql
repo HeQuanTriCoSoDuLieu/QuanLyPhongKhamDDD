@@ -18,6 +18,9 @@ BEGIN
 END
 GO
 
+SELECT COUNT(*) FROM dbo.TAIKHOAN
+GO
+
 
 
 --2. BẢNG TAIKHOAN
@@ -46,30 +49,67 @@ BEGIN
 END
 GO
 
-EXEC dbo.SP_INSERT_TAIKHOAN @TENDANGNHAP = 'sadmin', -- varchar(50)
-    @MATKHAU = '1', -- varchar(50)
-    @TENHIENTHI = N'Super Admin', -- nvarchar(50)
-    @MAPHANQUYEN = 1, -- int
-    @TRANGTHAI = 1 -- bit
-GO
-    
+
 --2.2 SP_LOGIN
-ALTER PROC SP_LOGIN
+
+CREATE FUNCTION FN_Login(@username VARCHAR(50), @password VARCHAR(50))
+RETURNS INT 
+AS
+BEGIN
+	DECLARE @result INT
+	SELECT @result = P.QUYEN 
+	FROM dbo.TAIKHOAN T, dbo.PHANQUYEN P 
+	WHERE P.MAPHANQUYEN = T.MAPHANQUYEN AND MATKHAU = @password AND T.TENDANGNHAP = @username AND T.TRANGTHAI = 1
+	IF	@result IS NULL RETURN 0;
+	RETURN @result;
+END 
+GO
+
+
+CREATE PROC SP_LOGIN
 	@TenDangNhap VARCHAR(50),
 	@MatKhau VARCHAR(50)
 AS
 BEGIN
-	DECLARE @result int
-	SELECT  @result = QUYEN 
-	FROM dbo.TAIKHOAN T , dbo.PHANQUYEN P 
-	WHERE TENDANGNHAP = @TenDangNhap AND MATKHAU = @MatKhau AND TRANGTHAI = 1 AND P.MAPHANQUYEN = T.MAPHANQUYEN
-	IF	@result = NULL
-	RETURN 0
-	RETURN @result
+	SELECT dbo.FN_Login(@TenDangNhap,@MatKhau)
 END
 GO
 
-DECLARE @R INT;
-EXEC @R =  dbo.SP_Login @TenDangNhap = N'sadmin', -- nvarchar(50)
-    @MatKhau = N's' -- nvarchar(50)
-PRINT @R
+
+--Bảng 3 BENHNHAN
+
+
+--3.1  SP_DanhSachBenhNhan
+CREATE  PROC SP_DanhSachBenhNhan
+AS
+BEGIN
+	SELECT	*
+	FROM dbo.BENHNHAN
+END
+GO
+
+
+
+
+ 
+-- 3.2 SP_TimKiemBenhNhan
+CREATE PROC SP_TimKiemBenhNhan
+	@TruongDuLieu VARCHAR(20),
+	@ThongTin NVARCHAR(250)
+ AS
+ BEGIN 
+
+	IF @TruongDuLieu = 'HOTEN'  SELECT * FROM dbo.BENHNHAN WHERE  HOTEN LIKE '%'+@ThongTin+'%'; 
+	IF @TruongDuLieu = 'MABN'  SELECT * FROM dbo.BENHNHAN WHERE  MABN LIKE '%'+@ThongTin+'%';
+	IF @TruongDuLieu = 'SODT'  SELECT * FROM dbo.BENHNHAN WHERE  SODT LIKE '%'+@ThongTin+'%';
+	IF @TruongDuLieu = 'SOCMND'  SELECT * FROM dbo.BENHNHAN WHERE  SOCMND LIKE '%'+@ThongTin+'%';
+ END
+ GO
+
+
+
+ 
+ SELECT B.HOTEN, B.NGAYSINH, B.GIOITINH, B.DIACHI, P.CHUANDOAN, N.HOTEN AS 'BACSI'
+ FROM dbo.PHIEUKHAM P JOIN dbo.BENHNHAN B ON B.MABN = P.MABN JOIN dbo.NHANVIEN N ON N.MANV = P.MANV 
+ GO
+ 

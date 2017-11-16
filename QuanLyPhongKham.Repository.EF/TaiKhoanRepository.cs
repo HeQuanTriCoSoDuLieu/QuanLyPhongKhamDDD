@@ -10,10 +10,10 @@ namespace QuanLyPhongKham.Repository.EF
 {
     public class TaiKhoanRepository : ITaiKhoanRepository
     {
-        public bool Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
             int result = QuanLyPhongKhamDbContext.Instance.TAIKHOANs.Count(); //p=>p.TenDangNhap==userName && p.MatKhau == passWord
-            return result > 0;
+            return result;
         }
     }
 }

@@ -10,13 +10,12 @@ namespace QuanLyPhongKham.Repository.ADO
 {
     public class TaiKhoanRepository : ITaiKhoanRepository
     {
-        public bool Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
-            int result;
 
-            result = DataProvider.Instane.ExecuteScalar("EXEC dbo.SP_Login @TenDangNhap , @MatKhau ", new object[] { userName, passWord });
+            int result = DataProvider.Instane.ExecuteScalar("EXEC dbo.SP_Login @TenDangNhap , @MatKhau ", new object[] { userName, passWord });
 
-            return result > 0;
+            return result ;
         }
     }
 }
