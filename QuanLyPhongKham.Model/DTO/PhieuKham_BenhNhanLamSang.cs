@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    public class PhieuKham
+    public class PhieuKham_BenhNhanLamSang
     {
         public int MaPhieuKham { get; set; }
         public int MaBN { get; set; }
@@ -24,11 +24,12 @@ namespace QuanLyPhongKham.Model.DTO
         public string HoanThanh { get; set; }
         public string DaThanhToan { get; set; }
         public string KetLuan { get; set; }
+        public string TienSu { get; set; }
 
-        public PhieuKham() { }
+        public PhieuKham_BenhNhanLamSang() { }
 
 
-        public PhieuKham(int MaPhieuKham, int MaBN, int MaNV, string ChuanDoan, int MaHinhThucKham, string NhipTim, string NhietDo, string HuyetAp, string CanNang, string ChieuCao, string MaICD, DateTime NgayKham, string HoanThanh, string DaThanhToan, string KetLuan)
+        public PhieuKham_BenhNhanLamSang(int MaPhieuKham, int MaBN, int MaNV, string ChuanDoan, int MaHinhThucKham, string NhipTim, string NhietDo, string HuyetAp, string CanNang, string ChieuCao, string MaICD, DateTime NgayKham, string HoanThanh, string DaThanhToan, string KetLuan, string TienSu)
         {
             this.MaPhieuKham = MaPhieuKham;
             this.MaBN = MaBN;
@@ -45,9 +46,10 @@ namespace QuanLyPhongKham.Model.DTO
             this.HoanThanh = HoanThanh;
             this.DaThanhToan = DaThanhToan;
             this.KetLuan = KetLuan;
+            this.TienSu = TienSu;
         }
 
-        public PhieuKham(DataRow row)
+        public PhieuKham_BenhNhanLamSang(DataRow row)
         {
             this.MaPhieuKham = (int)row["MAPHIEUKHAM"];
             this.MaBN = (int)row["MABN"];
@@ -64,7 +66,7 @@ namespace QuanLyPhongKham.Model.DTO
             this.HoanThanh = row["HOANTHANH"].ToString();
             this.DaThanhToan = row["DATHANHTOAN"].ToString();
             this.KetLuan = row["KETLUAN"].ToString();
-
+            this.TienSu = row["TIENSU"].ToString();
         }
     }
 }

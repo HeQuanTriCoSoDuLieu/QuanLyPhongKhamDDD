@@ -120,9 +120,55 @@ namespace QuanLyPhongKham.Services
         {
             return benhNhanRepository.TimKiemBenhNhan(col, info);
         }
+
+
+        #endregion
+
+        #region PhieuKhamServices
+        public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham()
+        {
+            return phieuKhamRepository.DanhSachChoKham();
+        }
+
+
+        public List<PhieuKham_BenhNhanTimKiem> KetQuaTimPhieuKham(string ten)
+        {
+            return phieuKhamRepository.KetQuaTimPhieuKham(ten);
+
+        }
+        public PhieuKham_BenhNhanLamSang DanhSachPhieuKham(int maphieu)
+        {
+            return phieuKhamRepository.DanhSachPhieuKham(maphieu);
+        }
+
+        public int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn)
+        {
+            int row = phieuKhamRepository.LuuPhieuKham(pkbn);
+            return row;
+        }
+        #endregion
+
+        #region DonThuocServices
+
+
+        public int ThemDonThuoc(Donthuoc donthuoc)
+        {
+            int row = donThuocRepository.ThemDonThuoc(donthuoc);
+            return row;
+        }
+
+        public int TaoChiTietDonThuoc(Chitietdonthuoc ctdt)
+        {
+            int row = chiTietDonThuocRepository.TaoChiTietDonThuoc(ctdt);
+            return row;
+        }
+
+
+
+
+        #endregion
+
+
     }
-
-    #endregion
-
 }
 
