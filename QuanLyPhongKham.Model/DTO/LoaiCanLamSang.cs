@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    public class LoaiCanLamSang
+    public class CanLamSang
     {
         public int MaLoaiCLS { get; set; }
         public string TenLoai { get; set; }
 
-        public LoaiCanLamSang()
+        public CanLamSang()
         {
         }
-        public LoaiCanLamSang(int MaLoaiCLS, string TenLoai)
+        public CanLamSang(int MaLoaiCLS, string TenLoai)
         {
             this.MaLoaiCLS = MaLoaiCLS;
             this.TenLoai = TenLoai;
         }
-        public LoaiCanLamSang (DataRow row)
+        public CanLamSang (DataRow row)
         {
             this.MaLoaiCLS = (int)row["MALOAICLS"];
             this.TenLoai = row["TENLOAI"].ToString();
