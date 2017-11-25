@@ -9,6 +9,7 @@ namespace QuanLyPhongKham.Model.DTO
 {
     public class ChiTietDonThuoc
     {
+
         public ChiTietDonThuoc() { }
         public ChiTietDonThuoc(int madonthuoc, int mathuoc, int soluong, String huongdan)
         {
@@ -24,6 +25,7 @@ namespace QuanLyPhongKham.Model.DTO
             SOLUONG = (int)row["SOLUONG"];
             HUONGDAN = row["HUONGDAN"].ToString();
         }
+        public int STT { get; set; }
         public int MADONTHUOC { get; set; }
         public int MATHUOC { get; set; }
         public int SOLUONG { get; set; }
