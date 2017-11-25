@@ -54,5 +54,17 @@ namespace QuanLyPhongKham.Repository.ADO
             int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Update_Phieukham @MAPHIEUKHAM , @MABN , @CHUANDOAN , @NHIPTIM , @NHIETDO , @HUYETAP , @CANNANG , @CHIEUCAO , @MAICD , @NGAYKHAM , @KETLUAN , @TIENSU", new object[] { pkbn.MaPhieuKham, pkbn.MaBN, pkbn.ChuanDoan, pkbn.NhipTim, pkbn.NhietDo, pkbn.HuyetAp, pkbn.CanNang, pkbn.ChieuCao, pkbn.MaICD, pkbn.NgayKham, pkbn.KetLuan, pkbn.TienSu});
             return row;
         }
+
+        public List<PhieuKham_LichSuKham> LichSuKham(int mabn)
+        {
+            List<PhieuKham_LichSuKham> list = new List<PhieuKham_LichSuKham>();
+            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_LichSuKham @MABN", new object[] { mabn });
+
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new PhieuKham_LichSuKham(row));
+            }
+            return list;
+        }
     }
 }

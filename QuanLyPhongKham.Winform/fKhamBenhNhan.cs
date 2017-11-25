@@ -27,6 +27,7 @@ namespace QuanLyPhongKham.Winform
             panelxetnghiem.Parent = panelchinh;
             panelnoisoi.Parent = panelchinh;
             paneldonthuoc.Parent = panelchinh;
+            panellichsukham.Parent = panelchinh;
         }
 
         private void testevent(object sender, TreeNodeMouseClickEventArgs e)
@@ -44,8 +45,20 @@ namespace QuanLyPhongKham.Winform
                 case "nodexetnghiem": showxetnghiem(); break;
                 case "nodenoisoi": shownoisoi(); break;
                 case "nodedonthuoc": showdonthuoc(); break;
+                case "nodelskham": showlskham(); break;
 
             }
+        }
+
+        private void showlskham()
+        {
+            paneldonthuoc.Visible = false;
+            panelnoisoi.Visible = false;
+            panelxetnghiem.Visible = false;
+            panelxquang.Visible = false;
+            panelsieuam.Visible = false;
+            panellamsang.Visible = false;
+            panellichsukham.Visible = true;
         }
 
         private void showdonthuoc()
@@ -56,6 +69,7 @@ namespace QuanLyPhongKham.Winform
             panelxquang.Visible = false;
             panelsieuam.Visible = false;
             panellamsang.Visible = false;
+            panellichsukham.Visible = false;
         }
 
         private void shownoisoi()
@@ -66,6 +80,7 @@ namespace QuanLyPhongKham.Winform
             panelxquang.Visible = false;
             panelsieuam.Visible = false;
             panellamsang.Visible = false;
+            panellichsukham.Visible = false;
         }
 
         private void showxetnghiem()
@@ -76,6 +91,7 @@ namespace QuanLyPhongKham.Winform
             panelxquang.Visible = false;
             panelsieuam.Visible = false;
             panellamsang.Visible = false;
+            panellichsukham.Visible = false;
         }
 
         private void showxquanh()
@@ -85,6 +101,7 @@ namespace QuanLyPhongKham.Winform
             panelxetnghiem.Visible = false;
             panelxquang.Visible = true;
             panelsieuam.Visible = false;
+            panellichsukham.Visible = false;
             panellamsang.Visible = false;
         }
         private void showsieuam()
@@ -95,6 +112,7 @@ namespace QuanLyPhongKham.Winform
             panelxquang.Visible = false;
             panelsieuam.Visible = true;
             panellamsang.Visible = false;
+            panellichsukham.Visible = false;
         }
         private void showlamsang()
         {
@@ -104,6 +122,7 @@ namespace QuanLyPhongKham.Winform
             panelxquang.Visible = false;
             panelsieuam.Visible = false;
             panellamsang.Visible = true;
+            panellichsukham.Visible = false;
         }
 
         private void btntimphieukham_Click(object sender, EventArgs e)
@@ -162,6 +181,41 @@ namespace QuanLyPhongKham.Winform
                 txtmaicd.Text = pk.MaICD.ToString();
                 txttiensukham.Text = pk.TienSu;
 
+
+
+                //đổ dữ liệu vào bảng đơn thuốc
+
+                List<Chitietdonthuoc_Thuoc> listdonthuoc = new List<Chitietdonthuoc_Thuoc>();
+                listdonthuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
+                for (int i = 1; i < listdonthuoc.Count; i++)
+                {
+                    listdonthuoc[i].STT = i;
+                }
+                dgvdonthuoc.DataSource = listdonthuoc;
+                dgvdonthuoc.Columns[0].HeaderText = "STT"; dgvdonthuoc.Columns[0].Width = 40;
+                dgvdonthuoc.Columns[1].HeaderText = "Mã phiếu"; dgvdonthuoc.Columns[1].Width = 85;
+                dgvdonthuoc.Columns[2].HeaderText = "Tên thuốc"; dgvdonthuoc.Columns[2].Width = 200 ;
+                dgvdonthuoc.Columns[3].HeaderText = "Số lượng"; dgvdonthuoc.Columns[3].Width = 95;
+                dgvdonthuoc.Columns[4].HeaderText = "Hướng dẫn"; dgvdonthuoc.Columns[4].Width = 235;
+                dgvdonthuoc.RowHeadersVisible = false;
+
+
+                //đổ dữ liệu vào bảng lịch sử khám
+                List<PhieuKham_LichSuKham> listlskham = new List<PhieuKham_LichSuKham>();
+                int mabn = int.Parse(txtmabenhnhan.Text);
+                listlskham = libraryService.LichSuKham(mabn);
+                for (int i = 1; i < listlskham.Count; i++)
+                {
+                    listlskham[i].STT = i;
+                }
+                dgvlichsukham.DataSource = listlskham;
+                dgvlichsukham.Columns[0].HeaderText = "STT"; dgvlichsukham.Columns[0].Width = 40;
+                dgvlichsukham.Columns[1].HeaderText = "Mã phiếu"; dgvlichsukham.Columns[1].Width = 85;
+                dgvlichsukham.Columns[2].HeaderText = "Ngày khám"; dgvlichsukham.Columns[2].Width = 115;
+                dgvlichsukham.Columns[3].HeaderText = "Chuẩn đoán"; dgvlichsukham.Columns[3].Width = 255;
+                dgvlichsukham.Columns[4].HeaderText = "Kết quả"; dgvlichsukham.Columns[4].Width = 265;
+                dgvlichsukham.RowHeadersVisible = false;
+
             }
         }
 
@@ -186,7 +240,42 @@ namespace QuanLyPhongKham.Winform
                 txtmaicd.Text = pk.MaICD.ToString();
                 txttiensukham.Text = pk.TienSu;
 
+
+                //đổ dữ liệu vào bảng đơn thuốc
+
+                List<Chitietdonthuoc_Thuoc> listdonthuoc = new List<Chitietdonthuoc_Thuoc>();
+                listdonthuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
+                for (int i = 1; i < listdonthuoc.Count; i++)
+                {
+                    listdonthuoc[i].STT = i;
+                }
+                dgvdonthuoc.DataSource = listdonthuoc;
+                dgvdonthuoc.Columns[0].HeaderText = "STT"; dgvdonthuoc.Columns[0].Width = 40;
+                dgvdonthuoc.Columns[1].HeaderText = "Mã phiếu"; dgvdonthuoc.Columns[1].Width = 85;
+                dgvdonthuoc.Columns[2].HeaderText = "Tên thuốc"; dgvdonthuoc.Columns[2].Width = 200;
+                dgvdonthuoc.Columns[2].HeaderText = "Số lượng"; dgvdonthuoc.Columns[3].Width = 95;
+                dgvdonthuoc.Columns[2].HeaderText = "Hướng dẫn"; dgvdonthuoc.Columns[4].Width = 230;
+                dgvdonthuoc.RowHeadersVisible = false;
+
+
+                //đổ dữ liệu vào bảng lịch sử khám
+
+                List<PhieuKham_LichSuKham> listlskham = new List<PhieuKham_LichSuKham>();
+                int mabn = int.Parse(txtmabenhnhan.Text);
+                listlskham = libraryService.LichSuKham(mabn);
+                for (int i = 1; i < listlskham.Count; i++)
+                {
+                    listlskham[i].STT = i;
+                }
+                dgvlichsukham.DataSource = listdonthuoc;
+                dgvlichsukham.Columns[0].HeaderText = "STT"; dgvlichsukham.Columns[0].Width = 40;
+                dgvlichsukham.Columns[1].HeaderText = "Mã phiếu"; dgvlichsukham.Columns[1].Width = 85;
+                dgvlichsukham.Columns[2].HeaderText = "Ngày khám"; dgvlichsukham.Columns[2].Width = 115;
+                dgvlichsukham.Columns[2].HeaderText = "Chuẩn đoán"; dgvlichsukham.Columns[3].Width = 250;
+                dgvlichsukham.Columns[2].HeaderText = "Kết quả"; dgvlichsukham.Columns[4].Width = 265;
+                dgvlichsukham.RowHeadersVisible = false;
             }
+
         }
 
         private void btnluuphieukham_Click(object sender, EventArgs e)
@@ -208,7 +297,7 @@ namespace QuanLyPhongKham.Winform
             {
                 foreach (Chitietdonthuoc i in DanhSachDonThuoc())
                 {
-                    libraryService.TaoChiTietDonThuoc(i);
+                    libraryService.TaoChiTietDonThuoc(i,dt.MMAPHIEUKHAM);
                 }
             }
             else
@@ -219,16 +308,16 @@ namespace QuanLyPhongKham.Winform
         }
         private List<Chitietdonthuoc> DanhSachDonThuoc()
         {
-            List<Chitietdonthuoc> dt = new List<Chitietdonthuoc>();
+            List<Chitietdonthuoc> listdt = new List<Chitietdonthuoc>();
             for(int i=0;i<dgvdonthuoc.RowCount;i++)
             {
                 Chitietdonthuoc thuoc = new Chitietdonthuoc();               
                 thuoc.MATHUOC = int.Parse(dgvdonthuoc.Rows[i].Cells[1].Value.ToString());
                 thuoc.SOLUONG = int.Parse(dgvdonthuoc.Rows[i].Cells[2].Value.ToString());
                 thuoc.HUONGDAN = dgvdonthuoc.Rows[i].Cells[3].Value.ToString();
-                dt.Add(thuoc);
+                listdt.Add(thuoc);
             }
-            return dt;
+            return listdt;
         }
 
         private int TaoDonThuoc(Donthuoc donthuoc)

@@ -9,6 +9,7 @@ namespace QuanLyPhongKham.Model.Interfaces
 {
     public interface IChiTietDonThuocRepository
     {
-        int TaoChiTietDonThuoc(Chitietdonthuoc ctdt);
+        int TaoChiTietDonThuoc(Chitietdonthuoc ctdt, int maphieu);
+        List<Chitietdonthuoc_Thuoc> DanhSachChiTietDonThuoc(int maphieu);
     }
 }

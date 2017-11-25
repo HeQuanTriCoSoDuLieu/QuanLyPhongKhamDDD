@@ -146,6 +146,12 @@ namespace QuanLyPhongKham.Services
             int row = phieuKhamRepository.LuuPhieuKham(pkbn);
             return row;
         }
+
+        public List<PhieuKham_LichSuKham> LichSuKham(int mabn)
+        {
+            return phieuKhamRepository.LichSuKham(mabn);
+        }
+
         #endregion
 
         #region DonThuocServices
@@ -157,12 +163,16 @@ namespace QuanLyPhongKham.Services
             return row;
         }
 
-        public int TaoChiTietDonThuoc(Chitietdonthuoc ctdt)
+        public int TaoChiTietDonThuoc(Chitietdonthuoc ctdt, int maphieu)
         {
-            int row = chiTietDonThuocRepository.TaoChiTietDonThuoc(ctdt);
+            int row = chiTietDonThuocRepository.TaoChiTietDonThuoc(ctdt, maphieu);
             return row;
         }
 
+        public List<Chitietdonthuoc_Thuoc> DanhSachChiTietDonThuoc(int maphieu)
+        {
+            return chiTietDonThuocRepository.DanhSachChiTietDonThuoc(maphieu);
+        }
 
 
 

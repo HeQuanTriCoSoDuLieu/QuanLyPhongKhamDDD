@@ -9,6 +9,7 @@ namespace QuanLyPhongKham.Model.DTO
 {
     public class PhieuKham
     {
+        public int STT { get; set; }
         public int MaPhieuKham { get; set; }
         public int MaBN { get; set; }
         public int MaNV { get; set; }

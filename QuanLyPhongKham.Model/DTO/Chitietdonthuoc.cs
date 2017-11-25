@@ -8,6 +8,7 @@ namespace QuanLyPhongKham.Model.DTO
 {
     public class Chitietdonthuoc
     {
+        public int STT { get; set; }
         public int MADONTHUOC { get; set; }
         public int MATHUOC { get; set; }
         public int SOLUONG { get; set; }
