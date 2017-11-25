@@ -536,12 +536,12 @@ GO
 
 -- 13.1 SP_InsertDonThuoc
 
-CREATE PROC SP_InsertDonThuoc
+create PROC SP_InsertDonThuoc
 	@Maphieukham INT
 AS
-	DECLARE @TONGCONG INT
+	DECLARE @TONGCONG money
 	DECLARE @MATHUOC INT
-	SET @MATHUOC = (SELECT  FROM MADONTHUOC )
+	SET @MATHUOC = (SELECT MATHUOC FROM CHITIETDONTHUOC, DONTHUOC WHERE DONTHUOC.MAPHIEUKHAM = @Maphieukham )
 	DECLARE @GIABANLE INT
 	SET @GIABANLE =  (SELECT GIABANLE FROM CHITIETPHIEUNHAPTHUOC, THUOC WHERE THUOC.MATHUOC = CHITIETPHIEUNHAPTHUOC.MATHUOC AND THUOC.MATHUOC = @MATHUOC)
 	IF (EXISTS (SELECT * FROM PHIEUKHAM WHERE MAPHIEUKHAM = @Maphieukham))	-- ma phieu kham ton tại
@@ -551,13 +551,20 @@ AS
 
 GO
 
+exec SP_InsertDonThuoc 10
+select * from DONTHUOC where DONTHUOC.MAPHIEUKHAM = 10
+
 --- 13.2 SP_UpdateDonThuoc
 
-CREATE PROC SP_UpdateDonThuoc
+create PROC SP_UpdateDonThuoc
 	@MaDT int,
-	@Maphieukham INT,
-	@Tongcong MONEY
+	@Maphieukham INT
 AS
+	DECLARE @TONGCONG money 
+	DECLARE @MATHUOC INT
+	SET @MATHUOC = (SELECT MATHUOC FROM CHITIETDONTHUOC WHERE CHITIETDONTHUOC.MADONTHUOC = @MaDT )
+	DECLARE @GIABANLE INT
+	SET @GIABANLE =  (SELECT GIABANLE FROM CHITIETPHIEUNHAPTHUOC, THUOC WHERE THUOC.MATHUOC = CHITIETPHIEUNHAPTHUOC.MATHUOC AND THUOC.MATHUOC = @MATHUOC)
 	IF (EXISTS (SELECT * FROM DONTHUOC WHERE MADONTHUOC = @MaDT))	-- ma phieu kham ton tại
 	BEGIN
 		UPDATE DONTHUOC SET MAPHIEUKHAM = @Maphieukham, TONGCONG = @Tongcong WHERE MADONTHUOC = @MaDT
@@ -565,29 +572,34 @@ AS
 
 GO
 
+exec SP_UpdateDonThuoc 11, 9
+select * from DONTHUOC where DONTHUOC.MADONTHUOC = 11
+
 --- BẢNG CHITIETHOADON
 
 --- 14.1 SP_InsertCTDT
 
-CREATE PROC SP_InsertCTDT
+create PROC SP_InsertCTDT
 	@madthuoc int,
 	@mathuoc int,
 	@soluong int,
 	@huongdan text
 AS 
-	IF EXISTS (SELECT * FROM CHITIETDONTHUOC WHERE MADONTHUOC = @madthuoc)
+	IF EXISTS (SELECT * FROM DONTHUOC WHERE MADONTHUOC = @madthuoc)
 	BEGIN
-		WHILE EXISTS (SELECT * FROM THUOC WHERE MATHUOC = @mathuoc)
+		if EXISTS (SELECT * FROM THUOC WHERE MATHUOC = @mathuoc)
 		BEGIN
 		INSERT INTO CHITIETDONTHUOC(MADONTHUOC, MATHUOC, SOLUONG, HUONGDAN) VALUES (@madthuoc, @mathuoc, @soluong, @huongdan)
 		END
 	END
-
 GO
+
+exec SP_InsertCTDT 10, 5, 10, N'Sáng tối'
+select * from CHITIETDONTHUOC
 
 --- 14.2 SP_UpdateCTDT
 
-CREATE PROC SP_UpdateCTDT
+create PROC SP_UpdateCTDT
 	@madthuoc int,
 	@mathuoc int,
 	@soluong int,
@@ -601,6 +613,9 @@ AS
 
 GO
 
+exec SP_UpdateCTDT 10, 6, 20, N'sáng tối'
+select * from CHITIETDONTHUOC
+
 --- BẢNG THUOC
 --- 15.1 SP_InsertThuoc
 
@@ -612,10 +627,13 @@ CREATE PROC SP_InsertThuoc
 	@ghichu text
 AS
 	BEGIN 
-		INSERT INTO THUOC(TENTHUOC, DONVITINH, LOAITHUOC, SOLUONGTON, GHICHU) VALUES (@tenthuoc, @donvitinh, @loaithuoc, @soluongton, @ghichu)
+		INSERT INTO THUOC(TENTHUOC, DONVITINH, LOAITHUOC, SOLUONGTON, GHICHU) 
+		VALUES (@tenthuoc, @donvitinh, @loaithuoc, @soluongton, @ghichu)
 	END
 
 GO
+exec SP_InsertThuoc N'auta',2,3,300,N'abc'
+select * from THUOC
 
 --- 15.2 SP_UpdateThuoc
 
@@ -633,6 +651,9 @@ AS
 	END
 
 GO	
+
+exec SP_UpdateThuoc 11, N'abc', 2,1,500, N'xyz'
+select * from THUOC
 
 --- BẢNG LOAITHUOC
 --- 16.1 SP_InsertLoaiThuoc
@@ -660,6 +681,8 @@ AS
 	END
 
 GO
+
+exec SP_InsertLoaiThuoc 
 
 --- BẢNG DONVITINH
 --- 17.1 SP_InsertDVT
