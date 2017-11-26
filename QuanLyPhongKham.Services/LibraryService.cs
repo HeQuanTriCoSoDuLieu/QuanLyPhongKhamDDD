@@ -39,6 +39,7 @@ namespace QuanLyPhongKham.Services
         private IHoaDonRepository hoaDonRepository;
         private IKhoaRepository khoaRepository;
         private ILoaiCanLamSangRepository loaiCanLamSanRepository;
+
         private ILoaiThuocRepository loaiThuocRepository;
         private INhaCungCapRepository nhaCungCapRepository;
         private INhanVienRepository nhanVienRepository;
@@ -122,6 +123,7 @@ namespace QuanLyPhongKham.Services
         }
 
 
+
         #endregion
 
         #region PhieuKhamServices
@@ -147,7 +149,7 @@ namespace QuanLyPhongKham.Services
             return row;
         }
 
-        public List<PhieuKham_LichSuKham> LichSuKham(int mabn)
+        public List<PhieuKham_LichSuKham>LichSuKham(int mabn)
         {
             return phieuKhamRepository.LichSuKham(mabn);
         }
@@ -157,19 +159,19 @@ namespace QuanLyPhongKham.Services
         #region DonThuocServices
 
 
-        public int ThemDonThuoc(Donthuoc donthuoc)
+        public int ThemDonThuoc(DonThuoc donthuoc)
         {
             int row = donThuocRepository.ThemDonThuoc(donthuoc);
             return row;
         }
 
-        public int TaoChiTietDonThuoc(Chitietdonthuoc ctdt, int maphieu)
+        public int TaoChiTietDonThuoc(ChiTietDonThuoc ctdt, int maphieu)
         {
             int row = chiTietDonThuocRepository.TaoChiTietDonThuoc(ctdt, maphieu);
             return row;
         }
 
-        public List<Chitietdonthuoc_Thuoc> DanhSachChiTietDonThuoc(int maphieu)
+        public List<ChiTietDonThuoc_Thuoc> DanhSachChiTietDonThuoc(int maphieu)
         {
             return chiTietDonThuocRepository.DanhSachChiTietDonThuoc(maphieu);
         }
@@ -177,6 +179,28 @@ namespace QuanLyPhongKham.Services
 
 
         #endregion
+
+
+
+
+
+
+        #region CAN LAM SANG Services
+        public List<CanLamSan> DanhSachLoaiCLS(int macls)
+        {
+            return canLamSanRepository.DanhSachLoaiCLS(macls);
+        }
+
+
+        public int InsertChiTietCLS(string getmaphieu, string getmacls)
+        {
+            return chiTietCLSRepository.InsertChiTietCLS(getmaphieu, getmacls);
+        }
+
+        #endregion
+
+
+
 
 
     }

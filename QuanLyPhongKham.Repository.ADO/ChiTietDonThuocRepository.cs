@@ -11,9 +11,9 @@ namespace QuanLyPhongKham.Repository.ADO
 {
     public class ChiTietDonThuocRepository : IChiTietDonThuocRepository
     {
-        public List<Chitietdonthuoc_Thuoc> DanhSachChiTietDonThuoc(int maphieu)
+        public List<ChiTietDonThuoc_Thuoc> DanhSachChiTietDonThuoc(int maphieu)
         {
-            List<Chitietdonthuoc_Thuoc> list = new List<Chitietdonthuoc_Thuoc>();
+            List<ChiTietDonThuoc_Thuoc> list = new List<ChiTietDonThuoc_Thuoc>();
 
             DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachChiTietDonThuoc @MAPHIEU",new object[] { maphieu });
 
@@ -21,12 +21,12 @@ namespace QuanLyPhongKham.Repository.ADO
 
             foreach (DataRow row in table.Rows)
             {
-                list.Add(new Chitietdonthuoc_Thuoc(row));
+                list.Add(new ChiTietDonThuoc_Thuoc(row));
             }
             return list;
         }
 
-        public int TaoChiTietDonThuoc(Chitietdonthuoc ctdt,int maphieu)
+        public int TaoChiTietDonThuoc(ChiTietDonThuoc ctdt,int maphieu)
         {
             int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Insert_ChiTietDonThuoc @MADONTHUOC @MATHUOC @SOLUONG @HUONGDAN", new object[] { ctdt.MADONTHUOC, ctdt.MATHUOC, ctdt.SOLUONG,ctdt.HUONGDAN });
             return row;

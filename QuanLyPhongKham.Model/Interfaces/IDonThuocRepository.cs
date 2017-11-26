@@ -9,6 +9,6 @@ namespace QuanLyPhongKham.Model.Interfaces
 {
     public interface IDonThuocRepository
     {
-        int ThemDonThuoc(Donthuoc donthuoc);
+        int ThemDonThuoc(DonThuoc donthuoc);
     }
 }

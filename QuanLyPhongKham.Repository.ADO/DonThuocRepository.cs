@@ -10,9 +10,9 @@ namespace QuanLyPhongKham.Repository.ADO
 {
     public class DonThuocRepository : IDonThuocRepository
     {
-        public int ThemDonThuoc(Donthuoc donthuoc)
+        public int ThemDonThuoc(DonThuoc DonThuoc)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Insert_DonThuoc", new object[] { donthuoc.MMAPHIEUKHAM, donthuoc.TONGCONG } );
+            int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Insert_DonThuoc", new object[] { DonThuoc.MAPHIEUKHAM, DonThuoc.TONGCONG } );
             return row;
         }
     }
