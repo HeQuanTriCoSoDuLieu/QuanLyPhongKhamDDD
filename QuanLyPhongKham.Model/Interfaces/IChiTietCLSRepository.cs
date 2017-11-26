@@ -8,5 +8,6 @@ namespace QuanLyPhongKham.Model.Interfaces
 {
     public interface IChiTietCLSRepository
     {
+        int InsertChiTietCLS(string maphieu, string macls); 
     }
 }

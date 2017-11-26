@@ -39,6 +39,7 @@ namespace QuanLyPhongKham.Services
         private IHoaDonRepository hoaDonRepository;
         private IKhoaRepository khoaRepository;
         private ILoaiCanLamSangRepository loaiCanLamSanRepository;
+
         private ILoaiThuocRepository loaiThuocRepository;
         private INhaCungCapRepository nhaCungCapRepository;
         private INhanVienRepository nhanVienRepository;
@@ -122,6 +123,7 @@ namespace QuanLyPhongKham.Services
         }
 
 
+
         #endregion
 
         #region PhieuKhamServices
@@ -177,6 +179,28 @@ namespace QuanLyPhongKham.Services
 
 
         #endregion
+
+
+
+
+
+
+        #region CAN LAM SANG Services
+        public List<CanLamSan> DanhSachLoaiCLS(int macls)
+        {
+            return canLamSanRepository.DanhSachLoaiCLS(macls);
+        }
+
+
+        public int InsertChiTietCLS(string getmaphieu, string getmacls)
+        {
+            return chiTietCLSRepository.InsertChiTietCLS(getmaphieu, getmacls);
+        }
+
+        #endregion
+
+
+
 
 
     }
