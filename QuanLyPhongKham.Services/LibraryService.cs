@@ -124,6 +124,67 @@ namespace QuanLyPhongKham.Services
 
 
 
+        #endregion
+
+        #region PhieuKhamServices
+        public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham()
+        {
+            return phieuKhamRepository.DanhSachChoKham();
+        }
+
+
+        public List<PhieuKham_BenhNhanTimKiem> KetQuaTimPhieuKham(string ten)
+        {
+            return phieuKhamRepository.KetQuaTimPhieuKham(ten);
+
+        }
+        public PhieuKham_BenhNhanLamSang DanhSachPhieuKham(int maphieu)
+        {
+            return phieuKhamRepository.DanhSachPhieuKham(maphieu);
+        }
+
+        public int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn)
+        {
+            int row = phieuKhamRepository.LuuPhieuKham(pkbn);
+            return row;
+        }
+
+        public List<PhieuKham_LichSuKham>LichSuKham(int mabn)
+        {
+            return phieuKhamRepository.LichSuKham(mabn);
+        }
+
+        #endregion
+
+        #region DonThuocServices
+
+
+        public int ThemDonThuoc(DonThuoc donthuoc)
+        {
+            int row = donThuocRepository.ThemDonThuoc(donthuoc);
+            return row;
+        }
+
+        public int TaoChiTietDonThuoc(ChiTietDonThuoc ctdt, int maphieu)
+        {
+            int row = chiTietDonThuocRepository.TaoChiTietDonThuoc(ctdt, maphieu);
+            return row;
+        }
+
+        public List<ChiTietDonThuoc_Thuoc> DanhSachChiTietDonThuoc(int maphieu)
+        {
+            return chiTietDonThuocRepository.DanhSachChiTietDonThuoc(maphieu);
+        }
+
+
+
+        #endregion
+
+
+
+
+
+
         #region CAN LAM SANG Services
         public List<CanLamSan> DanhSachLoaiCLS(int macls)
         {
@@ -138,9 +199,10 @@ namespace QuanLyPhongKham.Services
 
         #endregion
 
+
+
+
+
     }
-
-    #endregion
-
 }
 

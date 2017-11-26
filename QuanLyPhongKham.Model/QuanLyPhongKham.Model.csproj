@@ -41,19 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\PhieuKham_LichSuKham.cs" />
+    <Compile Include="DTO\ChiTietDonThuoc_Thuoc.cs" />
+    <Compile Include="DTO\PhieuKham_BenhNhanLamSang.cs" />
+    <Compile Include="DTO\PhieuKham_BenhNhanTimKiem.cs" />
+    <Compile Include="DTO\PhieuKham_BenhNhanChoKham.cs" />
     <Compile Include="DTO\BenhNhan.cs" />
     <Compile Include="DTO\ChiTietCLS.cs" />
-    <Compile Include="DTO\Chitietdonthuoc.cs" />
+    <Compile Include="DTO\ChiTietDonThuoc.cs" />
     <Compile Include="DTO\ChiTietPhieuNhapThuoc.cs" />
     <Compile Include="DTO\ChucDanh.cs" />
     <Compile Include="DTO\ChucVu.cs" />
     <Compile Include="DTO\Dichvucls.cs" />
-    <Compile Include="DTO\Donthuoc.cs" />
+    <Compile Include="DTO\DonThuoc.cs" />
     <Compile Include="DTO\Donvitinh.cs" />
     <Compile Include="DTO\HinhThucKham.cs" />
     <Compile Include="DTO\Khoa.cs" />
     <Compile Include="DTO\LoaiCanLamSang.cs" />
-    <Compile Include="DTO\Loaithuoc.cs" />
+    <Compile Include="DTO\LoaiThuoc.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\ChiTietNhapVatTu.cs" />
@@ -104,8 +109,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\Debug\EntityFramework.xml" />
     <Content Include="bin\Debug\QuanLyPhongKham.Model.dll" />
     <Content Include="bin\Debug\QuanLyPhongKham.Model.pdb" />
     <Content Include="obj\Debug\QuanLyPhongKham.Model.csproj.FileListAbsolute.txt" />
