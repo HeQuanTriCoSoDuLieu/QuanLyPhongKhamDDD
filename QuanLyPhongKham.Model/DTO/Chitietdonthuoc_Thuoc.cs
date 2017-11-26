@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    public class Chitietdonthuoc_Thuoc
+    public class ChiTietDonThuoc_Thuoc
     {
 
 
-        public Chitietdonthuoc_Thuoc(DataRow row)
+        public ChiTietDonThuoc_Thuoc(DataRow row)
         {
             this.MADONTHUOC = (int)row["MADONTHUOC"];
             this.TENTHUOC = row["TENTHUOC"].ToString();

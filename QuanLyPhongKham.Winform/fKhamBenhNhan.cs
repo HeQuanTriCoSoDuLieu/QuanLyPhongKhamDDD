@@ -185,7 +185,7 @@ namespace QuanLyPhongKham.Winform
 
                 //đổ dữ liệu vào bảng đơn thuốc
 
-                List<Chitietdonthuoc_Thuoc> listdonthuoc = new List<Chitietdonthuoc_Thuoc>();
+                List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
                 listdonthuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
                 for (int i = 1; i < listdonthuoc.Count; i++)
                 {
@@ -243,7 +243,7 @@ namespace QuanLyPhongKham.Winform
 
                 //đổ dữ liệu vào bảng đơn thuốc
 
-                List<Chitietdonthuoc_Thuoc> listdonthuoc = new List<Chitietdonthuoc_Thuoc>();
+                List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
                 listdonthuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
                 for (int i = 1; i < listdonthuoc.Count; i++)
                 {
@@ -280,8 +280,8 @@ namespace QuanLyPhongKham.Winform
 
         private void btnluuphieukham_Click(object sender, EventArgs e)
         {
-            Donthuoc dt = new Donthuoc();
-            dt.MMAPHIEUKHAM = int.Parse(txtmaphieukham.Text);   
+            DonThuoc dt = new DonThuoc();
+            dt.MAPHIEUKHAM = int.Parse(txtmaphieukham.Text);   
             PhieuKham_BenhNhanLamSang pkbn = new PhieuKham_BenhNhanLamSang(int.Parse(txtmaphieukham.Text), int.Parse(txtmabenhnhan.Text),0,txtchandoan.Text,0,txtnhiptim.Text,txtnhietdo.Text,txthuyetap.Text,txtcannang.Text,txtchieucao.Text,txtmaicd.Text, DateTime.Parse(txtngaykham.Text),null,null,txtketluan.Text,txttiensukham.Text);
 
             if (libraryService.LuuPhieuKham(pkbn) !=0)
@@ -295,9 +295,9 @@ namespace QuanLyPhongKham.Winform
 
             if(TaoDonThuoc(dt)!=0)
             {
-                foreach (Chitietdonthuoc i in DanhSachDonThuoc())
+                foreach (ChiTietDonThuoc i in DanhSachDonThuoc())
                 {
-                    libraryService.TaoChiTietDonThuoc(i,dt.MMAPHIEUKHAM);
+                    libraryService.TaoChiTietDonThuoc(i,dt.MAPHIEUKHAM);
                 }
             }
             else
@@ -306,12 +306,12 @@ namespace QuanLyPhongKham.Winform
 
             }
         }
-        private List<Chitietdonthuoc> DanhSachDonThuoc()
+        private List<ChiTietDonThuoc> DanhSachDonThuoc()
         {
-            List<Chitietdonthuoc> listdt = new List<Chitietdonthuoc>();
+            List<ChiTietDonThuoc> listdt = new List<ChiTietDonThuoc>();
             for(int i=0;i<dgvdonthuoc.RowCount;i++)
             {
-                Chitietdonthuoc thuoc = new Chitietdonthuoc();               
+                ChiTietDonThuoc thuoc = new ChiTietDonThuoc();               
                 thuoc.MATHUOC = int.Parse(dgvdonthuoc.Rows[i].Cells[1].Value.ToString());
                 thuoc.SOLUONG = int.Parse(dgvdonthuoc.Rows[i].Cells[2].Value.ToString());
                 thuoc.HUONGDAN = dgvdonthuoc.Rows[i].Cells[3].Value.ToString();
@@ -320,7 +320,7 @@ namespace QuanLyPhongKham.Winform
             return listdt;
         }
 
-        private int TaoDonThuoc(Donthuoc donthuoc)
+        private int TaoDonThuoc(DonThuoc donthuoc)
         {
             return libraryService.ThemDonThuoc(donthuoc);
         }
