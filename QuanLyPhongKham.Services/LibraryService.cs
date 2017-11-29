@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyPhongKham.Model.DTO;
+using System.Data;
 
 namespace QuanLyPhongKham.Services
 {
@@ -200,7 +201,10 @@ namespace QuanLyPhongKham.Services
         #endregion
 
 
-
+        public DataTable GetCLS(string filePath)
+        {
+            return canLamSanRepository.GetCLS(filePath);
+        }
 
 
     }
