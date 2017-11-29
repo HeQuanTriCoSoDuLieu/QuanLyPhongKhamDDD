@@ -197,10 +197,25 @@ namespace QuanLyPhongKham.Services
             return chiTietCLSRepository.InsertChiTietCLS(getmaphieu, getmacls);
         }
 
+
+
         #endregion
 
 
+        #region NhanVienServices
 
+        public List<LichSuKham_NhanVien> LichSuKhamNhanVien(string col, string value, int manv)
+        {
+            return nhanVienRepository.LichSuKhamNhanVien(col,value,manv);
+        }
+
+        public List<LichSuKham_NhanVien> LichSuKhamNhanVien(int manv)
+        {
+            return nhanVienRepository.LichSuKhamNhanVien(manv);
+        }
+
+
+        #endregion
 
 
     }
