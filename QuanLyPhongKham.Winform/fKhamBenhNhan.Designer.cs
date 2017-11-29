@@ -29,31 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fKhamBenhNhan));
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Lịch sử khám                 ");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Khám lâm sàng                            ");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("X - Quang                  ");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Siêu Âm           ");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Xét nghiệm                ");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Nội sôi            ");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Khám cận lâm sàng                            ", new System.Windows.Forms.TreeNode[] {
-            treeNode35,
-            treeNode36,
-            treeNode37,
-            treeNode38});
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Đơn thuốc                      ");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Lịch sử khám                 ");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Khám lâm sàng                            ");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("X - Quang                  ");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Siêu Âm           ");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Xét nghiệm                ");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Nội sôi            ");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Khám cận lâm sàng                            ", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Đơn thuốc                      ");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnlichsulamviec = new System.Windows.Forms.Button();
             this.btnxuatdonthuoc = new System.Windows.Forms.Button();
             this.btnluuphieukham = new System.Windows.Forms.Button();
             this.panelchinh = new System.Windows.Forms.Panel();
             this.panelxquang = new System.Windows.Forms.Panel();
             this.panellamsang = new System.Windows.Forms.Panel();
-            this.txtcannang = new System.Windows.Forms.TextBox();
             this.paneldonthuoc = new System.Windows.Forms.Panel();
             this.panelnoisoi = new System.Windows.Forms.Panel();
             this.panelxetnghiem = new System.Windows.Forms.Panel();
             this.panelsieuam = new System.Windows.Forms.Panel();
+            this.panellichsukham = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dgvlichsukham = new System.Windows.Forms.DataGridView();
             this.txtketluansieuam = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtmotasieuam = new System.Windows.Forms.TextBox();
@@ -69,11 +72,6 @@
             this.cbxetnghiem = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.dgvketquaxetnghiem = new System.Windows.Forms.DataGridView();
-            this.clstt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clchitieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cldonvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clketqua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clphuongphap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.txtketluannoisoi = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -107,6 +105,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.txtcannang = new System.Windows.Forms.TextBox();
             this.btnxacnhanxquang = new System.Windows.Forms.Button();
             this.cbxquang = new System.Windows.Forms.ComboBox();
             this.txtketluanxquang = new System.Windows.Forms.TextBox();
@@ -141,9 +140,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.panellichsukham = new System.Windows.Forms.Panel();
-            this.dgvlichsukham = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelchinh.SuspendLayout();
@@ -153,6 +149,8 @@
             this.panelnoisoi.SuspendLayout();
             this.panelxetnghiem.SuspendLayout();
             this.panelsieuam.SuspendLayout();
+            this.panellichsukham.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlichsukham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbsieuam2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbsieuam1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvketquaxetnghiem)).BeginInit();
@@ -166,8 +164,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdschokham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdsphieukham)).BeginInit();
-            this.panellichsukham.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlichsukham)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -193,6 +189,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnlichsulamviec);
             this.panel1.Controls.Add(this.btnxuatdonthuoc);
             this.panel1.Controls.Add(this.btnluuphieukham);
             this.panel1.Controls.Add(this.panelchinh);
@@ -203,10 +200,21 @@
             this.panel1.Size = new System.Drawing.Size(1074, 668);
             this.panel1.TabIndex = 2;
             // 
+            // btnlichsulamviec
+            // 
+            this.btnlichsulamviec.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlichsulamviec.Location = new System.Drawing.Point(912, 602);
+            this.btnlichsulamviec.Name = "btnlichsulamviec";
+            this.btnlichsulamviec.Size = new System.Drawing.Size(103, 44);
+            this.btnlichsulamviec.TabIndex = 22;
+            this.btnlichsulamviec.Text = "LỊCH SỬ LÀM VIỆC";
+            this.btnlichsulamviec.UseVisualStyleBackColor = true;
+            this.btnlichsulamviec.Click += new System.EventHandler(this.btnlichsulamviec_Click);
+            // 
             // btnxuatdonthuoc
             // 
             this.btnxuatdonthuoc.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxuatdonthuoc.Location = new System.Drawing.Point(912, 602);
+            this.btnxuatdonthuoc.Location = new System.Drawing.Point(783, 602);
             this.btnxuatdonthuoc.Name = "btnxuatdonthuoc";
             this.btnxuatdonthuoc.Size = new System.Drawing.Size(103, 44);
             this.btnxuatdonthuoc.TabIndex = 21;
@@ -216,7 +224,7 @@
             // btnluuphieukham
             // 
             this.btnluuphieukham.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnluuphieukham.Location = new System.Drawing.Point(782, 602);
+            this.btnluuphieukham.Location = new System.Drawing.Point(653, 602);
             this.btnluuphieukham.Name = "btnluuphieukham";
             this.btnluuphieukham.Size = new System.Drawing.Size(103, 44);
             this.btnluuphieukham.TabIndex = 20;
@@ -272,13 +280,6 @@
             this.panellamsang.Name = "panellamsang";
             this.panellamsang.Size = new System.Drawing.Size(777, 443);
             this.panellamsang.TabIndex = 33;
-            // 
-            // txtcannang
-            // 
-            this.txtcannang.Location = new System.Drawing.Point(235, 251);
-            this.txtcannang.Name = "txtcannang";
-            this.txtcannang.Size = new System.Drawing.Size(161, 22);
-            this.txtcannang.TabIndex = 13;
             // 
             // paneldonthuoc
             // 
@@ -347,6 +348,38 @@
             this.panelsieuam.Size = new System.Drawing.Size(771, 443);
             this.panelsieuam.TabIndex = 5;
             // 
+            // panellichsukham
+            // 
+            this.panellichsukham.Controls.Add(this.label8);
+            this.panellichsukham.Controls.Add(this.dgvlichsukham);
+            this.panellichsukham.Location = new System.Drawing.Point(0, 0);
+            this.panellichsukham.Name = "panellichsukham";
+            this.panellichsukham.Size = new System.Drawing.Size(771, 443);
+            this.panellichsukham.TabIndex = 44;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(275, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(214, 20);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Bảng chi tiết lịch sử khám";
+            // 
+            // dgvlichsukham
+            // 
+            this.dgvlichsukham.AllowUserToAddRows = false;
+            this.dgvlichsukham.AllowUserToDeleteRows = false;
+            this.dgvlichsukham.AllowUserToResizeColumns = false;
+            this.dgvlichsukham.AllowUserToResizeRows = false;
+            this.dgvlichsukham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlichsukham.Location = new System.Drawing.Point(4, 46);
+            this.dgvlichsukham.Name = "dgvlichsukham";
+            this.dgvlichsukham.RowHeadersVisible = false;
+            this.dgvlichsukham.Size = new System.Drawing.Size(763, 386);
+            this.dgvlichsukham.TabIndex = 0;
+            // 
             // txtketluansieuam
             // 
             this.txtketluansieuam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -387,7 +420,6 @@
             // 
             // pcbsieuam2
             // 
-            this.pcbsieuam2.Image = ((System.Drawing.Image)(resources.GetObject("pcbsieuam2.Image")));
             this.pcbsieuam2.Location = new System.Drawing.Point(525, 225);
             this.pcbsieuam2.Name = "pcbsieuam2";
             this.pcbsieuam2.Size = new System.Drawing.Size(227, 204);
@@ -396,7 +428,6 @@
             // 
             // pcbsieuam1
             // 
-            this.pcbsieuam1.Image = ((System.Drawing.Image)(resources.GetObject("pcbsieuam1.Image")));
             this.pcbsieuam1.Location = new System.Drawing.Point(525, 13);
             this.pcbsieuam1.Name = "pcbsieuam1";
             this.pcbsieuam1.Size = new System.Drawing.Size(227, 204);
@@ -463,6 +494,7 @@
             this.btnxacnhanxetnghiem.TabIndex = 7;
             this.btnxacnhanxetnghiem.Text = "Xác nhận";
             this.btnxacnhanxetnghiem.UseVisualStyleBackColor = true;
+            this.btnxacnhanxetnghiem.Click += new System.EventHandler(this.btnxacnhanxetnghiem_Click);
             // 
             // cbxetnghiem
             // 
@@ -490,57 +522,12 @@
             this.dgvketquaxetnghiem.AllowUserToDeleteRows = false;
             this.dgvketquaxetnghiem.AllowUserToResizeRows = false;
             this.dgvketquaxetnghiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvketquaxetnghiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clstt,
-            this.clchitieu,
-            this.cldonvitinh,
-            this.clketqua,
-            this.clphuongphap});
             this.dgvketquaxetnghiem.Location = new System.Drawing.Point(26, 58);
             this.dgvketquaxetnghiem.Name = "dgvketquaxetnghiem";
             this.dgvketquaxetnghiem.ReadOnly = true;
             this.dgvketquaxetnghiem.RowHeadersVisible = false;
             this.dgvketquaxetnghiem.Size = new System.Drawing.Size(704, 322);
             this.dgvketquaxetnghiem.TabIndex = 4;
-            // 
-            // clstt
-            // 
-            this.clstt.Frozen = true;
-            this.clstt.HeaderText = "STT";
-            this.clstt.Name = "clstt";
-            this.clstt.ReadOnly = true;
-            this.clstt.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clstt.Width = 35;
-            // 
-            // clchitieu
-            // 
-            this.clchitieu.Frozen = true;
-            this.clchitieu.HeaderText = "Chỉ tiêu kiểm nghiệm";
-            this.clchitieu.Name = "clchitieu";
-            this.clchitieu.ReadOnly = true;
-            this.clchitieu.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clchitieu.Width = 220;
-            // 
-            // cldonvitinh
-            // 
-            this.cldonvitinh.HeaderText = "Đơn vị  tính";
-            this.cldonvitinh.Name = "cldonvitinh";
-            this.cldonvitinh.ReadOnly = true;
-            this.cldonvitinh.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // clketqua
-            // 
-            this.clketqua.HeaderText = "Kết quả";
-            this.clketqua.Name = "clketqua";
-            this.clketqua.ReadOnly = true;
-            this.clketqua.Width = 150;
-            // 
-            // clphuongphap
-            // 
-            this.clphuongphap.HeaderText = "Phương  pháp";
-            this.clphuongphap.Name = "clphuongphap";
-            this.clphuongphap.ReadOnly = true;
-            this.clphuongphap.Width = 195;
             // 
             // label16
             // 
@@ -673,7 +660,7 @@
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(399, 7);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 16);
+            this.label21.Size = new System.Drawing.Size(70, 16);
             this.label21.TabIndex = 8;
             this.label21.Text = "Số lượng";
             // 
@@ -845,6 +832,13 @@
             this.label31.Size = new System.Drawing.Size(100, 16);
             this.label31.TabIndex = 0;
             this.label31.Text = "Tiền sử khám";
+            // 
+            // txtcannang
+            // 
+            this.txtcannang.Location = new System.Drawing.Point(235, 251);
+            this.txtcannang.Name = "txtcannang";
+            this.txtcannang.Size = new System.Drawing.Size(161, 22);
+            this.txtcannang.TabIndex = 13;
             // 
             // btnxacnhanxquang
             // 
@@ -1079,7 +1073,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 16);
+            this.label3.Size = new System.Drawing.Size(189, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "THÔNG TIN PHIẾU KHÁM";
             // 
@@ -1096,39 +1090,38 @@
             this.treeviewdvkham.ItemHeight = 25;
             this.treeviewdvkham.Location = new System.Drawing.Point(3, 0);
             this.treeviewdvkham.Name = "treeviewdvkham";
-            treeNode33.Name = "nodelskham";
-            treeNode33.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            treeNode33.Text = "Lịch sử khám                 ";
-            treeNode34.Name = "nodelamsang";
-            treeNode34.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode34.Text = "Khám lâm sàng                            ";
-            treeNode35.Name = "nodexquang";
-            treeNode35.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode35.Text = "X - Quang                  ";
-            treeNode36.Name = "nodesieuam";
-            treeNode36.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode36.Text = "Siêu Âm           ";
-            treeNode37.Name = "nodexetnghiem";
-            treeNode37.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode37.Text = "Xét nghiệm                ";
-            treeNode38.Name = "nodenoisoi";
-            treeNode38.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode38.Text = "Nội sôi            ";
-            treeNode39.Name = "nodekhamcanlamsang";
-            treeNode39.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode39.Text = "Khám cận lâm sàng                            ";
-            treeNode40.Name = "nodedonthuoc";
-            treeNode40.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode40.Text = "Đơn thuốc                      ";
+            treeNode1.Name = "nodelskham";
+            treeNode1.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            treeNode1.Text = "Lịch sử khám                 ";
+            treeNode2.Name = "nodelamsang";
+            treeNode2.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode2.Text = "Khám lâm sàng                            ";
+            treeNode3.Name = "nodexquang";
+            treeNode3.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode3.Text = "X - Quang                  ";
+            treeNode4.Name = "nodesieuam";
+            treeNode4.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode4.Text = "Siêu Âm           ";
+            treeNode5.Name = "nodexetnghiem";
+            treeNode5.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode5.Text = "Xét nghiệm                ";
+            treeNode6.Name = "nodenoisoi";
+            treeNode6.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode6.Text = "Nội sôi            ";
+            treeNode7.Name = "nodekhamcanlamsang";
+            treeNode7.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode7.Text = "Khám cận lâm sàng                            ";
+            treeNode8.Name = "nodedonthuoc";
+            treeNode8.NodeFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode8.Text = "Đơn thuốc                      ";
             this.treeviewdvkham.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode33,
-            treeNode34,
-            treeNode39,
-            treeNode40});
+            treeNode1,
+            treeNode2,
+            treeNode7,
+            treeNode8});
             this.treeviewdvkham.Size = new System.Drawing.Size(248, 452);
             this.treeviewdvkham.TabIndex = 0;
             this.treeviewdvkham.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeviewdichvukham);
-            this.treeviewdvkham.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.testevent);
             // 
             // panel4
             // 
@@ -1215,38 +1208,6 @@
             this.label12.TabIndex = 4;
             this.label12.Text = "TÌM PHIẾU KHÁM";
             // 
-            // panellichsukham
-            // 
-            this.panellichsukham.Controls.Add(this.label8);
-            this.panellichsukham.Controls.Add(this.dgvlichsukham);
-            this.panellichsukham.Location = new System.Drawing.Point(0, 0);
-            this.panellichsukham.Name = "panellichsukham";
-            this.panellichsukham.Size = new System.Drawing.Size(771, 443);
-            this.panellichsukham.TabIndex = 44;
-            // 
-            // dgvlichsukham
-            // 
-            this.dgvlichsukham.AllowUserToAddRows = false;
-            this.dgvlichsukham.AllowUserToDeleteRows = false;
-            this.dgvlichsukham.AllowUserToResizeColumns = false;
-            this.dgvlichsukham.AllowUserToResizeRows = false;
-            this.dgvlichsukham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlichsukham.Location = new System.Drawing.Point(4, 46);
-            this.dgvlichsukham.Name = "dgvlichsukham";
-            this.dgvlichsukham.RowHeadersVisible = false;
-            this.dgvlichsukham.Size = new System.Drawing.Size(763, 386);
-            this.dgvlichsukham.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(275, 15);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(214, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Bảng chi tiết lịch sử khám";
-            // 
             // fKhamBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1275,6 +1236,9 @@
             this.panelxetnghiem.PerformLayout();
             this.panelsieuam.ResumeLayout(false);
             this.panelsieuam.PerformLayout();
+            this.panellichsukham.ResumeLayout(false);
+            this.panellichsukham.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlichsukham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbsieuam2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbsieuam1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvketquaxetnghiem)).EndInit();
@@ -1290,9 +1254,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdschokham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdsphieukham)).EndInit();
-            this.panellichsukham.ResumeLayout(false);
-            this.panellichsukham.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlichsukham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1370,11 +1331,6 @@
         private System.Windows.Forms.ComboBox cbxetnghiem;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.DataGridView dgvketquaxetnghiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clstt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clchitieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cldonvitinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clketqua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clphuongphap;
         private System.Windows.Forms.Panel panelnoisoi;
         private System.Windows.Forms.TextBox txtketluannoisoi;
         private System.Windows.Forms.Label label22;
@@ -1403,5 +1359,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvlichsukham;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button btnlichsulamviec;
     }
 }
