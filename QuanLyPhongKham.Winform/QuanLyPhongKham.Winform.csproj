@@ -38,12 +38,6 @@
     <StartupObject>QuanLyPhongKham.Winform.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -80,6 +74,12 @@
     <Compile Include="fKhamBenhNhan.Designer.cs">
       <DependentUpon>fKhamBenhNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="fLichSuKhamBacSi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLichSuKhamBacSi.Designer.cs">
+      <DependentUpon>fLichSuKhamBacSi.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +102,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fKhamBenhNhan.resx">
       <DependentUpon>fKhamBenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLichSuKhamBacSi.resx">
+      <DependentUpon>fLichSuKhamBacSi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>

@@ -39,10 +39,6 @@ namespace QuanLyPhongKham.Winform
             panellichsukham.Parent = panelchinh;
         }
 
-        private void testevent(object sender, TreeNodeMouseClickEventArgs e)
-        {
-
-        }
 
         private void treeviewdichvukham(object sender, TreeViewEventArgs e)
         {
@@ -286,7 +282,8 @@ namespace QuanLyPhongKham.Winform
             dgvdschokham.DataSource = list;
             dgvdschokham.Columns[0].HeaderText = "STT"; dgvdschokham.Columns[0].Width = 30;
             dgvdschokham.Columns[1].HeaderText = "Mã phiếu"; dgvdschokham.Columns[1].Width = 40;
-            dgvdschokham.Columns[2].HeaderText = "Tên bệnh nhân"; dgvdschokham.Columns[2].Width = 185;
+            dgvdschokham.Columns[2].HeaderText = "Tên bệnh nhân"; dgvdschokham.Columns[2].Width = 115;
+            dgvdschokham.Columns[3].HeaderText = "Ngày khám"; dgvdschokham.Columns[3].Width = 75;
             dgvdschokham.RowHeadersVisible = false;
 
         }
@@ -505,6 +502,7 @@ namespace QuanLyPhongKham.Winform
             }
         }
 
+
         private void btnxacnhanxetnghiem_Click(object sender, EventArgs e)
         {
             string getmacls = cbxetnghiem.SelectedValue.ToString();
@@ -519,6 +517,14 @@ namespace QuanLyPhongKham.Winform
             {
                 MessageBox.Show("Cập nhật thất bại, đã có sẳn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnlichsulamviec_Click(object sender, EventArgs e)
+        {            
+            fLichSuKhamBacSi f = new fLichSuKhamBacSi(int.Parse(txtmabenhnhan.Text));
+            f.Load_fLichSuKhamBacSi();
+            f.ShowDialog();
+           
         }
 
     }
