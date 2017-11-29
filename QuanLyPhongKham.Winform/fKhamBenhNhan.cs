@@ -519,11 +519,64 @@ namespace QuanLyPhongKham.Winform
         }
 
         private void btnlichsulamviec_Click(object sender, EventArgs e)
-        {            
+        {
             fLichSuKhamBacSi f = new fLichSuKhamBacSi(int.Parse(txtmabenhnhan.Text));
             f.Load_fLichSuKhamBacSi();
             f.ShowDialog();
-           
+            if (f.maphieu != 0 && f.tenbn != null)
+            {
+                txttenbenhnhan.Text = f.tenbn;
+                PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
+                pk = libraryService.DanhSachPhieuKham(f.maphieu);
+                txtmaphieukham.Text = pk.MaPhieuKham.ToString();
+                txtmabenhnhan.Text = pk.MaBN.ToString();
+                txtngaykham.Text = pk.NgayKham.ToString();
+                txtchandoan.Text = pk.ChuanDoan;
+                txtketluan.Text = pk.KetLuan;
+                txtnhietdo.Text = pk.NhietDo.ToString();
+                txtnhiptim.Text = pk.NhipTim.ToString();
+                txthuyetap.Text = pk.HuyetAp.ToString();
+                txtchieucao.Text = pk.ChieuCao.ToString();
+                txtcannang.Text = pk.CanNang.ToString();
+                txtmaicd.Text = pk.MaICD.ToString();
+                txttiensukham.Text = pk.TienSu;
+
+
+
+                //đổ dữ liệu vào bảng đơn thuốc
+
+                List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
+                listdonthuoc = libraryService.DanhSachChiTietDonThuoc(f.maphieu);
+                for (int i = 1; i < listdonthuoc.Count; i++)
+                {
+                    listdonthuoc[i].STT = i;
+                }
+                dgvdonthuoc.DataSource = listdonthuoc;
+                dgvdonthuoc.Columns[0].HeaderText = "STT"; dgvdonthuoc.Columns[0].Width = 40;
+                dgvdonthuoc.Columns[1].HeaderText = "Mã phiếu"; dgvdonthuoc.Columns[1].Width = 85;
+                dgvdonthuoc.Columns[2].HeaderText = "Tên thuốc"; dgvdonthuoc.Columns[2].Width = 200;
+                dgvdonthuoc.Columns[3].HeaderText = "Số lượng"; dgvdonthuoc.Columns[3].Width = 95;
+                dgvdonthuoc.Columns[4].HeaderText = "Hướng dẫn"; dgvdonthuoc.Columns[4].Width = 235;
+                dgvdonthuoc.RowHeadersVisible = false;
+
+
+                //đổ dữ liệu vào bảng lịch sử khám
+                List<PhieuKham_LichSuKham> listlskham = new List<PhieuKham_LichSuKham>();
+                int mabn = int.Parse(txtmabenhnhan.Text);
+                listlskham = libraryService.LichSuKham(mabn);
+                for (int i = 1; i < listlskham.Count; i++)
+                {
+                    listlskham[i].STT = i;
+                }
+                dgvlichsukham.DataSource = listlskham;
+                dgvlichsukham.Columns[0].HeaderText = "STT"; dgvlichsukham.Columns[0].Width = 40;
+                dgvlichsukham.Columns[1].HeaderText = "Mã phiếu"; dgvlichsukham.Columns[1].Width = 85;
+                dgvlichsukham.Columns[2].HeaderText = "Ngày khám"; dgvlichsukham.Columns[2].Width = 115;
+                dgvlichsukham.Columns[3].HeaderText = "Chuẩn đoán"; dgvlichsukham.Columns[3].Width = 255;
+                dgvlichsukham.Columns[4].HeaderText = "Kết quả"; dgvlichsukham.Columns[4].Width = 265;
+                dgvlichsukham.RowHeadersVisible = false;
+
+            }
         }
 
     }
