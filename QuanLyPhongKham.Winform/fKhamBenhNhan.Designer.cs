@@ -72,11 +72,6 @@
             this.cbxetnghiem = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.dgvketquaxetnghiem = new System.Windows.Forms.DataGridView();
-            this.clstt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clchitieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cldonvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clketqua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clphuongphap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.txtketluannoisoi = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -425,7 +420,6 @@
             // 
             // pcbsieuam2
             // 
-            this.pcbsieuam2.Image = ((System.Drawing.Image)(resources.GetObject("pcbsieuam2.Image")));
             this.pcbsieuam2.Location = new System.Drawing.Point(525, 225);
             this.pcbsieuam2.Name = "pcbsieuam2";
             this.pcbsieuam2.Size = new System.Drawing.Size(227, 204);
@@ -434,7 +428,6 @@
             // 
             // pcbsieuam1
             // 
-            this.pcbsieuam1.Image = ((System.Drawing.Image)(resources.GetObject("pcbsieuam1.Image")));
             this.pcbsieuam1.Location = new System.Drawing.Point(525, 13);
             this.pcbsieuam1.Name = "pcbsieuam1";
             this.pcbsieuam1.Size = new System.Drawing.Size(227, 204);
@@ -501,6 +494,7 @@
             this.btnxacnhanxetnghiem.TabIndex = 7;
             this.btnxacnhanxetnghiem.Text = "Xác nhận";
             this.btnxacnhanxetnghiem.UseVisualStyleBackColor = true;
+            this.btnxacnhanxetnghiem.Click += new System.EventHandler(this.btnxacnhanxetnghiem_Click);
             // 
             // cbxetnghiem
             // 
@@ -528,57 +522,12 @@
             this.dgvketquaxetnghiem.AllowUserToDeleteRows = false;
             this.dgvketquaxetnghiem.AllowUserToResizeRows = false;
             this.dgvketquaxetnghiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvketquaxetnghiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clstt,
-            this.clchitieu,
-            this.cldonvitinh,
-            this.clketqua,
-            this.clphuongphap});
             this.dgvketquaxetnghiem.Location = new System.Drawing.Point(26, 58);
             this.dgvketquaxetnghiem.Name = "dgvketquaxetnghiem";
             this.dgvketquaxetnghiem.ReadOnly = true;
             this.dgvketquaxetnghiem.RowHeadersVisible = false;
             this.dgvketquaxetnghiem.Size = new System.Drawing.Size(704, 322);
             this.dgvketquaxetnghiem.TabIndex = 4;
-            // 
-            // clstt
-            // 
-            this.clstt.Frozen = true;
-            this.clstt.HeaderText = "STT";
-            this.clstt.Name = "clstt";
-            this.clstt.ReadOnly = true;
-            this.clstt.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clstt.Width = 35;
-            // 
-            // clchitieu
-            // 
-            this.clchitieu.Frozen = true;
-            this.clchitieu.HeaderText = "Chỉ tiêu kiểm nghiệm";
-            this.clchitieu.Name = "clchitieu";
-            this.clchitieu.ReadOnly = true;
-            this.clchitieu.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clchitieu.Width = 220;
-            // 
-            // cldonvitinh
-            // 
-            this.cldonvitinh.HeaderText = "Đơn vị  tính";
-            this.cldonvitinh.Name = "cldonvitinh";
-            this.cldonvitinh.ReadOnly = true;
-            this.cldonvitinh.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // clketqua
-            // 
-            this.clketqua.HeaderText = "Kết quả";
-            this.clketqua.Name = "clketqua";
-            this.clketqua.ReadOnly = true;
-            this.clketqua.Width = 150;
-            // 
-            // clphuongphap
-            // 
-            this.clphuongphap.HeaderText = "Phương  pháp";
-            this.clphuongphap.Name = "clphuongphap";
-            this.clphuongphap.ReadOnly = true;
-            this.clphuongphap.Width = 195;
             // 
             // label16
             // 
@@ -1382,11 +1331,6 @@
         private System.Windows.Forms.ComboBox cbxetnghiem;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.DataGridView dgvketquaxetnghiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clstt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clchitieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cldonvitinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clketqua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clphuongphap;
         private System.Windows.Forms.Panel panelnoisoi;
         private System.Windows.Forms.TextBox txtketluannoisoi;
         private System.Windows.Forms.Label label22;

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyPhongKham.Model.DTO;
+using System.Data;
 
 namespace QuanLyPhongKham.Services
 {
@@ -197,11 +198,15 @@ namespace QuanLyPhongKham.Services
             return chiTietCLSRepository.InsertChiTietCLS(getmaphieu, getmacls);
         }
 
-
+      public DataTable GetCLS(string filePath)
+        {
+            return canLamSanRepository.GetCLS(filePath);
+        }
 
         #endregion
 
 
+        
         #region NhanVienServices
 
         public List<LichSuKham_NhanVien> LichSuKhamNhanVien(string col, string value, int manv)
