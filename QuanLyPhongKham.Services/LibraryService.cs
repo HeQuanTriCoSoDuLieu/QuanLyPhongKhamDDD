@@ -198,16 +198,15 @@ namespace QuanLyPhongKham.Services
             return chiTietCLSRepository.InsertChiTietCLS(getmaphieu, getmacls);
         }
 
-
-
-        #endregion
-
-
-        public DataTable GetCLS(string filePath)
+      public DataTable GetCLS(string filePath)
         {
             return canLamSanRepository.GetCLS(filePath);
         }
 
+        #endregion
+
+
+        
         #region NhanVienServices
 
         public List<LichSuKham_NhanVien> LichSuKhamNhanVien(string col, string value, int manv)
