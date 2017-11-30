@@ -49,7 +49,6 @@ namespace QuanLyPhongKham.Winform
                 result = (int) row["QUYEN"];
                 id = (int) row["MANV"];
             }
-            MessageBox.Show(String.Format("id {0} quyen {1}", id, result));
             switch (result)
             {
                 case 1:
