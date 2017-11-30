@@ -15,6 +15,8 @@ namespace QuanLyPhongKham.Repository.ADO
 
         private static DataProvider instance;
 
+    
+
         /// <summary>
         /// kiểm tra xem đã tạo đối tượng DataProvider nào trước đó hay chưa.
         /// Nếu chưa thì tạo mới, nếu có rồi thì trả về đối tượng đó lun.

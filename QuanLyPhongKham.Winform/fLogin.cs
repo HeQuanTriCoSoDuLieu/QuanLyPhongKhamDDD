@@ -40,7 +40,16 @@ namespace QuanLyPhongKham.Winform
         {
             string userName = txbUserName.Text.Trim();
             string passWord = txbPassWord.Text.Trim();
-            int result = libraryService.Login(userName, passWord);
+           
+            DataTable dataTable = libraryService.Login(userName, passWord);
+            int result = 0;
+            int id = 0;
+            foreach (DataRow row in dataTable.Rows)
+            {
+                result = (int) row["QUYEN"];
+                id = (int) row["MANV"];
+            }
+            MessageBox.Show(String.Format("id {0} quyen {1}", id, result));
             switch (result)
             {
                 case 1:
@@ -72,11 +81,13 @@ namespace QuanLyPhongKham.Winform
                     break;
             }
 
+     
             if (result!=0 && chkRememberMe.Checked)
             {
                 Properties.Settings.Default.username = txbUserName.Text;
                 Properties.Settings.Default.password = txbPassWord.Text;
                 Properties.Settings.Default.rememberMe = true;
+                Properties.Settings.Default.id = id.ToString();
                 Properties.Settings.Default.Save();
             }else
             {
@@ -96,6 +107,11 @@ namespace QuanLyPhongKham.Winform
 
             }
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyPhongKham.Model.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace QuanLyPhongKham.Model.Interfaces
 {
     public interface INhanVienRepository
     {
+        /// <summary>
+        /// Load danh sách nhân viên từ database lên
+        /// </summary>
+        /// <returns></returns>
+        List<NhanVien> DanhSachNhanVien();
     }
 }

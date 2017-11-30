@@ -9,6 +9,8 @@ namespace QuanLyPhongKham.Model.DTO
 {
     public class PhieuKham
     {
+        #region properties
+
         public int MaPhieuKham { get; set; }
         public int MaBN { get; set; }
         public int MaNV { get; set; }
@@ -24,10 +26,17 @@ namespace QuanLyPhongKham.Model.DTO
         public string KetLuan { get; set; }
         public int HoanThanh { get; set; }
         public int DaThanhToan { get; set; }
+        public int NVTiepNhan { get; set; }
+
+
+
+
+        #endregion
 
         public PhieuKham() { }
 
 
+        #region Constructors nguyên mẫu
         public PhieuKham(int MaPhieuKham, int MaBN, int MaNV, string ChuanDoan, int MaHinhThucKham, DateTime NgayKham, string NhipTim, string NhietDo, string HuyetAp, int CanNang, int ChieuCao, int MaICD, string KetLuan, int HoanThanh, int DaThanhToan)
         {
             this.MaPhieuKham = MaPhieuKham;
@@ -49,25 +58,26 @@ namespace QuanLyPhongKham.Model.DTO
 
         public PhieuKham(DataRow row)
         {
-            this.MaPhieuKham = (int)row["MAPHIEUKHAM"];
-            this.MaBN = (int)row["MABN"];
-            this.MaNV = (int)row["MANV"];
-            this.ChuanDoan = row["CHUANDOAN"].ToString();
-            this.MaHinhThucKham = (int)row["MAHINHTHUCKHAM"];
-            this.NgayKham = (DateTime)row["NGAYKHAM"];
-            this.NhipTim = row["NHIPTIM"].ToString();
-            this.NhietDo = row["NHIETDO"].ToString();
-            this.HuyetAp = row["HUYETAP"].ToString();
-            this.CanNang = (int)row["CANNANG"];
-            this.ChieuCao = (int)row["CHIEUCAO"];
-            this.MaICD = (int)row["MAICD"];
-            this.KetLuan = row["KETLUAN"].ToString();
-            this.HoanThanh = (int)row["HOANTHANH"];
-            this.DaThanhToan = (int)row["DATHANHTOAN"];
-
+            MaPhieuKham = (int)row["MAPHIEUKHAM"];
+            MaBN = (int)row["MABN"];
+            MaNV = (int)row["MANV"];
+            ChuanDoan = row["CHUANDOAN"].ToString();
+            MaHinhThucKham = (int)row["MAHINHTHUCKHAM"];
+            NgayKham = (DateTime)row["NGAYKHAM"];
+            NhipTim = row["NHIPTIM"].ToString();
+            NhietDo = row["NHIETDO"].ToString();
+            HuyetAp = row["HUYETAP"].ToString();
+            CanNang = (int)row["CANNANG"];
+            ChieuCao = (int)row["CHIEUCAO"];
+            MaICD = (int)row["MAICD"];
+            KetLuan = row["KETLUAN"].ToString();
+            HoanThanh = (int)row["HOANTHANH"];
+            DaThanhToan = (int)row["DATHANHTOAN"];
+            NVTiepNhan = (int)row["NVTIEPNHAN"];
         }
 
 
+        #endregion
 
 
     }

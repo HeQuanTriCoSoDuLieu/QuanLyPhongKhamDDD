@@ -35,6 +35,7 @@
             this.chkRememberMe = new MetroFramework.Controls.MetroCheckBox();
             this.txbPassWord = new MetroFramework.Controls.MetroTextBox();
             this.txbUserName = new MetroFramework.Controls.MetroTextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.chkRememberMe);
             this.panel1.Controls.Add(this.txbPassWord);
@@ -66,7 +68,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogin.BackColor = System.Drawing.Color.White;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(172, 130);
+            this.btnLogin.Location = new System.Drawing.Point(3, 133);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(86, 30);
             this.btnLogin.TabIndex = 3;
@@ -109,7 +111,7 @@
             this.txbPassWord.MaxLength = 32767;
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.PasswordChar = '●';
-            //this.txbPassWord.PromptText = "Mật khẩu";
+            this.txbPassWord.PromptText = "Mật khẩu";
             this.txbPassWord.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbPassWord.SelectedText = "";
             this.txbPassWord.SelectionLength = 0;
@@ -159,11 +161,27 @@
             this.txbUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txbUserName.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(139, 133);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(86, 30);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // fLogin
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(459, 254);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -188,5 +206,6 @@
         private MetroFramework.Controls.MetroCheckBox chkRememberMe;
         private MetroFramework.Controls.MetroTextBox txbPassWord;
         private MetroFramework.Controls.MetroTextBox txbUserName;
+        private System.Windows.Forms.Button btnExit;
     }
 }
