@@ -14,5 +14,7 @@ namespace QuanLyPhongKham.Model.Interfaces
         /// </summary>
         /// <returns></returns>
         List<NhanVien> DanhSachNhanVien();
+        List<LichSuKham_NhanVien> LichSuKhamNhanVien(string col, string value,int manv);
+        List<LichSuKham_NhanVien> LichSuKhamNhanVien(int manv);
     }
 }

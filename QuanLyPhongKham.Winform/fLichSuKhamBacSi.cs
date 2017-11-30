@@ -17,6 +17,8 @@ namespace QuanLyPhongKham.Winform
     {
         private int MaBn;
         private LibraryService libraryService;
+        public int maphieu;
+        public string tenbn;
         public fLichSuKhamBacSi(int mabn)
         {
             InitializeComponent();
@@ -92,6 +94,31 @@ namespace QuanLyPhongKham.Winform
             dgvdsphieukham.Columns[4].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[4].Width = 90;
             dgvdsphieukham.Columns[5].HeaderText = "Đã thanh toán"; dgvdsphieukham.Columns[5].Width = 85;
             dgvdsphieukham.RowHeadersVisible = false;
+        }
+
+        private void dgvdsphieukham_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            maphieu = GetMaPhieuKham();
+            tenbn = GetTenBenhNhan();
+            this.Close();
+        }
+
+        public int GetMaPhieuKham()
+        {
+            
+            foreach (DataGridViewRow row in dgvdsphieukham.SelectedRows)
+            {
+                maphieu = (int)row.Cells[2].Value;
+            }
+            return maphieu;
+        }
+        public string GetTenBenhNhan()
+        {
+            foreach (DataGridViewRow row in dgvdsphieukham.SelectedRows)
+            {
+                tenbn = (string)row.Cells[3].Value;
+            }
+            return tenbn;
         }
     }
 }

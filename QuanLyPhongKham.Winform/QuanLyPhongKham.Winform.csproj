@@ -97,6 +97,12 @@
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTimKiemThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTimKiemThuoc.Designer.cs">
+      <DependentUpon>fTimKiemThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThuNgan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTimKiemThuoc.resx">
+      <DependentUpon>fTimKiemThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTiepNhanBenhNhan.resx">
       <DependentUpon>fTiepNhanBenhNhan.cs</DependentUpon>
