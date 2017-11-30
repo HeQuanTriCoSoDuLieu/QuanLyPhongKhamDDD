@@ -11,43 +11,60 @@ namespace QuanLyPhongKham.Repository.ADO
 {
     public class PhieuKhamRepository : IPhieuKhamRepository
     {
-        /// <summary>
-        /// hàm load danh sách phiếu khám cho fTiepNhanBenhNhan
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <returns></returns>
-        public List<PhieuKhamGUI> DanhSachPhieuKhamGUI(DateTime dateTime)
+        public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham()
         {
-            List<PhieuKhamGUI> list = new List<PhieuKhamGUI>();
+            List<PhieuKham_BenhNhanChoKham> list = new List<PhieuKham_BenhNhanChoKham>();
 
-            DataTable table = DataProvider.Instane.ExecuteReader("EXEC  dbo.SP_DanhSachKham_fKhamBenNhan @NgayKham ", new object[] { dateTime });
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_Select_Phieukham_Chokham");
+
+
 
             foreach (DataRow row in table.Rows)
             {
-                PhieuKhamGUI phieuKhamGUI = new PhieuKhamGUI(row);
-                list.Add(phieuKhamGUI);
+                list.Add(new PhieuKham_BenhNhanChoKham(row));
             }
+            return list;
+        }   
 
+        public List<PhieuKham_BenhNhanTimKiem> KetQuaTimPhieuKham(string ten)
+        {
+            List<PhieuKham_BenhNhanTimKiem> list = new List<PhieuKham_BenhNhanTimKiem>();
+            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_Search_Phieukham_By_Ten @TEN", new object[] {ten});
+
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new PhieuKham_BenhNhanTimKiem(row));
+            }
             return list;
         }
-
-        public bool InsertPhieuKham(PhieuKham phieuKham)
+        public PhieuKham_BenhNhanLamSang DanhSachPhieuKham(int maphieu)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.InsertPhieuKham @MABN , @MANV , @NVTIEPNHAN , @CHUANDOAN , @MAHINHTHUCKHAM ", new object[] { phieuKham.MaBN, phieuKham.MaNV, phieuKham.NVTiepNhan, phieuKham.ChuanDoan, phieuKham.MaHinhThucKham });
+            PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_Search_Phieukham_By_Id @ID", new object[] { maphieu });
 
-            return row > 0;
+            foreach (DataRow row in table.Rows)
+            {
+               pk = new PhieuKham_BenhNhanLamSang(row);
+            }
+            return pk ;
         }
 
-        public void HuyKham(int maPhieuKham, int nhanvien)
+        public int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn)
         {
-            DataProvider.Instane.ExecuteNonQuery("EXEC dbo.HuyKham @MAPHIEUKHAM , @nhanvien", new object[] { maPhieuKham , nhanvien});
-
+            int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Update_Phieukham @MAPHIEUKHAM , @MABN , @CHUANDOAN , @NHIPTIM , @NHIETDO , @HUYETAP , @CANNANG , @CHIEUCAO , @MAICD , @NGAYKHAM , @KETLUAN , @TIENSU", new object[] { pkbn.MaPhieuKham, pkbn.MaBN, pkbn.ChuanDoan, pkbn.NhipTim, pkbn.NhietDo, pkbn.HuyetAp, pkbn.CanNang, pkbn.ChieuCao, pkbn.MaICD, pkbn.NgayKham, pkbn.KetLuan, pkbn.TienSu});
+            return row;
         }
 
-        public void CapNhatPhieuKham(PhieuKham phieuKham)
+        public List<PhieuKham_LichSuKham> LichSuKham(int mabn)
         {
+            List<PhieuKham_LichSuKham> list = new List<PhieuKham_LichSuKham>();
+            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_LichSuKham @MABN", new object[] { mabn });
 
-            DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_UpdatePhieuKham @MAPHIEUKHAM , @MANV , @NVTIEPNHAN , @CHUANDOAN , @MAHINHTHUCKHAM", new object[] { phieuKham.MaPhieuKham, phieuKham.MaNV, phieuKham.NVTiepNhan, phieuKham.ChuanDoan, phieuKham.MaHinhThucKham });
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new PhieuKham_LichSuKham(row));
+            }
+            return list;
         }
     }
 }

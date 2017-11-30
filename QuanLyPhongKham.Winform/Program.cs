@@ -16,7 +16,7 @@ namespace QuanLyPhongKham.Winform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fLogin());//fTiepNhanBenhNhan fLogin
+            Application.Run(new fKhamBenhNhan());
         }
     }
 }
