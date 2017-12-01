@@ -137,11 +137,10 @@ namespace QuanLyPhongKham.Services
         public List<PhieuKham_BenhNhanTimKiem> KetQuaTimPhieuKham(string ten)
         {
             return phieuKhamRepository.KetQuaTimPhieuKham(ten);
-
         }
-        public PhieuKham_BenhNhanLamSang DanhSachPhieuKham(int maphieu)
+        public PhieuKham_BenhNhanLamSang ThongTinPhieuKham(int maphieu)
         {
-            return phieuKhamRepository.DanhSachPhieuKham(maphieu);
+            return phieuKhamRepository.ThongTinPhieuKham(maphieu);
         }
 
         public int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn)
@@ -155,6 +154,10 @@ namespace QuanLyPhongKham.Services
             return phieuKhamRepository.LichSuKham(mabn);
         }
 
+        public List<PhieuKham_BenhNhanTimKiem> DanhSachPhieuKham()
+        {
+            return phieuKhamRepository.DanhSachPhieuKham();
+        }
         #endregion
 
         #region DonThuocServices

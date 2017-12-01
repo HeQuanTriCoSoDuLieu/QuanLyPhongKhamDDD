@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyPhongKham.Winform
-{
+{  
     public partial class fLichSuKhamBacSi : Form
     {
         private int MaBn;
@@ -29,8 +29,9 @@ namespace QuanLyPhongKham.Winform
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string cot = "";
+            string value = txttimkiem.Text;
             switch (cbxtimkiem.SelectedIndex)
-            {
+            {             
                 case 0:
                     cot = "MABN";
                     break;
@@ -41,22 +42,25 @@ namespace QuanLyPhongKham.Winform
                     cot = "MAPHIEUKHAM";
                     break;
                 case 3:
-                    cot = "NGAYKHAM";
+                    cot = "NGAYKHAM"; 
                     break;
             }
-            if (txttimkiem.Text == "")
+            if (StringToInt(value,cot)==false)
             {
-                MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn đã nhập sai hoặc chưa nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-            {
-                if (libraryService.LichSuKhamNhanVien(cot, txttimkiem.Text,MaBn).Count==0)
+            {                            
+                if (value == "" || value.StartsWith(" ") || value.EndsWith(" "))
+                {
+                    MessageBox.Show("Vui lòng không nhập khoảng trắng trước và sau từ khoá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (libraryService.LichSuKhamNhanVien(cot,value,MaBn).Count==0)
                 {
                     MessageBox.Show("Không tìm thấy dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                {
-                   
+                {                  
                     List<LichSuKham_NhanVien> listlskham = new List<LichSuKham_NhanVien>();                
                     listlskham = libraryService.LichSuKhamNhanVien(cot, txttimkiem.Text, MaBn);
                     for (int i = 1; i < listlskham.Count; i++)
@@ -71,10 +75,8 @@ namespace QuanLyPhongKham.Winform
                     dgvdsphieukham.Columns[4].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[4].Width = 90;
                     dgvdsphieukham.Columns[5].HeaderText = "Đã thanh toán"; dgvdsphieukham.Columns[5].Width = 85;
                     dgvdsphieukham.RowHeadersVisible = false;
-
                 }
-
-            }
+            } 
         }
         public void Load_fLichSuKhamBacSi()
         {
@@ -104,8 +106,7 @@ namespace QuanLyPhongKham.Winform
         }
 
         public int GetMaPhieuKham()
-        {
-            
+        {     
             foreach (DataGridViewRow row in dgvdsphieukham.SelectedRows)
             {
                 maphieu = (int)row.Cells[2].Value;
@@ -119,6 +120,22 @@ namespace QuanLyPhongKham.Winform
                 tenbn = (string)row.Cells[3].Value;
             }
             return tenbn;
+        }
+        public bool StringToInt(string s,string cot)
+        {
+            if (cot == "MABN" || cot == "MAPHIEUKHAM")
+            {
+                try
+                {
+                    int.Parse(txttimkiem.Text);
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+                return true;
+            }
+            return true;
         }
     }
 }

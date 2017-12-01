@@ -70,7 +70,7 @@
             "Mã bệnh nhân",
             "Họ tên bệnh nhân",
             "Mã phiếu khám",
-            "Ngày khám"});
+            "Ngày khám (yyyy-mm-dd)"});
             this.cbxtimkiem.Location = new System.Drawing.Point(124, 25);
             this.cbxtimkiem.Name = "cbxtimkiem";
             this.cbxtimkiem.Size = new System.Drawing.Size(149, 21);

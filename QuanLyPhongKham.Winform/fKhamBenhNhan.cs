@@ -21,7 +21,7 @@ namespace QuanLyPhongKham.Winform
     {
         private LibraryService libraryService;
 
-        string link = @"E:\Hoc Tap\QuanLyPhongKham\File";   // địa chỉ file kết quả
+        string link = @"F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\File";   // địa chỉ file kết quả
 
         public fKhamBenhNhan()
         {
@@ -253,8 +253,20 @@ namespace QuanLyPhongKham.Winform
 
         private void btntimphieukham_Click(object sender, EventArgs e)
         {
+            if(txttimphieukham.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên bệnh nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txttimphieukham.Text.StartsWith(" ") || txttimphieukham.Text.EndsWith(" "))
+            {
+                MessageBox.Show("Vui lòng không nhập khoảng trắng trước hoặc sau từ khoá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (libraryService.KetQuaTimPhieuKham(txttimphieukham.Text).Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy bệnh nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            if (txttimphieukham.Text != "")
+            }
+            else
             {
                 dgvdsphieukham.DataSource = libraryService.KetQuaTimPhieuKham(txttimphieukham.Text);
                 dgvdsphieukham.Columns[0].HeaderText = "Mã phiếu"; dgvdsphieukham.Columns[0].Width = 40;
@@ -262,17 +274,13 @@ namespace QuanLyPhongKham.Winform
                 dgvdsphieukham.Columns[2].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[2].Width = 70;
                 dgvdsphieukham.Columns[3].HeaderText = "Đã Khám"; dgvdsphieukham.Columns[3].Width = 40;
                 dgvdsphieukham.RowHeadersVisible = false;
+                dgvdsphieukham.Rows[0].Selected = false;
             }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập tên bệnh nhân cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
 
         private void fKhamBenhNhan_Load(object sender, EventArgs e)
         {
-
+            //Load danh sách chờ khám
             List<PhieuKham_BenhNhanChoKham> list = new List<PhieuKham_BenhNhanChoKham>();
             list = libraryService.DanhSachChoKham();
             for (int i = 1; i < list.Count; i++)
@@ -282,10 +290,19 @@ namespace QuanLyPhongKham.Winform
             dgvdschokham.DataSource = list;
             dgvdschokham.Columns[0].HeaderText = "STT"; dgvdschokham.Columns[0].Width = 30;
             dgvdschokham.Columns[1].HeaderText = "Mã phiếu"; dgvdschokham.Columns[1].Width = 40;
-            dgvdschokham.Columns[2].HeaderText = "Tên bệnh nhân"; dgvdschokham.Columns[2].Width = 115;
+            dgvdschokham.Columns[2].HeaderText = "Tên bệnh nhân"; dgvdschokham.Columns[2].Width = 110;
             dgvdschokham.Columns[3].HeaderText = "Ngày khám"; dgvdschokham.Columns[3].Width = 75;
             dgvdschokham.RowHeadersVisible = false;
+            dgvdschokham.Rows[0].Selected = false;
 
+            //Load danh sách phiếu khám
+            dgvdsphieukham.DataSource = libraryService.DanhSachPhieuKham();
+            dgvdsphieukham.Columns[0].HeaderText = "Mã phiếu"; dgvdsphieukham.Columns[0].Width = 40;
+            dgvdsphieukham.Columns[1].HeaderText = "Tên bệnh nhân"; dgvdsphieukham.Columns[1].Width = 105;
+            dgvdsphieukham.Columns[2].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[2].Width = 70;
+            dgvdsphieukham.Columns[3].HeaderText = "Đã Khám"; dgvdsphieukham.Columns[3].Width = 40;
+            dgvdsphieukham.RowHeadersVisible = false;
+            dgvdsphieukham.Rows[0].Selected = false;
         }
 
         private void dgvdschokham_SelectionChanged(object sender, EventArgs e)
@@ -295,7 +312,7 @@ namespace QuanLyPhongKham.Winform
                 int maphieu = (int)row.Cells[1].Value;
                 txttenbenhnhan.Text = row.Cells[2].Value.ToString();
                 PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
-                pk = libraryService.DanhSachPhieuKham(maphieu);
+                pk = libraryService.ThongTinPhieuKham(maphieu);
                 txtmaphieukham.Text = pk.MaPhieuKham.ToString();
                 txtmabenhnhan.Text = pk.MaBN.ToString();
                 txtngaykham.Text = pk.NgayKham.ToString();
@@ -326,6 +343,7 @@ namespace QuanLyPhongKham.Winform
                 dgvdonthuoc.Columns[3].HeaderText = "Số lượng"; dgvdonthuoc.Columns[3].Width = 95;
                 dgvdonthuoc.Columns[4].HeaderText = "Hướng dẫn"; dgvdonthuoc.Columns[4].Width = 235;
                 dgvdonthuoc.RowHeadersVisible = false;
+                dgvdonthuoc.Rows[0].Selected = false;
 
 
                 //đổ dữ liệu vào bảng lịch sử khám
@@ -343,7 +361,7 @@ namespace QuanLyPhongKham.Winform
                 dgvlichsukham.Columns[3].HeaderText = "Chuẩn đoán"; dgvlichsukham.Columns[3].Width = 255;
                 dgvlichsukham.Columns[4].HeaderText = "Kết quả"; dgvlichsukham.Columns[4].Width = 265;
                 dgvlichsukham.RowHeadersVisible = false;
-
+                dgvlichsukham.Rows[0].Selected = false;
             }
         }
 
@@ -354,7 +372,7 @@ namespace QuanLyPhongKham.Winform
                 int maphieu = (int)row.Cells[0].Value;
                 txttenbenhnhan.Text = row.Cells[1].Value.ToString();
                 PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
-                pk = libraryService.DanhSachPhieuKham(maphieu);
+                pk = libraryService.ThongTinPhieuKham(maphieu);
                 txtmaphieukham.Text = pk.MaPhieuKham.ToString();
                 txtmabenhnhan.Text = pk.MaBN.ToString();              
                 txtngaykham.Text = pk.NgayKham.ToString();
@@ -384,7 +402,7 @@ namespace QuanLyPhongKham.Winform
                 dgvdonthuoc.Columns[2].HeaderText = "Số lượng"; dgvdonthuoc.Columns[3].Width = 95;
                 dgvdonthuoc.Columns[2].HeaderText = "Hướng dẫn"; dgvdonthuoc.Columns[4].Width = 230;
                 dgvdonthuoc.RowHeadersVisible = false;
-
+                dgvdonthuoc.Rows[0].Selected = false;
 
                 //đổ dữ liệu vào bảng lịch sử khám
 
@@ -402,6 +420,7 @@ namespace QuanLyPhongKham.Winform
                 dgvlichsukham.Columns[2].HeaderText = "Chuẩn đoán"; dgvlichsukham.Columns[3].Width = 250;
                 dgvlichsukham.Columns[2].HeaderText = "Kết quả"; dgvlichsukham.Columns[4].Width = 265;
                 dgvlichsukham.RowHeadersVisible = false;
+                dgvlichsukham.Rows[0].Selected = false;
             }
 
         }
@@ -527,7 +546,7 @@ namespace QuanLyPhongKham.Winform
             {
                 txttenbenhnhan.Text = f.tenbn;
                 PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
-                pk = libraryService.DanhSachPhieuKham(f.maphieu);
+                pk = libraryService.ThongTinPhieuKham(f.maphieu);
                 txtmaphieukham.Text = pk.MaPhieuKham.ToString();
                 txtmabenhnhan.Text = pk.MaBN.ToString();
                 txtngaykham.Text = pk.NgayKham.ToString();
@@ -558,6 +577,7 @@ namespace QuanLyPhongKham.Winform
                 dgvdonthuoc.Columns[3].HeaderText = "Số lượng"; dgvdonthuoc.Columns[3].Width = 95;
                 dgvdonthuoc.Columns[4].HeaderText = "Hướng dẫn"; dgvdonthuoc.Columns[4].Width = 235;
                 dgvdonthuoc.RowHeadersVisible = false;
+                dgvdonthuoc.Rows[0].Selected = false;
 
 
                 //đổ dữ liệu vào bảng lịch sử khám
@@ -575,9 +595,52 @@ namespace QuanLyPhongKham.Winform
                 dgvlichsukham.Columns[3].HeaderText = "Chuẩn đoán"; dgvlichsukham.Columns[3].Width = 255;
                 dgvlichsukham.Columns[4].HeaderText = "Kết quả"; dgvlichsukham.Columns[4].Width = 265;
                 dgvlichsukham.RowHeadersVisible = false;
+                dgvlichsukham.Rows[0].Selected = false;
 
             }
         }
 
+        private void dgvlichsukham_SelectionChanged(object sender, EventArgs e)
+        {
+            {
+                foreach (DataGridViewRow row in dgvlichsukham.SelectedRows)
+                {
+                    int maphieu = (int)row.Cells[1].Value;
+                    PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
+                    pk = libraryService.ThongTinPhieuKham(maphieu);
+                    txtmaphieukham.Text = pk.MaPhieuKham.ToString();
+                    txtmabenhnhan.Text = pk.MaBN.ToString();
+                    txtngaykham.Text = pk.NgayKham.ToString();
+                    txtchandoan.Text = pk.ChuanDoan;
+                    txtketluan.Text = pk.KetLuan;
+                    txtnhietdo.Text = pk.NhietDo.ToString();
+                    txtnhiptim.Text = pk.NhipTim.ToString();
+                    txthuyetap.Text = pk.HuyetAp.ToString();
+                    txtchieucao.Text = pk.ChieuCao.ToString();
+                    txtcannang.Text = pk.CanNang.ToString();
+                    txtmaicd.Text = pk.MaICD.ToString();
+                    txttiensukham.Text = pk.TienSu;
+
+
+                    //đổ dữ liệu vào bảng đơn thuốc
+
+                    List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
+                    listdonthuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
+                    for (int i = 1; i < listdonthuoc.Count; i++)
+                    {
+                        listdonthuoc[i].STT = i;
+                    }
+                    dgvdonthuoc.DataSource = listdonthuoc;
+                    dgvdonthuoc.Columns[0].HeaderText = "STT"; dgvdonthuoc.Columns[0].Width = 40;
+                    dgvdonthuoc.Columns[1].HeaderText = "Mã phiếu"; dgvdonthuoc.Columns[1].Width = 85;
+                    dgvdonthuoc.Columns[2].HeaderText = "Tên thuốc"; dgvdonthuoc.Columns[2].Width = 200;
+                    dgvdonthuoc.Columns[2].HeaderText = "Số lượng"; dgvdonthuoc.Columns[3].Width = 95;
+                    dgvdonthuoc.Columns[2].HeaderText = "Hướng dẫn"; dgvdonthuoc.Columns[4].Width = 230;
+                    dgvdonthuoc.RowHeadersVisible = false;
+                    dgvdonthuoc.Rows[0].Selected = false;
+
+                }
+            }
+        }
     }
 }

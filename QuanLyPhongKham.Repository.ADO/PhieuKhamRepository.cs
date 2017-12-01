@@ -37,7 +37,7 @@ namespace QuanLyPhongKham.Repository.ADO
             }
             return list;
         }
-        public PhieuKham_BenhNhanLamSang DanhSachPhieuKham(int maphieu)
+        public PhieuKham_BenhNhanLamSang ThongTinPhieuKham(int maphieu)
         {
             PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
             DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_Search_Phieukham_By_Id @ID", new object[] { maphieu });
@@ -63,6 +63,18 @@ namespace QuanLyPhongKham.Repository.ADO
             foreach (DataRow row in table.Rows)
             {
                 list.Add(new PhieuKham_LichSuKham(row));
+            }
+            return list;
+        }
+
+        public List<PhieuKham_BenhNhanTimKiem> DanhSachPhieuKham()
+        {
+            List<PhieuKham_BenhNhanTimKiem> list = new List<PhieuKham_BenhNhanTimKiem>();
+            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_Select_Phieukham_All", new object[] {});
+
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new PhieuKham_BenhNhanTimKiem(row));
             }
             return list;
         }
