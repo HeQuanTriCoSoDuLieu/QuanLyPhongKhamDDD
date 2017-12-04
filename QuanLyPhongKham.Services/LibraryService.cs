@@ -162,9 +162,6 @@ namespace QuanLyPhongKham.Services
         #endregion
 
         #region PhieuKhamServices
-<<<<<<< HEAD
-        public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham(int manv)
-=======
         /// <summary>
         /// load danh sach kham cho fTiepNhanBenhNhan
         /// </summary>
@@ -195,11 +192,11 @@ namespace QuanLyPhongKham.Services
         #endregion
 
 
+       
          #region PhieuKhamServices
-        public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham()
->>>>>>> aad8c12927cac0888da38be3174fbc925ac0dfda
+        public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham(int manv,string date)
         {
-            return phieuKhamRepository.DanhSachChoKham(manv);
+            return phieuKhamRepository.DanhSachChoKham(manv,date);
         }
 
 

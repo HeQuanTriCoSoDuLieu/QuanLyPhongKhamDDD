@@ -45,7 +45,7 @@ namespace QuanLyPhongKham.Winform
         {
             switch (treeviewdvkham.SelectedNode.Name)
             {
-                case "nodexquang": showxquanh(); break;
+                case "nodexquang": showxquang(); break;
                 case "nodesieuam": showsieuam(); break;
                 case "nodelamsang": showlamsang(); break;
                 case "nodexetnghiem": showxetnghiem(); break;
@@ -171,7 +171,7 @@ namespace QuanLyPhongKham.Winform
         /// <summary>
         /// Hàm hiện thị panel chụp x-quang
         /// </summary>
-        private void showxquanh()
+        private void showxquang()
         {
             paneldonthuoc.Visible = false;
             panelnoisoi.Visible = false;
@@ -308,7 +308,8 @@ namespace QuanLyPhongKham.Winform
             panelchinh.Visible = true;
             //Load danh sách chờ khám
             List<PhieuKham_BenhNhanChoKham> list = new List<PhieuKham_BenhNhanChoKham>();
-            list = libraryService.DanhSachChoKham(manv);
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
+            list = libraryService.DanhSachChoKham(manv,date);
             for (int i = 1; i < list.Count; i++)
             {
                 list[i].STT = i;

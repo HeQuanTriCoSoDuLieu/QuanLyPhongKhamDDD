@@ -58,7 +58,7 @@ namespace QuanLyPhongKham.Winform
                     Show();
                     break;
                 case 2:
-                    fKhamBenhNhan khamBenhNhan = new fKhamBenhNhan();
+                    fKhamBenhNhan khamBenhNhan = new fKhamBenhNhan(id);
                     Hide();
                     khamBenhNhan.ShowDialog();
                     Show();

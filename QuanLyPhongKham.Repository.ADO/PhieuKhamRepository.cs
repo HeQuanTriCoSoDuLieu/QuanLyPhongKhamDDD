@@ -11,11 +11,11 @@ namespace QuanLyPhongKham.Repository.ADO
 {
     public class PhieuKhamRepository : IPhieuKhamRepository
     {
-        public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham(int manv)
+        public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham(int manv,string date)
         {
             List<PhieuKham_BenhNhanChoKham> list = new List<PhieuKham_BenhNhanChoKham>();
 
-            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_Select_Phieukham_Chokham @MANV", new object[] { manv });
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_Select_Phieukham_Chokham @MANV , @NGKHAM", new object[] { manv, date});
 
 
 
@@ -29,11 +29,7 @@ namespace QuanLyPhongKham.Repository.ADO
         public List<PhieuKham_BenhNhanTimKiem> KetQuaTimPhieuKham(string ten, int manv)
         {
             List<PhieuKham_BenhNhanTimKiem> list = new List<PhieuKham_BenhNhanTimKiem>();
-<<<<<<< HEAD
-            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_Search_Phieukham_By_Ten @TEN , @MANV", new object[] {ten,manv});
-=======
-            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_Search_Phieukham_By_Ten @TEN", new object[] { ten });
->>>>>>> aad8c12927cac0888da38be3174fbc925ac0dfda
+            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_Search_Phieukham_By_Ten @TEN , @MANV", new object[] { ten, manv });
 
             foreach (DataRow row in table.Rows)
             {
@@ -71,11 +67,10 @@ namespace QuanLyPhongKham.Repository.ADO
             return list;
         }
 
-<<<<<<< HEAD
         public List<PhieuKham_BenhNhanTimKiem> DanhSachPhieuKham(int manv)
         {
             List<PhieuKham_BenhNhanTimKiem> list = new List<PhieuKham_BenhNhanTimKiem>();
-            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_Select_Phieukham_All @MANV", new object[] {manv});
+            DataTable table = DataProvider.Instane.ExecuteReader(" EXECUTE dbo.SP_Select_Phieukham_All @MANV", new object[] { manv });
 
             foreach (DataRow row in table.Rows)
             {
@@ -88,8 +83,7 @@ namespace QuanLyPhongKham.Repository.ADO
         {
             int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Update_HoanThanhPhieuKham  @MAPHIEU", new object[] { maphieu });
             return row;
-=======
-
+        }
 
 
         /// <summary>
@@ -129,8 +123,8 @@ namespace QuanLyPhongKham.Repository.ADO
         {
 
             DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_UpdatePhieuKham @MAPHIEUKHAM , @MANV , @NVTIEPNHAN , @CHUANDOAN , @MAHINHTHUCKHAM", new object[] { phieuKham.MaPhieuKham, phieuKham.MaNV, phieuKham.NVTiepNhan, phieuKham.ChuanDoan, phieuKham.MaHinhThucKham });
->>>>>>> aad8c12927cac0888da38be3174fbc925ac0dfda
         }
+
     }
 }
 

@@ -148,10 +148,6 @@
             this.txbUserName.MaxLength = 32767;
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.PasswordChar = '\0';
-<<<<<<< HEAD
-=======
-            //this.txbUserName.PromptText = "Tên đăng nhập";
->>>>>>> aad8c12927cac0888da38be3174fbc925ac0dfda
             this.txbUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbUserName.SelectedText = "";
             this.txbUserName.SelectionLength = 0;
