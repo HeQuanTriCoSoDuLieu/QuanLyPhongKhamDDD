@@ -9,7 +9,8 @@ namespace QuanLyPhongKham.Model.DTO
 {
     public class PhieuKham
     {
-        public int STT { get; set; }
+        #region properties
+
         public int MaPhieuKham { get; set; }
         public int MaBN { get; set; }
         public int MaNV { get; set; }
@@ -25,7 +26,10 @@ namespace QuanLyPhongKham.Model.DTO
         public string HoanThanh { get; set; }
         public string DaThanhToan { get; set; }
         public string KetLuan { get; set; }
+        public int NVTiepNhan { get; set; }
 
+
+#endregion
         public PhieuKham() { }
 
 
@@ -65,6 +69,7 @@ namespace QuanLyPhongKham.Model.DTO
             this.HoanThanh = row["HOANTHANH"].ToString();
             this.DaThanhToan = row["DATHANHTOAN"].ToString();
             this.KetLuan = row["KETLUAN"].ToString();
+            NVTiepNhan = (int) row["NVTIEPNHAN"];
 
         }
     }

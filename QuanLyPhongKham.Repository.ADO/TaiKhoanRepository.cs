@@ -5,17 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace QuanLyPhongKham.Repository.ADO
 {
     public class TaiKhoanRepository : ITaiKhoanRepository
     {
-        public int Login(string userName, string passWord)
+
+
+        public DataTable Login(string userName, string passWord)
         {
 
-            int result = DataProvider.Instane.ExecuteScalar("EXEC dbo.SP_Login @TenDangNhap , @MatKhau ", new object[] { userName, passWord });
+            DataTable dataTable = DataProvider.Instane.ExecuteReader("EXEC dbo.SP_Login @TenDangNhap , @MatKhau", new object[] { userName, passWord });
 
-            return result ;
+            return dataTable;
+
         }
     }
 }

@@ -10,5 +10,7 @@ namespace QuanLyPhongKham.Model.Interfaces
     {
         List<BenhNhan> DanhSachBenhNhan();
         List<BenhNhan> TimKiemBenhNhan(string col, string info);
+        bool ThemBenhNhan(BenhNhan benhNhan);
+        bool UpdateBenhNhan(BenhNhan benhNhan);
     }
 }
