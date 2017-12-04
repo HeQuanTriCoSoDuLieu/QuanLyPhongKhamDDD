@@ -15,21 +15,21 @@ namespace QuanLyPhongKham.Winform
 {  
     public partial class fLichSuKhamBacSi : Form
     {
-        private int MaBn;
+        private int manv;
         private LibraryService libraryService;
         public int maphieu;
         public string tenbn;
-        public fLichSuKhamBacSi(int mabn)
+        public fLichSuKhamBacSi(int manv)
         {
             InitializeComponent();
-            this.MaBn = mabn;
+            this.manv = manv;
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string cot = "";
-            string value = txttimkiem.Text;
+            string value = txttimkiem.Text.Trim();
             switch (cbxtimkiem.SelectedIndex)
             {             
                 case 0:
@@ -47,22 +47,18 @@ namespace QuanLyPhongKham.Winform
             }
             if (StringToInt(value,cot)==false)
             {
-                MessageBox.Show("Bạn đã nhập sai hoặc chưa nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Từ khoá không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {                            
-                if (value == "" || value.StartsWith(" ") || value.EndsWith(" "))
-                {
-                    MessageBox.Show("Vui lòng không nhập khoảng trắng trước và sau từ khoá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (libraryService.LichSuKhamNhanVien(cot,value,MaBn).Count==0)
+                if (libraryService.LichSuKhamNhanVien(cot,value,manv).Count==0)
                 {
                     MessageBox.Show("Không tìm thấy dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {                  
                     List<LichSuKham_NhanVien> listlskham = new List<LichSuKham_NhanVien>();                
-                    listlskham = libraryService.LichSuKhamNhanVien(cot, txttimkiem.Text, MaBn);
+                    listlskham = libraryService.LichSuKhamNhanVien(cot, txttimkiem.Text, manv);
                     for (int i = 1; i < listlskham.Count; i++)
                     {
                         listlskham[i].STT = i;
@@ -78,12 +74,13 @@ namespace QuanLyPhongKham.Winform
                 }
             } 
         }
+
         public void Load_fLichSuKhamBacSi()
         {
-            dgvdsphieukham.DataSource = libraryService.LichSuKhamNhanVien(MaBn);
+            dgvdsphieukham.DataSource = libraryService.LichSuKhamNhanVien(manv);
             List<LichSuKham_NhanVien> listlskham = new List<LichSuKham_NhanVien>();
 
-            listlskham = libraryService.LichSuKhamNhanVien(MaBn);
+            listlskham = libraryService.LichSuKhamNhanVien(manv);
             for (int i = 1; i < listlskham.Count; i++)
             {
                 listlskham[i].STT = i;
@@ -105,6 +102,10 @@ namespace QuanLyPhongKham.Winform
             this.Close();
         }
 
+        /// <summary>
+        /// Hàm lấy mã phiếu khám của bệnh nhân từ bảng kết quả
+        /// </summary>
+        /// <returns></returns>
         public int GetMaPhieuKham()
         {     
             foreach (DataGridViewRow row in dgvdsphieukham.SelectedRows)
@@ -113,6 +114,11 @@ namespace QuanLyPhongKham.Winform
             }
             return maphieu;
         }
+
+        /// <summary>
+        /// Hàm lấy tên của bệnh nhân từ bảng kết quả
+        /// </summary>
+        /// <returns></returns>
         public string GetTenBenhNhan()
         {
             foreach (DataGridViewRow row in dgvdsphieukham.SelectedRows)
@@ -121,6 +127,13 @@ namespace QuanLyPhongKham.Winform
             }
             return tenbn;
         }
+
+        /// <summary>
+        /// Hàm kiểm tra từ khoá nhập vào có phải là số
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="cot"></param>
+        /// <returns></returns>
         public bool StringToInt(string s,string cot)
         {
             if (cot == "MABN" || cot == "MAPHIEUKHAM")

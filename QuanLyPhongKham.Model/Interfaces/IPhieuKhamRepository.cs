@@ -9,11 +9,12 @@ namespace QuanLyPhongKham.Model.Interfaces
 {
     public interface IPhieuKhamRepository
     {
-        List<PhieuKham_BenhNhanTimKiem> KetQuaTimPhieuKham(string ten);
-        List<PhieuKham_BenhNhanChoKham> DanhSachChoKham();
-        List<PhieuKham_BenhNhanTimKiem> DanhSachPhieuKham();
+        List<PhieuKham_BenhNhanTimKiem> KetQuaTimPhieuKham(string ten,int manv);
+        List<PhieuKham_BenhNhanChoKham> DanhSachChoKham(int manv);
+        List<PhieuKham_BenhNhanTimKiem> DanhSachPhieuKham(int manv);
         PhieuKham_BenhNhanLamSang ThongTinPhieuKham(int maphieu);
         int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn);
         List<PhieuKham_LichSuKham> LichSuKham(int mabn);
+        int HoanThanhPhieuKham(int maphieu);
     }
 }

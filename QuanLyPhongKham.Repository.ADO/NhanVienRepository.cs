@@ -25,9 +25,8 @@ namespace QuanLyPhongKham.Repository.ADO
 
         public List<LichSuKham_NhanVien> LichSuKhamNhanVien(string cot,string value, int manv)
         {
-            List<LichSuKham_NhanVien> list = new List<LichSuKham_NhanVien>();
-            DataTable table = DataProvider.Instane.ExecuteReader("EXEC dbo.SP_TimKiemLichSuKhamNhanVien @ThongTin , @TruongDuLieu , @MaNhanVien  ", new object[] { cot, value, manv });
-
+            List<LichSuKham_NhanVien> list = new List<LichSuKham_NhanVien>();        
+            DataTable table = DataProvider.Instane.ExecuteReader("EXEC dbo.SP_TimKiemLichSuKhamNhanVien @ThongTin , @DuLieu , @MaNhanVien  ", new object[] { cot, value, manv });
             foreach (DataRow row in table.Rows)
             {
                 list.Add(new LichSuKham_NhanVien(row));

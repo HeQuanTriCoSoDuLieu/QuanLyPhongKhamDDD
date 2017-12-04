@@ -28,7 +28,7 @@ namespace QuanLyPhongKham.Repository.ADO
 
         public int TaoChiTietDonThuoc(ChiTietDonThuoc ctdt,int maphieu)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Insert_ChiTietDonThuoc @MADONTHUOC @MATHUOC @SOLUONG @HUONGDAN", new object[] { ctdt.MADONTHUOC, ctdt.MATHUOC, ctdt.SOLUONG,ctdt.HUONGDAN });
+            int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Insert_ChiTietDonThuoc @MAPHIEUKHAM , @MATHUOC , @SOLUONG , @HUONGDAN", new object[] { maphieu, ctdt.MATHUOC, ctdt.SOLUONG,ctdt.HUONGDAN });
             return row;
         }
     }
