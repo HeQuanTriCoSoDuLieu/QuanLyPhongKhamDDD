@@ -14,5 +14,9 @@ namespace QuanLyPhongKham.Model.Interfaces
         PhieuKham_BenhNhanLamSang DanhSachPhieuKham(int maphieu);
         int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn);
         List<PhieuKham_LichSuKham> LichSuKham(int mabn);
+        List<PhieuKhamGUI> DanhSachPhieuKhamGUI(DateTime dateTime);
+        bool InsertPhieuKham(PhieuKham phieuKham);
+        void HuyKham(int maPhieuKham, int nhanvien);
+        void CapNhatPhieuKham(PhieuKham phieuKham);
     }
 }

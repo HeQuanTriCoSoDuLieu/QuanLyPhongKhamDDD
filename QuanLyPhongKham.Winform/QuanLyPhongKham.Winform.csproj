@@ -32,7 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>hospital.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>QuanLyPhongKham.Winform.Program</StartupObject>
@@ -58,11 +59,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,8 +74,16 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fAddEditBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddEditBenhNhan.Designer.cs">
+      <DependentUpon>fAddEditBenhNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,8 +128,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="fAdmin.resx">
-      <DependentUpon>fAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="fAddEditBenhNhan.resx">
+      <DependentUpon>fAddEditBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fKhamBenhNhan.resx">
       <DependentUpon>fKhamBenhNhan.cs</DependentUpon>
@@ -147,6 +157,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QuanLyPhongKham.Model.DTO.BenhNhan.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,11 +174,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\hospital-icon.png" />
+    <Content Include="Assets\Images\hospital.ico" />
     <Content Include="Assets\Images\lock-icon.png" />
     <Content Include="Assets\Images\user-icon.png" />
     <Content Include="Assets\Images\User-Interface-Password-icon.png" />
     <Content Include="Assets\Images\user_male2-64.png" />
-    <Content Include="hospital.ico" />
     <None Include="Resources\TEST.jpg" />
   </ItemGroup>
   <ItemGroup>

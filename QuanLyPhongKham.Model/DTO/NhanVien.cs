@@ -9,44 +9,44 @@ namespace QuanLyPhongKham.Model.DTO
 {
     public class NhanVien
     {
-        public NhanVien() { }
 
-        public NhanVien(int manv,string hoten,bool gioitinh,string sodt,string email, int makhoa, int machucdanh, int machucvu)
+        public NhanVien()
         {
-            MaNV = manv;
-            HoTen = hoten;
-            GioiTinh = gioitinh;
-            SoDT = sodt;
-            Email = email;
-            MaKhoa = makhoa;
-            MaChucDanh = machucdanh;
-            MaChucVu = machucvu;
         }
+
         public NhanVien(DataRow row)
         {
-            MaNV = (int)row["MANV"];
-            HoTen = row["HOTEN"].ToString();
-            GioiTinh = (bool)row["GIOITINH"];
-            SoDT = row["SODT"].ToString();
-            Email = row["EMAIL"].ToString();
-            MaKhoa = (int)row["MAKHOA"];
-            MaChucDanh = (int)row["MACHUCDANH"];
-            MaChucVu = (int)row["MACHUCVU"];
+            MANV = (int)row["MANV"];
+            HOTEN = row["HOTEN"].ToString();
+            GIOITINH = (bool)row["GIOITINH"] == true ? "Nam" : "Nữ";
+            SODT = row["SODT"].ToString();
+            EMAIL = row["EMAIL"].ToString();
+            MACHUCDANH = (int)row["MACHUCDANH"];
+            MACHUCVU = (int)row["MACHUCVU"];
+            LOAINHANVIEN = row["LOAINHANVIEN"].ToString();
         }
-        public int MaNV {get;set;}
 
-        public string HoTen { get; set; }
+        public NhanVien(int mANV, string hOTEN, string gIOITINH, string sODT, string eMAIL, int kHOA, int mACHUCDANH, int mACHUCVU, string lOAINHANVIEN)
+        {
+            MANV = mANV;
+            HOTEN = hOTEN;
+            GIOITINH = gIOITINH;
+            SODT = sODT;
+            EMAIL = eMAIL;
+            KHOA = kHOA;
+            MACHUCDANH = mACHUCDANH;
+            MACHUCVU = mACHUCVU;
+            LOAINHANVIEN = lOAINHANVIEN;
+        }
 
-        public bool GioiTinh { get; set; }
-
-        public string SoDT { get; set; }
-
-        public string Email { get; set; }
-
-        public int MaKhoa { get; set; }
-
-        public int MaChucDanh { get; set; }
-
-        public int MaChucVu { get; set; }
+        public int MANV { get; set; }
+        public string HOTEN { get; set; }
+        public string GIOITINH { get; set; }
+        public string SODT { get; set; }
+        public string EMAIL { get; set; }
+        public int KHOA { get; set; }
+        public int MACHUCDANH { get; set; }
+        public int MACHUCVU { get; set; }
+        public string LOAINHANVIEN { get; set; }
     }
 }

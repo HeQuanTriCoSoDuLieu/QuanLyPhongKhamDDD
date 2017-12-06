@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace QuanLyPhongKham.Model.Interfaces
 {
     public interface ITaiKhoanRepository
     {
-        int Login(string userName, string passWord);
+     
+        DataTable Login(string userName, string passWord);
     }
 }
