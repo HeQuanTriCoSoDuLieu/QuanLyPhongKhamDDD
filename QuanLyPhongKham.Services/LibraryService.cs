@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QuanLyPhongKham.Model.DTO;
 using System.Data;
+using QuanLyPhongKham.Repository.ADO;
 
 namespace QuanLyPhongKham.Services
 {
@@ -223,6 +224,31 @@ namespace QuanLyPhongKham.Services
         #endregion
 
 
+        #region ThuocServices
+        
+        public List<Thuoc_Loaithuoc> Danhsachthuoc()
+        {
+            return thuocRepository.Danhsachthuoc();
+        }
+
+
+
+        public List<Thuoc_Loaithuoc> Danhsachthuoc(string Thongtin, string Dulieu)
+        {
+            return thuocRepository.Danhsachthuoc(Thongtin,Dulieu);
+        } 
+        #endregion
+
+        public List<Vattuyte_DVT> DanhsachVTYT()
+        {
+            return vatTuYTeRepository.DanhsachVTYT();
+        }
+
+
+        public List<Vattuyte_DVT> TimkiemVTYT(string thongtin, string dulieu)
+        {
+            return vatTuYTeRepository.TimkiemVTYT(thongtin,dulieu);
+        }
     }
 }
 
