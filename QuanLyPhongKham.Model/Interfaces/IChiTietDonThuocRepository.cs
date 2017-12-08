@@ -11,5 +11,6 @@ namespace QuanLyPhongKham.Model.Interfaces
     {
         int TaoChiTietDonThuoc(ChiTietDonThuoc ctdt, int maphieu);
         List<ChiTietDonThuoc_Thuoc> DanhSachChiTietDonThuoc(int maphieu);
+        int ThemThuoc(int madonthuoc, int mathuoc, int soluong, string huongdan);
     }
 }

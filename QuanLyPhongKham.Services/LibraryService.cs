@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using QuanLyPhongKham.Model.DTO;
 using System.Data;
-using QuanLyPhongKham.Repository.ADO;
 
 namespace QuanLyPhongKham.Services
 {
@@ -41,6 +40,7 @@ namespace QuanLyPhongKham.Services
         private IHoaDonRepository hoaDonRepository;
         private IKhoaRepository khoaRepository;
         private ILoaiCanLamSangRepository loaiCanLamSanRepository;
+
         private ILoaiThuocRepository loaiThuocRepository;
         private INhaCungCapRepository nhaCungCapRepository;
         private INhanVienRepository nhanVienRepository;
@@ -97,12 +97,12 @@ namespace QuanLyPhongKham.Services
 
 
         #region Services cho tài khoản
- 
-
-        public DataTable Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
             return taiKhoanRepository.Login(userName, passWord);
         }
+
+
 
 
 
@@ -116,10 +116,6 @@ namespace QuanLyPhongKham.Services
             return benhNhanRepository.DanhSachBenhNhan();
         }
 
-        public bool UpdateBenhNhan(BenhNhan benhNhan)
-        {
-            return benhNhanRepository.UpdateBenhNhan(benhNhan);
-        }
 
 
         public List<BenhNhan> TimKiemBenhNhan(string col, string info)
@@ -127,73 +123,11 @@ namespace QuanLyPhongKham.Services
             return benhNhanRepository.TimKiemBenhNhan(col, info);
         }
 
-        public bool ThemBenhNhan(BenhNhan benhNhan)
-        {
-            return benhNhanRepository.ThemBenhNhan(benhNhan);
-        }
-
-        #endregion
-
-
-
-        #region NhanVienServices
-
-        public List<NhanVien> DanhSachNhanVien()
-        {
-            return nhanVienRepository.DanhSachNhanVien();
-        }
-
-
-
-
-        #endregion
-
-
-
-        #region HinhThucKhamServices
-
-
-        public List<HinhThucKham> DanhSachHinhThucKham()
-        {
-            return hinhThucKhamRepository.DanhSachHinhThucKham();
-        }
-
 
 
         #endregion
 
         #region PhieuKhamServices
-        /// <summary>
-        /// load danh sach kham cho fTiepNhanBenhNhan
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <returns></returns>
-        public List<PhieuKhamGUI> DanhSachPhieuKhamGUI(DateTime dateTime)
-        {
-            return phieuKhamRepository.DanhSachPhieuKhamGUI(dateTime);
-        }
-
-        public bool InsertPhieuKham(PhieuKham phieuKham)
-        {
-            return phieuKhamRepository.InsertPhieuKham(phieuKham);
-        }
-
-        public void HuyKham(int maPhieuKham, int nhanVien)
-        {
-            phieuKhamRepository.HuyKham(maPhieuKham, nhanVien);
-        }
-
-        public void CapNhatPhieuKham(PhieuKham phieuKham)
-        {
-            phieuKhamRepository.CapNhatPhieuKham(phieuKham);
-        }
-
-     
-
-        #endregion
-
-
-         #region PhieuKhamServices
         public List<PhieuKham_BenhNhanChoKham> DanhSachChoKham()
         {
             return phieuKhamRepository.DanhSachChoKham();
@@ -259,20 +193,25 @@ namespace QuanLyPhongKham.Services
         }
 
 
-        public int InsertChiTietCLS(string getmaphieu, string getmacls)
+        public int InsertChiTietCLS(string getmaphieu, string getmacls, string link)
         {
-            return chiTietCLSRepository.InsertChiTietCLS(getmaphieu, getmacls);
+            return chiTietCLSRepository.InsertChiTietCLS(getmaphieu, getmacls, link);
         }
 
-      public DataTable GetCLS(string filePath)
+        public DataTable GetCLS(string filePath)
         {
             return canLamSanRepository.GetCLS(filePath);
         }
 
+
+        public ChiTietCLS LayketQua(string maphieu, string macls)
+        {
+            return chiTietCLSRepository.LayketQua(maphieu, macls);
+        }
         #endregion
 
 
-        
+
         #region NhanVienServices
 
         public List<LichSuKham_NhanVien> LichSuKhamNhanVien(string col, string value, int manv)
@@ -288,132 +227,21 @@ namespace QuanLyPhongKham.Services
 
         #endregion
 
-    /*
-    
-        #region Services cho tài khoản
- 
 
-        public DataTable Login(string userName, string passWord)
+        #region form tìm kiếm thuốc
+        public List<TimKiemThuoc> TimKiemThuoc(string timkiemthuoc, int timtheo, int loaithuoc)
         {
-            return taiKhoanRepository.Login(userName, passWord);
+            return thuocRepository.TimKiemThuoc(timkiemthuoc, timtheo, loaithuoc);
         }
-
-
-
-        #endregion
-
-
-
-        #region BenhNhanServices
-        public List<BenhNhan> DanhSachBenhNhan()
-        {
-            return benhNhanRepository.DanhSachBenhNhan();
-        }
-
-        public bool UpdateBenhNhan(BenhNhan benhNhan)
-        {
-            return benhNhanRepository.UpdateBenhNhan(benhNhan);
-        }
-
-
-        public List<BenhNhan> TimKiemBenhNhan(string col, string info)
-        {
-            return benhNhanRepository.TimKiemBenhNhan(col, info);
-        }
-
-        public bool ThemBenhNhan(BenhNhan benhNhan)
-        {
-            return benhNhanRepository.ThemBenhNhan(benhNhan);
-        }
-
-        #endregion
-
-
-
-        #region NhanVienServices
-
-        public List<NhanVien> DanhSachNhanVien()
-        {
-            return nhanVienRepository.DanhSachNhanVien();
-        }
-
-
-
-
-        #endregion
-
-
-
-        #region HinhThucKhamServices
-
-
-        public List<HinhThucKham> DanhSachHinhThucKham()
-        {
-            return hinhThucKhamRepository.DanhSachHinhThucKham();
-        }
-
-
-
-        #endregion
-
-        #region PhieuKhamServices
-        /// <summary>
-        /// load danh sach kham cho fTiepNhanBenhNhan
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <returns></returns>
-        public List<PhieuKhamGUI> DanhSachPhieuKhamGUI(DateTime dateTime)
-        {
-            return phieuKhamRepository.DanhSachPhieuKhamGUI(dateTime);
-        }
-
-        public bool InsertPhieuKham(PhieuKham phieuKham)
-        {
-            return phieuKhamRepository.InsertPhieuKham(phieuKham);
-        }
-
-        public void HuyKham(int maPhieuKham, int nhanVien)
-        {
-            phieuKhamRepository.HuyKham(maPhieuKham, nhanVien);
-        }
-
-        public void CapNhatPhieuKham(PhieuKham phieuKham)
-        {
-            phieuKhamRepository.CapNhatPhieuKham(phieuKham);
-        }
-
-     
-
-        #endregion
-
-     */
-
-        #region ThuocServices
         
-        public List<Thuoc_Loaithuoc> Danhsachthuoc()
+        public int ThemThuoc(int madonthuoc, int mathuoc, int soluong, string huongdan)
         {
-            return thuocRepository.Danhsachthuoc();
+            return chiTietDonThuocRepository.ThemThuoc(madonthuoc, mathuoc, soluong, huongdan);
         }
-
-
-
-        public List<Thuoc_Loaithuoc> Danhsachthuoc(string Thongtin, string Dulieu)
-        {
-            return thuocRepository.Danhsachthuoc(Thongtin,Dulieu);
-        } 
         #endregion
 
-        public List<Vattuyte_DVT> DanhsachVTYT()
-        {
-            return vatTuYTeRepository.DanhsachVTYT();
-        }
 
 
-        public List<Vattuyte_DVT> TimkiemVTYT(string thongtin, string dulieu)
-        {
-            return vatTuYTeRepository.TimkiemVTYT(thongtin,dulieu);
-        }
     }
-    
 }
 
