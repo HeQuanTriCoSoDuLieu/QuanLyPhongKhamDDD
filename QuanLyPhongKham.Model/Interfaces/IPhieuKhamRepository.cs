@@ -12,7 +12,7 @@ namespace QuanLyPhongKham.Model.Interfaces
         List<PhieuKham_BenhNhanTimKiem> KetQuaTimPhieuKham(string ten,int manv);
         List<PhieuKham_BenhNhanChoKham> DanhSachChoKham(int manv,string date);
         List<PhieuKham_BenhNhanTimKiem> DanhSachPhieuKham(int manv);
-        PhieuKham_BenhNhanLamSang ThongTinPhieuKham(int maphieu);
+        List<PhieuKham_BenhNhanLamSang> ThongTinPhieuKham();
         int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn);
         List<PhieuKham_LichSuKham> LichSuKham(int mabn);
         List<PhieuKhamGUI> DanhSachPhieuKhamGUI(DateTime dateTime);

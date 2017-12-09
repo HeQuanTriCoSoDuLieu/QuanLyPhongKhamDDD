@@ -34,5 +34,6 @@ namespace QuanLyPhongKham.Model.DTO
             this.KetLuan = row["KETLUAN"].ToString();
 
         }
+
     }
 }
