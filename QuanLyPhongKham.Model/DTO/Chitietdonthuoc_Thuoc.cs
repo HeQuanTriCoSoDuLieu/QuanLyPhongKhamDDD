@@ -13,14 +13,14 @@ namespace QuanLyPhongKham.Model.DTO
 
         public ChiTietDonThuoc_Thuoc(DataRow row)
         {
-            this.MADONTHUOC = (int)row["MADONTHUOC"];
+            this.MATHUOC = (int)row["MATHUOC"];
             this.TENTHUOC = row["TENTHUOC"].ToString();
             this.SOLUONG = (int)row["SOLUONG"];
             this.HUONGDAN = row["HUONGDAN"].ToString();
         }
 
         public int STT { get; set; }
-        public int MADONTHUOC { get; set; }
+        public int MATHUOC { get; set; }
         public string  TENTHUOC { get; set; }
         public int SOLUONG { get; set; }
         public string HUONGDAN { get; set; }

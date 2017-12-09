@@ -7,34 +7,34 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    public class Thuoc
+    public class Thuoc_Loaithuoc
     {
-        public Thuoc() { }
+        public Thuoc_Loaithuoc() { }
 
-        public Thuoc(int Mathuoc, String Tenthuoc, int Donvitinh, int Loaithuoc, int Soluongton, String Ghichu)
+        public Thuoc_Loaithuoc(int Mathuoc, String Tenthuoc, string Tendonvitinh, string Tenloaithuoc, int Soluongton, String Ghichu)
         {
-            MATHUOC = Mathuoc;
+           this. MATHUOC = Mathuoc;
             TENTHUOC = Tenthuoc;
-            DONVITINH = Donvitinh;
-            LOAITHUOC = Loaithuoc;
+            TENDONVITINH = Tendonvitinh;
+            TENLOAITHUOC = Tenloaithuoc;
             SOLUONGTON = Soluongton;
             GHICHU = Ghichu;
         }
 
-        public Thuoc(DataRow row)
+        public Thuoc_Loaithuoc(DataRow row)
         {
             MATHUOC = (int)row["MATHUOC"];
             TENTHUOC = row["TENTHUOC"].ToString();
-            DONVITINH = (int)row["DONVITINH"];
-            LOAITHUOC = (int)row["LOAITHUOC"];
+            TENDONVITINH = row["TENDVT"].ToString();
+            TENLOAITHUOC = row["TENLOAI"].ToString();
             SOLUONGTON = (int)row["SOLUONGTON"];
             GHICHU = row["GHICHU"].ToString();
         }
 
         public int MATHUOC { get; set; }
         public string TENTHUOC { get; set; }
-        public int DONVITINH { get; set; }
-        public int LOAITHUOC { get; set; }
+        public string TENDONVITINH { get; set; }
+        public string TENLOAITHUOC { get; set; }
         public int SOLUONGTON { get; set; }
         public string GHICHU { get; set; }
     }

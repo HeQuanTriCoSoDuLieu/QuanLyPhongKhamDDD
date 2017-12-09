@@ -43,6 +43,7 @@
             this.dgvdsphieukham.AllowUserToDeleteRows = false;
             this.dgvdsphieukham.AllowUserToResizeColumns = false;
             this.dgvdsphieukham.AllowUserToResizeRows = false;
+            this.dgvdsphieukham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdsphieukham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdsphieukham.Location = new System.Drawing.Point(29, 87);
             this.dgvdsphieukham.Name = "dgvdsphieukham";
@@ -115,6 +116,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvdsphieukham);
             this.Name = "fLichSuKhamBacSi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fLichSuKhamBacSi";
             ((System.ComponentModel.ISupportInitialize)(this.dgvdsphieukham)).EndInit();
             this.ResumeLayout(false);

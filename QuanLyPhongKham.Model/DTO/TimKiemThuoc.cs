@@ -7,35 +7,34 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongKham.Model.DTO
 {
-    public class Thuoc
+    public class TimKiemThuoc
     {
-        public Thuoc() { }
+        public TimKiemThuoc() { }
 
-        public Thuoc(int Mathuoc, String Tenthuoc, int Donvitinh, int Loaithuoc, int Soluongton, String Ghichu)
+        public TimKiemThuoc(int Mathuoc, String Tenthuoc, string Tendvt, string Tenloai, int Soluongton)
         {
             MATHUOC = Mathuoc;
             TENTHUOC = Tenthuoc;
-            DONVITINH = Donvitinh;
-            LOAITHUOC = Loaithuoc;
+            TENDVT = Tendvt;
+            TENLOAI = Tenloai;
             SOLUONGTON = Soluongton;
-            GHICHU = Ghichu;
+
         }
 
-        public Thuoc(DataRow row)
+        public TimKiemThuoc(DataRow row)
         {
             MATHUOC = (int)row["MATHUOC"];
             TENTHUOC = row["TENTHUOC"].ToString();
-            DONVITINH = (int)row["DONVITINH"];
-            LOAITHUOC = (int)row["LOAITHUOC"];
+            TENDVT = row["TENDVT"].ToString();
+            TENLOAI = row["TENLOAI"].ToString();
             SOLUONGTON = (int)row["SOLUONGTON"];
-            GHICHU = row["GHICHU"].ToString();
+
         }
 
         public int MATHUOC { get; set; }
         public string TENTHUOC { get; set; }
-        public int DONVITINH { get; set; }
-        public int LOAITHUOC { get; set; }
+        public string TENDVT { get; set; }
+        public string TENLOAI { get; set; }
         public int SOLUONGTON { get; set; }
-        public string GHICHU { get; set; }
     }
 }

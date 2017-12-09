@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fKhamBenhNhan));
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Lịch sử khám                                  ");
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Khám lâm sàng                              ");
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("X - Quang                                   ");
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Siêu Âm                                     ");
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Xét nghiệm                                ");
-            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Nội sôi                                       ");
-            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Khám cận lâm sàng                       ", new System.Windows.Forms.TreeNode[] {
-            treeNode59,
-            treeNode60,
-            treeNode61,
-            treeNode62});
-            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Đơn thuốc                                       ");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Lịch sử khám                                  ");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Khám lâm sàng                              ");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("X - Quang                                   ");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Siêu Âm                                     ");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Xét nghiệm                                ");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Nội sôi                                       ");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Khám cận lâm sàng                       ", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Đơn thuốc                                       ");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_lichsulamviec = new System.Windows.Forms.ToolStripMenuItem();
@@ -111,6 +111,11 @@
             this.txtchonthuoc = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.dgvdonthuoc = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label19 = new System.Windows.Forms.Label();
             this.btnxacnhanxquang = new System.Windows.Forms.Button();
             this.cbxquang = new System.Windows.Forms.ComboBox();
@@ -558,7 +563,7 @@
             this.dgvlichsukham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvlichsukham.Size = new System.Drawing.Size(763, 386);
             this.dgvlichsukham.TabIndex = 0;
-            this.dgvlichsukham.Click += new System.EventHandler(this.dgvlichsukham_Click);
+            this.dgvlichsukham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlichsukham_CellClick);
             // 
             // label8
             // 
@@ -632,6 +637,7 @@
             this.btnxacnhansieuam.TabIndex = 37;
             this.btnxacnhansieuam.Text = "Xác nhận";
             this.btnxacnhansieuam.UseVisualStyleBackColor = true;
+            this.btnxacnhansieuam.Click += new System.EventHandler(this.btnxacnhansieuam_Click_1);
             // 
             // cbsieuam
             // 
@@ -796,6 +802,7 @@
             this.btnxacnhannoisoi.TabIndex = 37;
             this.btnxacnhannoisoi.Text = "Xác nhận";
             this.btnxacnhannoisoi.UseVisualStyleBackColor = true;
+            this.btnxacnhannoisoi.Click += new System.EventHandler(this.btnxacnhannoisoi_Click_1);
             // 
             // cbnoisoi
             // 
@@ -865,6 +872,7 @@
             this.btnchonthuoc.TabIndex = 7;
             this.btnchonthuoc.Text = "Thêm vào đơn thuốc";
             this.btnchonthuoc.UseVisualStyleBackColor = true;
+            this.btnchonthuoc.Click += new System.EventHandler(this.btnchonthuoc_Click);
             // 
             // btntimthuoc
             // 
@@ -874,6 +882,7 @@
             this.btntimthuoc.TabIndex = 6;
             this.btntimthuoc.Text = "...";
             this.btntimthuoc.UseVisualStyleBackColor = true;
+            this.btntimthuoc.Click += new System.EventHandler(this.btntimthuoc_Click);
             // 
             // txtchonthuoc
             // 
@@ -902,6 +911,12 @@
             this.dgvdonthuoc.AllowUserToResizeRows = false;
             this.dgvdonthuoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdonthuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvdonthuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dgvdonthuoc.Location = new System.Drawing.Point(61, 99);
             this.dgvdonthuoc.MultiSelect = false;
             this.dgvdonthuoc.Name = "dgvdonthuoc";
@@ -909,6 +924,41 @@
             this.dgvdonthuoc.RowHeadersVisible = false;
             this.dgvdonthuoc.Size = new System.Drawing.Size(659, 335);
             this.dgvdonthuoc.TabIndex = 3;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "STT";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 40;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Mã thuốc";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 85;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tên thuốc";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số lượng";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 95;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Hướng dẫn";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 235;
             // 
             // label19
             // 
@@ -928,6 +978,7 @@
             this.btnxacnhanxquang.TabIndex = 32;
             this.btnxacnhanxquang.Text = "Xác nhận";
             this.btnxacnhanxquang.UseVisualStyleBackColor = true;
+            this.btnxacnhanxquang.Click += new System.EventHandler(this.btnxacnhanxquang_Click_1);
             // 
             // cbxquang
             // 
@@ -1183,35 +1234,35 @@
             this.treeviewdvkham.ItemHeight = 25;
             this.treeviewdvkham.Location = new System.Drawing.Point(3, 0);
             this.treeviewdvkham.Name = "treeviewdvkham";
-            treeNode57.Name = "nodelskham";
-            treeNode57.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode57.Text = "Lịch sử khám                                  ";
-            treeNode58.Name = "nodelamsang";
-            treeNode58.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode58.Text = "Khám lâm sàng                              ";
-            treeNode59.Name = "nodexquang";
-            treeNode59.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode59.Text = "X - Quang                                   ";
-            treeNode60.Name = "nodesieuam";
-            treeNode60.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode60.Text = "Siêu Âm                                     ";
-            treeNode61.Name = "nodexetnghiem";
-            treeNode61.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode61.Text = "Xét nghiệm                                ";
-            treeNode62.Name = "nodenoisoi";
-            treeNode62.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode62.Text = "Nội sôi                                       ";
-            treeNode63.Name = "nodekhamcanlamsang";
-            treeNode63.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode63.Text = "Khám cận lâm sàng                       ";
-            treeNode64.Name = "nodedonthuoc";
-            treeNode64.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode64.Text = "Đơn thuốc                                       ";
+            treeNode1.Name = "nodelskham";
+            treeNode1.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "Lịch sử khám                                  ";
+            treeNode2.Name = "nodelamsang";
+            treeNode2.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode2.Text = "Khám lâm sàng                              ";
+            treeNode3.Name = "nodexquang";
+            treeNode3.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode3.Text = "X - Quang                                   ";
+            treeNode4.Name = "nodesieuam";
+            treeNode4.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode4.Text = "Siêu Âm                                     ";
+            treeNode5.Name = "nodexetnghiem";
+            treeNode5.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode5.Text = "Xét nghiệm                                ";
+            treeNode6.Name = "nodenoisoi";
+            treeNode6.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode6.Text = "Nội sôi                                       ";
+            treeNode7.Name = "nodekhamcanlamsang";
+            treeNode7.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode7.Text = "Khám cận lâm sàng                       ";
+            treeNode8.Name = "nodedonthuoc";
+            treeNode8.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode8.Text = "Đơn thuốc                                       ";
             this.treeviewdvkham.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode57,
-            treeNode58,
-            treeNode63,
-            treeNode64});
+            treeNode1,
+            treeNode2,
+            treeNode7,
+            treeNode8});
             this.treeviewdvkham.Size = new System.Drawing.Size(248, 452);
             this.treeviewdvkham.TabIndex = 0;
             this.treeviewdvkham.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeviewdichvukham);
@@ -1247,7 +1298,7 @@
             this.dgvdschokham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvdschokham.Size = new System.Drawing.Size(260, 277);
             this.dgvdschokham.TabIndex = 3;
-            this.dgvdschokham.SelectionChanged += new System.EventHandler(this.dgvdschokham_SelectionChanged);
+            this.dgvdschokham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdschokham_CellClick);
             // 
             // dgvdsphieukham
             // 
@@ -1266,7 +1317,7 @@
             this.dgvdsphieukham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvdsphieukham.Size = new System.Drawing.Size(260, 277);
             this.dgvdsphieukham.TabIndex = 2;
-            this.dgvdsphieukham.SelectionChanged += new System.EventHandler(this.dgvdsphieukham_SelectionChanged);
+            this.dgvdsphieukham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdsphieukham_CellClick);
             // 
             // txttimphieukham
             // 
@@ -1464,5 +1515,10 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnHoanthanh;
         private System.Windows.Forms.ToolStripMenuItem tsmi_lichsulamviec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

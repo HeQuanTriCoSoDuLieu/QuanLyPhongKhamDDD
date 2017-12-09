@@ -72,6 +72,9 @@
     <Compile Include="DTO\PhieuNhap.cs" />
     <Compile Include="DTO\QuocGia.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\Thuoc_Loaithuoc.cs" />
+    <Compile Include="DTO\TimKiemThuoc.cs" />
+    <Compile Include="DTO\Vattuyte_DVT.cs" />
     <Compile Include="Interfaces\ITaiKhoanRepository.cs" />
     <Compile Include="DTO\Thuoc.cs" />
     <Compile Include="DTO\VatTuYTe.cs" />

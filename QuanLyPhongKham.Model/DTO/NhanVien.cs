@@ -10,7 +10,6 @@ namespace QuanLyPhongKham.Model.DTO
     public class NhanVien
     {
 
-
         public NhanVien()
         {
         }
