@@ -9,8 +9,10 @@ namespace QuanLyPhongKham.Model.Interfaces
 {
     public interface IThuocRepository
     {
+
         List<TimKiemThuoc> TimKiemThuoc(string timkiemthuoc, int timtheo, int loaithuoc);
         //List<Thuoc_Loaithuoc> Danhsachthuoc(string Thongtin, string Dulieu);
         //List<Thuoc_Loaithuoc> Danhsachthuoc();
+
     }
 }
