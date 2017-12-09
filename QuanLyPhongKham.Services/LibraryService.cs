@@ -289,11 +289,11 @@ namespace QuanLyPhongKham.Services
         {
             return thuocRepository.TimKiemThuoc(timkiemthuoc, timtheo, loaithuoc);
         }
-        
-        public int ThemThuoc(int madonthuoc, int mathuoc, int soluong, string huongdan)
-        {
-            return chiTietDonThuocRepository.ThemThuoc(madonthuoc, mathuoc, soluong, huongdan);
-        }
+
+        //public int ThemThuoc(int madonthuoc, int mathuoc, int soluong, string huongdan)
+        //{
+        //    return chiTietDonThuocRepository.ThemThuoc(madonthuoc, mathuoc, soluong, huongdan);
+        //}
         #endregion
 
         #region VatTuYTeServices
