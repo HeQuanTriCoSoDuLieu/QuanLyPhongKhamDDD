@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fKhamBenhNhan));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Lịch sử khám                                  ");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Khám lâm sàng                              ");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("X - Quang                                   ");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Siêu Âm                                     ");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Xét nghiệm                                ");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Nội sôi                                       ");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Khám cận lâm sàng                       ", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Đơn thuốc                                       ");
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Lịch sử khám                                  ");
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Khám lâm sàng                              ");
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("X - Quang                                   ");
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Siêu Âm                                     ");
+            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Xét nghiệm                                ");
+            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Nội sôi                                       ");
+            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Khám cận lâm sàng                       ", new System.Windows.Forms.TreeNode[] {
+            treeNode59,
+            treeNode60,
+            treeNode61,
+            treeNode62});
+            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Đơn thuốc                                       ");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_lichsulamviec = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,7 +145,6 @@
             this.btntimphieukham = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelchinh.SuspendLayout();
@@ -546,7 +545,7 @@
             // 
             this.dgvlichsukham.AllowUserToAddRows = false;
             this.dgvlichsukham.AllowUserToDeleteRows = false;
-            this.dgvlichsukham.AllowUserToResizeColumns = false;
+            this.dgvlichsukham.AllowUserToOrderColumns = true;
             this.dgvlichsukham.AllowUserToResizeRows = false;
             this.dgvlichsukham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvlichsukham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -711,10 +710,12 @@
             // 
             this.dgvketquaxetnghiem.AllowUserToAddRows = false;
             this.dgvketquaxetnghiem.AllowUserToDeleteRows = false;
+            this.dgvketquaxetnghiem.AllowUserToOrderColumns = true;
             this.dgvketquaxetnghiem.AllowUserToResizeRows = false;
             this.dgvketquaxetnghiem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvketquaxetnghiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvketquaxetnghiem.Location = new System.Drawing.Point(26, 58);
+            this.dgvketquaxetnghiem.MultiSelect = false;
             this.dgvketquaxetnghiem.Name = "dgvketquaxetnghiem";
             this.dgvketquaxetnghiem.ReadOnly = true;
             this.dgvketquaxetnghiem.RowHeadersVisible = false;
@@ -897,11 +898,12 @@
             // 
             this.dgvdonthuoc.AllowUserToAddRows = false;
             this.dgvdonthuoc.AllowUserToDeleteRows = false;
-            this.dgvdonthuoc.AllowUserToResizeColumns = false;
+            this.dgvdonthuoc.AllowUserToOrderColumns = true;
             this.dgvdonthuoc.AllowUserToResizeRows = false;
             this.dgvdonthuoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdonthuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdonthuoc.Location = new System.Drawing.Point(61, 99);
+            this.dgvdonthuoc.MultiSelect = false;
             this.dgvdonthuoc.Name = "dgvdonthuoc";
             this.dgvdonthuoc.ReadOnly = true;
             this.dgvdonthuoc.RowHeadersVisible = false;
@@ -1040,6 +1042,7 @@
             // txtmabenhnhan
             // 
             this.txtmabenhnhan.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtmabenhnhan.Enabled = false;
             this.txtmabenhnhan.Location = new System.Drawing.Point(110, 75);
             this.txtmabenhnhan.Name = "txtmabenhnhan";
             this.txtmabenhnhan.ReadOnly = true;
@@ -1058,6 +1061,7 @@
             // txtngaykham
             // 
             this.txtngaykham.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtngaykham.Enabled = false;
             this.txtngaykham.Location = new System.Drawing.Point(321, 75);
             this.txtngaykham.Name = "txtngaykham";
             this.txtngaykham.ReadOnly = true;
@@ -1077,6 +1081,7 @@
             // txtmaphieukham
             // 
             this.txtmaphieukham.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtmaphieukham.Enabled = false;
             this.txtmaphieukham.Location = new System.Drawing.Point(110, 38);
             this.txtmaphieukham.Name = "txtmaphieukham";
             this.txtmaphieukham.ReadOnly = true;
@@ -1086,6 +1091,7 @@
             // txttenbenhnhan
             // 
             this.txttenbenhnhan.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txttenbenhnhan.Enabled = false;
             this.txttenbenhnhan.Location = new System.Drawing.Point(321, 38);
             this.txttenbenhnhan.Name = "txttenbenhnhan";
             this.txttenbenhnhan.ReadOnly = true;
@@ -1177,35 +1183,35 @@
             this.treeviewdvkham.ItemHeight = 25;
             this.treeviewdvkham.Location = new System.Drawing.Point(3, 0);
             this.treeviewdvkham.Name = "treeviewdvkham";
-            treeNode1.Name = "nodelskham";
-            treeNode1.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode1.Text = "Lịch sử khám                                  ";
-            treeNode2.Name = "nodelamsang";
-            treeNode2.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode2.Text = "Khám lâm sàng                              ";
-            treeNode3.Name = "nodexquang";
-            treeNode3.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode3.Text = "X - Quang                                   ";
-            treeNode4.Name = "nodesieuam";
-            treeNode4.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode4.Text = "Siêu Âm                                     ";
-            treeNode5.Name = "nodexetnghiem";
-            treeNode5.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode5.Text = "Xét nghiệm                                ";
-            treeNode6.Name = "nodenoisoi";
-            treeNode6.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode6.Text = "Nội sôi                                       ";
-            treeNode7.Name = "nodekhamcanlamsang";
-            treeNode7.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode7.Text = "Khám cận lâm sàng                       ";
-            treeNode8.Name = "nodedonthuoc";
-            treeNode8.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            treeNode8.Text = "Đơn thuốc                                       ";
+            treeNode57.Name = "nodelskham";
+            treeNode57.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode57.Text = "Lịch sử khám                                  ";
+            treeNode58.Name = "nodelamsang";
+            treeNode58.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode58.Text = "Khám lâm sàng                              ";
+            treeNode59.Name = "nodexquang";
+            treeNode59.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode59.Text = "X - Quang                                   ";
+            treeNode60.Name = "nodesieuam";
+            treeNode60.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode60.Text = "Siêu Âm                                     ";
+            treeNode61.Name = "nodexetnghiem";
+            treeNode61.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode61.Text = "Xét nghiệm                                ";
+            treeNode62.Name = "nodenoisoi";
+            treeNode62.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode62.Text = "Nội sôi                                       ";
+            treeNode63.Name = "nodekhamcanlamsang";
+            treeNode63.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode63.Text = "Khám cận lâm sàng                       ";
+            treeNode64.Name = "nodedonthuoc";
+            treeNode64.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            treeNode64.Text = "Đơn thuốc                                       ";
             this.treeviewdvkham.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode7,
-            treeNode8});
+            treeNode57,
+            treeNode58,
+            treeNode63,
+            treeNode64});
             this.treeviewdvkham.Size = new System.Drawing.Size(248, 452);
             this.treeviewdvkham.TabIndex = 0;
             this.treeviewdvkham.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeviewdichvukham);
@@ -1228,7 +1234,7 @@
             // 
             this.dgvdschokham.AllowUserToAddRows = false;
             this.dgvdschokham.AllowUserToDeleteRows = false;
-            this.dgvdschokham.AllowUserToResizeColumns = false;
+            this.dgvdschokham.AllowUserToOrderColumns = true;
             this.dgvdschokham.AllowUserToResizeRows = false;
             this.dgvdschokham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdschokham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1247,7 +1253,7 @@
             // 
             this.dgvdsphieukham.AllowUserToAddRows = false;
             this.dgvdsphieukham.AllowUserToDeleteRows = false;
-            this.dgvdsphieukham.AllowUserToResizeColumns = false;
+            this.dgvdsphieukham.AllowUserToOrderColumns = true;
             this.dgvdsphieukham.AllowUserToResizeRows = false;
             this.dgvdsphieukham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdsphieukham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1451,7 +1457,6 @@
         private System.Windows.Forms.Panel panellichsukham;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvlichsukham;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;

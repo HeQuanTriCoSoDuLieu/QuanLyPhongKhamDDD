@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace QuanLyPhongKham.Winform
         private LibraryService libraryService;
         public int maphieu;
         public string tenbn;
+
         public fLichSuKhamBacSi(int manv)
         {
             InitializeComponent();
@@ -58,10 +60,11 @@ namespace QuanLyPhongKham.Winform
                 else
                 {                  
                     List<LichSuKham_NhanVien> listlskham = new List<LichSuKham_NhanVien>();                
-                    listlskham = libraryService.LichSuKhamNhanVien(cot, txttimkiem.Text, manv);
-                    for (int i = 1; i < listlskham.Count; i++)
+                    listlskham = libraryService.LichSuKhamNhanVien(cot,value, manv);
+                    for (int i = 0; i < listlskham.Count; i++)
                     {
-                        listlskham[i].STT = i;
+                        listlskham[i].STT = i + 1;
+                        listlskham[i].NgayKham = DateTime.Parse(listlskham[i].NgayKham.ToString("dd/MM/yyyy"));
                     }
                     dgvdsphieukham.DataSource = listlskham;
                     dgvdsphieukham.Columns[0].HeaderText = "STT"; dgvdsphieukham.Columns[0].Width = 40;
@@ -81,9 +84,10 @@ namespace QuanLyPhongKham.Winform
             List<LichSuKham_NhanVien> listlskham = new List<LichSuKham_NhanVien>();
 
             listlskham = libraryService.LichSuKhamNhanVien(manv);
-            for (int i = 1; i < listlskham.Count; i++)
+            for (int i = 0; i < listlskham.Count; i++)
             {
-                listlskham[i].STT = i;
+                listlskham[i].STT = i + 1;
+                listlskham[i].NgayKham = DateTime.Parse(listlskham[i].NgayKham.ToString("dd/MM/yyyy"));
             }
             dgvdsphieukham.DataSource = listlskham;
             dgvdsphieukham.Columns[0].HeaderText = "STT"; dgvdsphieukham.Columns[0].Width = 40;
@@ -140,7 +144,7 @@ namespace QuanLyPhongKham.Winform
             {
                 try
                 {
-                    int.Parse(txttimkiem.Text);
+                    int.Parse(s);
                 }
                 catch (Exception)
                 {
