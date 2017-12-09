@@ -31,12 +31,5 @@ namespace QuanLyPhongKham.Repository.ADO
             int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Insert_ChiTietDonThuoc @MAPHIEUKHAM , @MATHUOC , @SOLUONG , @HUONGDAN", new object[] { maphieu, ctdt.MATHUOC, ctdt.SOLUONG,ctdt.HUONGDAN });
             return row;
         }
-
-        // thêm thuốc vào đơn thuốc
-        public int ThemThuoc(int madonthuoc, int mathuoc, int soluong, string huongdan)
-        {
-            int result = DataProvider.Instane.ExecuteNonQuery("EXEC dbo.SP_InsertThuoc @MAPHIEUKHAM , @MATHUOC , @SOLUONG , @HUONGDAN" , new object[] { madonthuoc , mathuoc , soluong , huongdan });
-            return result;
-        }
     }
 }
