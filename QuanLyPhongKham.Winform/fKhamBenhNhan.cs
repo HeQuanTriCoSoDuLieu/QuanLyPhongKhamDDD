@@ -94,15 +94,12 @@ namespace QuanLyPhongKham.Winform
             {
                 List<PhieuKham_BenhNhanTimKiem> list = new List<PhieuKham_BenhNhanTimKiem>();
                 list = libraryService.KetQuaTimPhieuKham(txttimphieukham.Text.Trim(), manv);
-                for (int i = 0; i < list.Count; i++)
-                {
-                    list[i].NgayKham = DateTime.Parse(list[i].NgayKham.ToString("dd/MM/yyyy"));
-                }
                 dgvdsphieukham.DataSource = list;
                 dgvdsphieukham.Columns[0].HeaderText = "Mã phiếu"; dgvdsphieukham.Columns[0].Width = 40;
                 dgvdsphieukham.Columns[1].HeaderText = "Tên bệnh nhân"; dgvdsphieukham.Columns[1].Width = 105;
                 dgvdsphieukham.Columns[2].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[2].Width = 70;
                 dgvdsphieukham.Columns[3].HeaderText = "Đã Khám"; dgvdsphieukham.Columns[3].Width = 40;
+                dgvdsphieukham.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
                 dgvdsphieukham.RowHeadersVisible = false;
                 dgvdsphieukham.Rows[0].Selected = false;
             }
