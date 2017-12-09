@@ -12,7 +12,7 @@ namespace QuanLyPhongKham.Repository.ADO
     {
         public int ThemDonThuoc(DonThuoc DonThuoc)
         {
-            int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Insert_DonThuoc", new object[] { DonThuoc.MAPHIEUKHAM, DonThuoc.TONGCONG } );
+            int row = DataProvider.Instane.ExecuteNonQuery("EXECUTE dbo.SP_Insert_DonThuoc @MAPHIEUKHAM", new object[] { DonThuoc.MAPHIEUKHAM } );
             return row;
         }
     }

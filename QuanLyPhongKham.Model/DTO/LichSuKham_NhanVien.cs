@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace QuanLyPhongKham.Model.DTO
 {
     public class LichSuKham_NhanVien
-    {
+    {      
         public int STT { get; set; }
         public int MaBn { get; set; }
         public int MaPhieuKham { get; set; }
@@ -29,7 +30,7 @@ namespace QuanLyPhongKham.Model.DTO
         {
             this.MaBn = (int)row["MABN"];
             this.MaPhieuKham = (int)row["MAPHIEUKHAM"];
-            this.HoTen = row["HOTEN"].ToString();
+            this.HoTen = row["HOTEN"].ToString();             
             this.NgayKham = (DateTime)row["NGAYKHAM"];
             this.DaThanhToan = (bool)row["DATHANHTOAN"];
         }

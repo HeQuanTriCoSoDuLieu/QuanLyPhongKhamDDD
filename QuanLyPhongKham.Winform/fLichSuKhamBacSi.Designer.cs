@@ -43,6 +43,7 @@
             this.dgvdsphieukham.AllowUserToDeleteRows = false;
             this.dgvdsphieukham.AllowUserToResizeColumns = false;
             this.dgvdsphieukham.AllowUserToResizeRows = false;
+            this.dgvdsphieukham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdsphieukham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdsphieukham.Location = new System.Drawing.Point(29, 87);
             this.dgvdsphieukham.Name = "dgvdsphieukham";
@@ -70,7 +71,7 @@
             "Mã bệnh nhân",
             "Họ tên bệnh nhân",
             "Mã phiếu khám",
-            "Ngày khám"});
+            "Ngày khám (yyyy-mm-dd)"});
             this.cbxtimkiem.Location = new System.Drawing.Point(124, 25);
             this.cbxtimkiem.Name = "cbxtimkiem";
             this.cbxtimkiem.Size = new System.Drawing.Size(149, 21);
@@ -115,6 +116,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvdsphieukham);
             this.Name = "fLichSuKhamBacSi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fLichSuKhamBacSi";
             ((System.ComponentModel.ISupportInitialize)(this.dgvdsphieukham)).EndInit();
             this.ResumeLayout(false);

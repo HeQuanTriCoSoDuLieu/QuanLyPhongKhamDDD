@@ -380,7 +380,7 @@
             this.btTimkiemkhothuoc.TabIndex = 38;
             this.btTimkiemkhothuoc.Text = "Tìm kiếm";
             this.btTimkiemkhothuoc.UseVisualStyleBackColor = true;
-            this.btTimkiemkhothuoc.Click += new System.EventHandler(this.btTimkiemkhothuoc_Click);
+            //this.btTimkiemkhothuoc.Click += new System.EventHandler(this.btTimkiemkhothuoc_Click);
             // 
             // txttimkiemkhothuoc
             // 

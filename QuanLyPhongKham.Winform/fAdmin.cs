@@ -67,21 +67,21 @@ namespace QuanLyPhongKham.Winform
             panelkhothuoc.Visible = false;
             panelkhovattuyte.Visible = true;
         }
-        private void Load_fadminThuoc()
-        {
-            Tableketquatimkiemthuoc.DataSource = libraryService.Danhsachthuoc();
-            Tableketquatimkiemthuoc.Columns[0].HeaderText = "Mã thuốc"; Tableketquatimkiemthuoc.Columns[0].Width = 50;
-            Tableketquatimkiemthuoc.Columns[1].HeaderText = "Tên thuốc"; Tableketquatimkiemthuoc.Columns[1].Width = 200;
-            Tableketquatimkiemthuoc.Columns[2].HeaderText = "Đơn vị tính"; Tableketquatimkiemthuoc.Columns[2].Width = 60;
-            Tableketquatimkiemthuoc.Columns[3].HeaderText = "Loại thuốc"; Tableketquatimkiemthuoc.Columns[3].Width = 250;
-            Tableketquatimkiemthuoc.Columns[4].HeaderText = "Số lượng"; Tableketquatimkiemthuoc.Columns[4].Width = 50;
-            Tableketquatimkiemthuoc.Columns[5].HeaderText = "Ghi chú"; Tableketquatimkiemthuoc.Columns[5].Width = 385;
-            Tableketquatimkiemthuoc.RowHeadersVisible = false;
-        }
+        //private void Load_fadminThuoc()
+        //{
+        //    Tableketquatimkiemthuoc.DataSource = libraryService.Danhsachthuoc();
+        //    Tableketquatimkiemthuoc.Columns[0].HeaderText = "Mã thuốc"; Tableketquatimkiemthuoc.Columns[0].Width = 50;
+        //    Tableketquatimkiemthuoc.Columns[1].HeaderText = "Tên thuốc"; Tableketquatimkiemthuoc.Columns[1].Width = 200;
+        //    Tableketquatimkiemthuoc.Columns[2].HeaderText = "Đơn vị tính"; Tableketquatimkiemthuoc.Columns[2].Width = 60;
+        //    Tableketquatimkiemthuoc.Columns[3].HeaderText = "Loại thuốc"; Tableketquatimkiemthuoc.Columns[3].Width = 250;
+        //    Tableketquatimkiemthuoc.Columns[4].HeaderText = "Số lượng"; Tableketquatimkiemthuoc.Columns[4].Width = 50;
+        //    Tableketquatimkiemthuoc.Columns[5].HeaderText = "Ghi chú"; Tableketquatimkiemthuoc.Columns[5].Width = 385;
+        //    Tableketquatimkiemthuoc.RowHeadersVisible = false;
+        //}
 
         private void fAdmin_Load(object sender, EventArgs e)
         {
-            Load_fadminThuoc();
+            //Load_fadminThuoc();
             Load_fadminVTYT();
         }
 
@@ -99,43 +99,43 @@ namespace QuanLyPhongKham.Winform
             }
         }
 
-        private void btTimkiemkhothuoc_Click(object sender, EventArgs e)
-        {
-            string col = "";
-            switch(comboBoxTimtheokhothuoc.SelectedIndex)
-            {
-                case 0:
-                    col = "MATHUOC";break;
-                case 1:
-                    col = "TENTHUOC";break;
-                case 2:
-                    col = "TENLOAI";break;
-            }
-            if (txttimkiemkhothuoc.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (libraryService.Danhsachthuoc(col, txttimkiemkhothuoc.Text.Trim()).Count == 0)
-                {
-                    MessageBox.Show("Không tìm thấy dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
+        //private void btTimkiemkhothuoc_Click(object sender, EventArgs e)
+        //{
+        //    string col = "";
+        //    switch(comboBoxTimtheokhothuoc.SelectedIndex)
+        //    {
+        //        case 0:
+        //            col = "MATHUOC";break;
+        //        case 1:
+        //            col = "TENTHUOC";break;
+        //        case 2:
+        //            col = "TENLOAI";break;
+        //    }
+        //    if (txttimkiemkhothuoc.Text == "")
+        //    {
+        //        MessageBox.Show("Vui lòng nhập thông tin cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    else
+        //    {
+        //        if (libraryService.Danhsachthuoc(col, txttimkiemkhothuoc.Text.Trim()).Count == 0)
+        //        {
+        //            MessageBox.Show("Không tìm thấy dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //        else
+        //        {
 
-                    Tableketquatimkiemthuoc.DataSource = libraryService.Danhsachthuoc(col, txttimkiemkhothuoc.Text.Trim());
-                    Tableketquatimkiemthuoc.Columns[0].HeaderText = "Mã thuốc"; Tableketquatimkiemthuoc.Columns[0].Width = 50;
-                    Tableketquatimkiemthuoc.Columns[1].HeaderText = "Tên thuốc"; Tableketquatimkiemthuoc.Columns[1].Width = 200;
-                    Tableketquatimkiemthuoc.Columns[2].HeaderText = "Đơn vị tính"; Tableketquatimkiemthuoc.Columns[2].Width = 60;
-                    Tableketquatimkiemthuoc.Columns[3].HeaderText = "Loại thuốc"; Tableketquatimkiemthuoc.Columns[3].Width = 250;
-                    Tableketquatimkiemthuoc.Columns[4].HeaderText = "Số lượng"; Tableketquatimkiemthuoc.Columns[4].Width = 50;
-                    Tableketquatimkiemthuoc.Columns[5].HeaderText = "Ghi chú"; Tableketquatimkiemthuoc.Columns[5].Width = 385;
-                    Tableketquatimkiemthuoc.RowHeadersVisible = false;
+        //            Tableketquatimkiemthuoc.DataSource = libraryService.Danhsachthuoc(col, txttimkiemkhothuoc.Text.Trim());
+        //            Tableketquatimkiemthuoc.Columns[0].HeaderText = "Mã thuốc"; Tableketquatimkiemthuoc.Columns[0].Width = 50;
+        //            Tableketquatimkiemthuoc.Columns[1].HeaderText = "Tên thuốc"; Tableketquatimkiemthuoc.Columns[1].Width = 200;
+        //            Tableketquatimkiemthuoc.Columns[2].HeaderText = "Đơn vị tính"; Tableketquatimkiemthuoc.Columns[2].Width = 60;
+        //            Tableketquatimkiemthuoc.Columns[3].HeaderText = "Loại thuốc"; Tableketquatimkiemthuoc.Columns[3].Width = 250;
+        //            Tableketquatimkiemthuoc.Columns[4].HeaderText = "Số lượng"; Tableketquatimkiemthuoc.Columns[4].Width = 50;
+        //            Tableketquatimkiemthuoc.Columns[5].HeaderText = "Ghi chú"; Tableketquatimkiemthuoc.Columns[5].Width = 385;
+        //            Tableketquatimkiemthuoc.RowHeadersVisible = false;
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
         private void Load_fadminVTYT()
         {
             TableKhovattuyte.DataSource = libraryService.DanhsachVTYT();
