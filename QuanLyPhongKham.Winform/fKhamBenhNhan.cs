@@ -22,12 +22,17 @@ namespace QuanLyPhongKham.Winform
         #region bien toan cuc
         private LibraryService libraryService;
         private static List<PhieuKham_BenhNhanTimKiem> listtimkiem;
-        private static List<PhieuKham_BenhNhanLamSang> listphieukhambenhnhan; 
+        private static List<PhieuKham_BenhNhanLamSang> listphieukhambenhnhan;
 
-        int manv;
+        int manv, sttMaPhieu;
+
+        private static List<ChiTietDonThuoc_Thuoc> sttListChiTietDonThuoc;
+
         string link = @"F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\File";   // địa chỉ file kết quả
         public string tenthuoc;
         public int mathuocft;
+
+
         #endregion
 
         #region Constructor 
@@ -173,6 +178,7 @@ namespace QuanLyPhongKham.Winform
             foreach (DataGridViewRow row in dgvdsphieukham.SelectedRows)
             {
                 //đổ dữ liệu lên thông tin phiếu khám + panel lâm sàng
+                sttMaPhieu = (int)row.Cells[0].Value;
                 int maphieu = (int)row.Cells[0].Value;
                 txttenbenhnhan.Text = row.Cells[1].Value.ToString();
                 PhieuKham_BenhNhanLamSang pk = listphieukhambenhnhan.Where(p => p.MaPhieuKham == maphieu).Single();
@@ -193,15 +199,18 @@ namespace QuanLyPhongKham.Winform
                 //đổ dữ liệu vào bảng đơn thuốc
 
                 List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
-                listdonthuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
+                //listdonthuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
+                sttListChiTietDonThuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
                 dgvdonthuoc.Rows.Clear();
-                for (int i = 0; i < listdonthuoc.Count; i++)
+                //for (int i = 0; i < listdonthuoc.Count; i++)
+                //{
+                //    sttListChiTietDonThuoc[i].STT = i + 1;
+                //}
+                int stt = 1;
+                foreach (var item in sttListChiTietDonThuoc)
                 {
-                    listdonthuoc[i].STT = i + 1;
-                }
-                foreach (var item in listdonthuoc)
-                {
-                    dgvdonthuoc.Rows.Add(item.STT, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
+                    dgvdonthuoc.Rows.Add(stt++, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
+
                 }
 
 
@@ -454,21 +463,42 @@ namespace QuanLyPhongKham.Winform
             {
                 int soluong = int.Parse(txtsoluongthuoc.Text);
                 if (soluong > 0)
-                {                   
+                {
                     int maphieu = int.Parse(txtmaphieukham.Text);
                     int stt = dgvdonthuoc.Rows.Count;
                     List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
+
+                    ChiTietDonThuoc_Thuoc ctdtt = new ChiTietDonThuoc_Thuoc();
+                    ctdtt.MATHUOC = mathuocft;
+                    ctdtt.TENTHUOC = tenthuoc;
+                    ctdtt.SOLUONG = int.Parse(txtsoluongthuoc.Text);
+                    ctdtt.HUONGDAN = txtghichudonthuoc.Text;
+                    sttListChiTietDonThuoc.Add(ctdtt);
+
+
+
                     listdonthuoc = libraryService.DanhSachChiTietDonThuoc(maphieu);
+
+                    //int stt = dgvdonthuoc.RowCount;
+                    //foreach (ChiTietDonThuoc_Thuoc item in listthuoct)
+                    //{
+                    //    dgvdonthuoc.Rows.Add(++stt, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
+                    //}
+
+
+
 
                     if (stt < dgvdonthuoc.Rows.Count)
                     {
                         stt = dgvdonthuoc.Rows.Count;
                         dgvdonthuoc.Rows.Add(stt, mathuocft, tenthuoc, txtsoluongthuoc.Text, txtghichudonthuoc.Text);
+                        //LoadDonThuoc(listthuoct);
                         stt = stt + 1;
                     }
                     else
                     {
                         dgvdonthuoc.Rows.Add(stt + 1, mathuocft, tenthuoc, txtsoluongthuoc.Text, txtghichudonthuoc.Text);
+                        //LoadDonThuoc(listthuoct);
                         stt = stt + 1;
                     }
                 }
@@ -631,6 +661,44 @@ namespace QuanLyPhongKham.Winform
                     }
                 }
         }
+
+        private void dgvdonthuoc_MouseClick(object sender, MouseEventArgs e)
+        {
+            ContextMenu ctx = new ContextMenu();
+            MenuItem mItem = new MenuItem();
+            mItem.Text = "Xóa thuốc";
+            mItem.Click += MItem_Click;
+            ctx.MenuItems.Add(mItem);
+
+            if (e.Button == MouseButtons.Right)
+            {
+                System.Drawing.Point pt = new System.Drawing.Point(e.X, e.Y);
+                ctx.Show(dgvdonthuoc, pt);
+            }
+        }
+
+        private void MItem_Click(object sender, EventArgs e)
+        {
+            int maThuoc = (int)dgvdonthuoc.SelectedRows[0].Cells[1].Value;
+            dgvdonthuoc.Rows.RemoveAt(dgvdonthuoc.CurrentRow.Index);
+            
+            if (dgvdonthuoc.SelectedRows.Count > 0)
+            {               
+                var dt = sttListChiTietDonThuoc.Find(p => p.MATHUOC == maThuoc);
+                if (dt != null)
+                {
+                    sttListChiTietDonThuoc.Remove(dt);
+                }
+                dgvdonthuoc.Rows.Clear();
+                int i = 1;
+                foreach (var item in sttListChiTietDonThuoc)
+                {
+                    dgvdonthuoc.Rows.Add(i++, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
+                }
+            }
+        }
+
+
 
         #endregion
 
@@ -842,6 +910,7 @@ namespace QuanLyPhongKham.Winform
             return listdt;
         }
 
+
         /// <summary>
         /// Hàm thêm đơn thuốc vào database
         /// </summary>
@@ -851,6 +920,7 @@ namespace QuanLyPhongKham.Winform
         {
             return libraryService.ThemDonThuoc(donthuoc);
         }
+
 
         #endregion
 
