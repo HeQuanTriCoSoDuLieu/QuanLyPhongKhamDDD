@@ -23,7 +23,7 @@ namespace QuanLyPhongKham.Winform
         private LibraryService libraryService;
         int manv, sttMaPhieu;
         
-        string link = @"F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\File";   // địa chỉ file kết quả
+        string link = @"E:\Hoc Tap\QuanLyPhongKham\";   // địa chỉ file kết quả
         public string tenthuoc;
         public int mathuocft;
 
@@ -416,34 +416,38 @@ namespace QuanLyPhongKham.Winform
             string getmacls = cbxetnghiem.SelectedValue.ToString();
             string getphieunhap = txtmaphieukham.Text;
             string linkxetnghiem = "File\\Xet-nghiem\\XN";
-            int result = libraryService.InsertChiTietCLS(getphieunhap, getmacls, linkxetnghiem);
 
             string mabn = txtmabenhnhan.Text;
-            ChiTietCLS cls = new ChiTietCLS();
-            cls = libraryService.LayketQua(getphieunhap, getmacls);
-            string ketqua = cls.KetQua.ToString();
-            string linkdanxetnghiem = @ketqua + "" + mabn + "" + getphieunhap;
-
-            if (result > 0)
+            if(getphieunhap != "")
             {
-                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                // đưa dữ liệu từ file vào sieu am
-                // đọc từ file word
+                int result = libraryService.InsertChiTietCLS(getphieunhap, getmacls, linkxetnghiem);
+                ChiTietCLS cls = new ChiTietCLS();
+                cls = libraryService.LayketQua(getphieunhap, getmacls);
+                string ketqua = cls.KetQua.ToString();
+                string linkdanxetnghiem = @ketqua + "" + mabn + "" + getphieunhap;
 
-                try
+                if (result > 0)
                 {
-                    string file = link + "" + @linkdanxetnghiem + "" + @"\ketqua.xlsx";
-                    dgvketquaxetnghiem.DataSource = libraryService.GetCLS(file);
-                    dgvdsphieukham.RowHeadersVisible = false;
+                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Cập nhật thất bại, đã có sẳn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // đưa dữ liệu từ file vào sieu am
+                    // đọc từ file word
+
+                    try
+                    {
+                        string file = link + "" + @linkdanxetnghiem + "" + @"\ketqua.xlsx";
+                        dgvketquaxetnghiem.DataSource = libraryService.GetCLS(file);
+                        dgvdsphieukham.RowHeadersVisible = false;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Cập nhật thất bại, đã có sẳn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
+
 
         }
         private void btntimthuoc_Click(object sender, EventArgs e)
@@ -516,16 +520,17 @@ namespace QuanLyPhongKham.Winform
         {
             string getmacls = cbxquang.SelectedValue.ToString();
             string getphieunhap = txtmaphieukham.Text;
-            string linkxquang = "File\\X-quang\\XQ";
-            int result = libraryService.InsertChiTietCLS(getphieunhap, getmacls, linkxquang);
             string mabn = txtmabenhnhan.Text;
-            ChiTietCLS cls = new ChiTietCLS();
-            cls = libraryService.LayketQua(getphieunhap, getmacls);
+            string linkxquang = "File\\X-quang\\XQ";
+            if (getphieunhap != "")
+            {
+                int result = libraryService.InsertChiTietCLS(getphieunhap, getmacls, linkxquang);
+                ChiTietCLS cls = new ChiTietCLS();
+                cls = libraryService.LayketQua(getphieunhap, getmacls);
 
-            string ketqua = cls.KetQua.ToString();
+                string ketqua = cls.KetQua.ToString();
 
-            string linkdanxquang = @ketqua + "" + mabn + "" + getphieunhap;
-
+                string linkdanxquang = @ketqua + "" + mabn + "" + getphieunhap;
                 if (result > 0)
                 {
                     MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -549,24 +554,30 @@ namespace QuanLyPhongKham.Winform
                     }
                     catch
                     {
-                        MessageBox.Show("Cập nhật thất bại, đã có sẳn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cập nhật thất bại, đã có sẳn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Không được để trống phiếu khám", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         private void btnxacnhannoisoi_Click_1(object sender, EventArgs e)
         {
             string getmacls = cbnoisoi.SelectedValue.ToString();
             string getphieunhap = txtmaphieukham.Text;
-            string linknoisoi = "File\\Noi-soi\\NS";
-            int result = libraryService.InsertChiTietCLS(getphieunhap, getmacls, linknoisoi);
+            string linknoisoi = "File\\Noi-soi\\NS";           
             string mabn = txtmabenhnhan.Text;
-            ChiTietCLS cls = new ChiTietCLS();
-            cls = libraryService.LayketQua(getphieunhap, getmacls);
-            string ketqua = cls.KetQua.ToString();
 
-            string linkdannoisoi = @ketqua + "" + mabn + "" + getphieunhap;
-
+            if (getphieunhap != "")
+            {
+                int result = libraryService.InsertChiTietCLS(getphieunhap, getmacls, linknoisoi);
+                ChiTietCLS cls = new ChiTietCLS();
+                cls = libraryService.LayketQua(getphieunhap, getmacls);
+                string ketqua = cls.KetQua.ToString();
+                string linkdannoisoi = @ketqua + "" + mabn + "" + getphieunhap;  
                 if (result > 0)
                 {
                     MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -606,20 +617,29 @@ namespace QuanLyPhongKham.Winform
                     }
                 }
 
+            }
+            else
+            {
+                MessageBox.Show("Không được để trống phiếu khám", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
         private void btnxacnhansieuam_Click_1(object sender, EventArgs e)
         {
             string getmacls = cbsieuam.SelectedValue.ToString();
             string getphieunhap = txtmaphieukham.Text;
             string linksieuam = "File\\Sieu-am\\SA";
-            int result = libraryService.InsertChiTietCLS(getphieunhap, getmacls, linksieuam);
-
+            
             string mabn = txtmabenhnhan.Text;
-            ChiTietCLS cls = new ChiTietCLS();
-            cls = libraryService.LayketQua(getphieunhap, getmacls);
-            string ketqua = cls.KetQua.ToString();
+            if(getphieunhap != "")
+            {
+                int result = libraryService.InsertChiTietCLS(getphieunhap, getmacls, linksieuam);
+                ChiTietCLS cls = new ChiTietCLS();
+                cls = libraryService.LayketQua(getphieunhap, getmacls);
+                string ketqua = cls.KetQua.ToString();
 
-            string linkdansieuam = @ketqua + "" + mabn + "" + getphieunhap;
+                string linkdansieuam = @ketqua + "" + mabn + "" + getphieunhap;
 
                 if (result > 0)
                 {
@@ -659,8 +679,47 @@ namespace QuanLyPhongKham.Winform
                         MessageBox.Show("Cập nhật thất bại, đã có sẳn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Không được để trống phiếu khám", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        private void dgvdonthuoc_MouseClick(object sender, MouseEventArgs e)
+        {
+            ContextMenu ctx = new ContextMenu();
+            MenuItem mItem = new MenuItem();
+            mItem.Text = "Xóa thuốc";
+            mItem.Click += MItem_Click;
+            ctx.MenuItems.Add(mItem);
 
+            if (e.Button == MouseButtons.Right)
+            {
+                System.Drawing.Point pt = new System.Drawing.Point(e.X, e.Y);
+                ctx.Show(dgvdonthuoc, pt);
+            }
+        }
+        private void MItem_Click(object sender, EventArgs e)
+        {
+            int maThuoc = (int)dgvdonthuoc.SelectedRows[0].Cells[1].Value;
+            dgvdonthuoc.Rows.RemoveAt(dgvdonthuoc.CurrentRow.Index);
+
+            if (dgvdonthuoc.SelectedRows.Count > 0)
+            {
+
+                var dt = sttListChiTietDonThuoc.Find(p => p.MATHUOC == maThuoc);
+                if (dt != null)
+                {
+                    sttListChiTietDonThuoc.Remove(dt);
+                }
+                dgvdonthuoc.Rows.Clear();
+                int i = 1;
+                foreach (var item in sttListChiTietDonThuoc)
+                {
+                    dgvdonthuoc.Rows.Add(i++, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
+                }
+            }
+        }
         #endregion
 
         #region Method
@@ -888,41 +947,5 @@ namespace QuanLyPhongKham.Winform
         }
 
         #endregion
-
-        private void dgvdonthuoc_MouseClick(object sender, MouseEventArgs e)
-        {
-            ContextMenu ctx = new ContextMenu();
-            MenuItem mItem = new MenuItem();
-            mItem.Text = "Xóa thuốc";
-            mItem.Click += MItem_Click;
-            ctx.MenuItems.Add(mItem);
-
-            if (e.Button == MouseButtons.Right)
-            {
-                System.Drawing.Point pt = new System.Drawing.Point(e.X, e.Y);
-                ctx.Show(dgvdonthuoc, pt);
-            }
-        }
-
-        private void MItem_Click(object sender, EventArgs e)
-        {
-            dgvdonthuoc.Rows.RemoveAt(dgvdonthuoc.CurrentRow.Index);
-            
-            if (dgvdonthuoc.SelectedRows.Count > 0)
-            {
-                int maThuoc= (int)dgvdonthuoc.SelectedRows[0].Cells[1].Value;
-                var dt = sttListChiTietDonThuoc.Find(p => p.MATHUOC == maThuoc);
-                if (dt!= null)
-                {
-                    sttListChiTietDonThuoc.Remove(dt);
-                }
-                dgvdonthuoc.Rows.Clear();
-                int i = 1;
-                foreach (var item in sttListChiTietDonThuoc)
-                {
-                    dgvdonthuoc.Rows.Add(i++, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
-                }
-            }
-        }
     }
 }
