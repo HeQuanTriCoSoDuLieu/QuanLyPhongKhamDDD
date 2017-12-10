@@ -45,11 +45,12 @@
             this.dgvdsphieukham.AllowUserToResizeRows = false;
             this.dgvdsphieukham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdsphieukham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdsphieukham.Location = new System.Drawing.Point(29, 87);
+            this.dgvdsphieukham.Location = new System.Drawing.Point(27, 80);
+            this.dgvdsphieukham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvdsphieukham.Name = "dgvdsphieukham";
             this.dgvdsphieukham.ReadOnly = true;
             this.dgvdsphieukham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdsphieukham.Size = new System.Drawing.Size(531, 360);
+            this.dgvdsphieukham.Size = new System.Drawing.Size(531, 443);
             this.dgvdsphieukham.TabIndex = 3;
             this.dgvdsphieukham.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvdsphieukham_MouseDoubleClick);
             // 
@@ -57,7 +58,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(203, 68);
+            this.label2.Location = new System.Drawing.Point(205, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 16);
             this.label2.TabIndex = 4;
@@ -71,27 +73,30 @@
             "Mã bệnh nhân",
             "Họ tên bệnh nhân",
             "Mã phiếu khám",
-            "Ngày khám (yyyy-mm-dd)"});
-            this.cbxtimkiem.Location = new System.Drawing.Point(124, 25);
+            "Ngày khám (yyyy/MM/dd)"});
+            this.cbxtimkiem.Location = new System.Drawing.Point(99, 15);
+            this.cbxtimkiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxtimkiem.Name = "cbxtimkiem";
-            this.cbxtimkiem.Size = new System.Drawing.Size(149, 21);
+            this.cbxtimkiem.Size = new System.Drawing.Size(186, 24);
             this.cbxtimkiem.TabIndex = 38;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(26, 29);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(23, 20);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.Size = new System.Drawing.Size(68, 16);
             this.label11.TabIndex = 37;
-            this.label11.Text = "Tìm kiếm theo";
+            this.label11.Text = "Tìm theo";
             // 
             // btntimkiem
             // 
-            this.btntimkiem.Location = new System.Drawing.Point(485, 24);
+            this.btntimkiem.Location = new System.Drawing.Point(483, 13);
+            this.btntimkiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(75, 23);
+            this.btntimkiem.Size = new System.Drawing.Size(75, 28);
             this.btntimkiem.TabIndex = 36;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = true;
@@ -99,22 +104,26 @@
             // 
             // txttimkiem
             // 
-            this.txttimkiem.Location = new System.Drawing.Point(279, 25);
+            this.txttimkiem.Location = new System.Drawing.Point(293, 15);
+            this.txttimkiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttimkiem.Multiline = true;
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(190, 20);
+            this.txttimkiem.Size = new System.Drawing.Size(182, 24);
             this.txttimkiem.TabIndex = 35;
             // 
             // fLichSuKhamBacSi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 471);
+            this.ClientSize = new System.Drawing.Size(590, 553);
             this.Controls.Add(this.cbxtimkiem);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btntimkiem);
             this.Controls.Add(this.txttimkiem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvdsphieukham);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fLichSuKhamBacSi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fLichSuKhamBacSi";

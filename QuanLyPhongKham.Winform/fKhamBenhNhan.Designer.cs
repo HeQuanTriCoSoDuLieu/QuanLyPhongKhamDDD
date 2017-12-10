@@ -922,8 +922,10 @@
             this.dgvdonthuoc.Name = "dgvdonthuoc";
             this.dgvdonthuoc.ReadOnly = true;
             this.dgvdonthuoc.RowHeadersVisible = false;
+            this.dgvdonthuoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvdonthuoc.Size = new System.Drawing.Size(659, 335);
             this.dgvdonthuoc.TabIndex = 3;
+            this.dgvdonthuoc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvdonthuoc_MouseClick);
             // 
             // Column1
             // 
