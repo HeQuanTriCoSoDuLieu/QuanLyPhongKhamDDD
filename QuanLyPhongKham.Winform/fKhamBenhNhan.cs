@@ -21,13 +21,19 @@ namespace QuanLyPhongKham.Winform
     {
         #region bien toan cuc
         private LibraryService libraryService;
+        private static List<PhieuKham_BenhNhanTimKiem> listtimkiem;
+        private static List<PhieuKham_BenhNhanLamSang> listphieukhambenhnhan;
+
         int manv, sttMaPhieu;
-        
-        string link = @"E:\Hoc Tap\QuanLyPhongKham\";   // địa chỉ file kết quả
+
+
+        private static List<ChiTietDonThuoc_Thuoc> sttListChiTietDonThuoc;
+
+        string link = @"F:\STUDY\ĐỒ ÁN NĂM  3\QUANLYPHONGKHAM\File";   // địa chỉ file kết quả
+
         public string tenthuoc;
         public int mathuocft;
 
-        private static List<ChiTietDonThuoc_Thuoc> sttListChiTietDonThuoc;
 
         #endregion
 
@@ -36,9 +42,10 @@ namespace QuanLyPhongKham.Winform
         {
             this.manv = manv;
             InitializeComponent();
-
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
-
+            //khởi tạo list
+            listtimkiem = libraryService.DanhSachPhieuKham(manv);
+            listphieukhambenhnhan = libraryService.ThongTinPhieuKham();
             //add parent 
             panellamsang.Parent = panelchinh;
             panelsieuam.Parent = panelchinh;
@@ -94,15 +101,12 @@ namespace QuanLyPhongKham.Winform
             {
                 List<PhieuKham_BenhNhanTimKiem> list = new List<PhieuKham_BenhNhanTimKiem>();
                 list = libraryService.KetQuaTimPhieuKham(txttimphieukham.Text.Trim(), manv);
-                for (int i = 0; i < list.Count; i++)
-                {
-                    list[i].NgayKham = DateTime.Parse(list[i].NgayKham.ToString("dd/MM/yyyy"));
-                }
                 dgvdsphieukham.DataSource = list;
                 dgvdsphieukham.Columns[0].HeaderText = "Mã phiếu"; dgvdsphieukham.Columns[0].Width = 40;
                 dgvdsphieukham.Columns[1].HeaderText = "Tên bệnh nhân"; dgvdsphieukham.Columns[1].Width = 105;
                 dgvdsphieukham.Columns[2].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[2].Width = 70;
                 dgvdsphieukham.Columns[3].HeaderText = "Đã Khám"; dgvdsphieukham.Columns[3].Width = 40;
+                dgvdsphieukham.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
                 dgvdsphieukham.RowHeadersVisible = false;
                 dgvdsphieukham.Rows[0].Selected = false;
             }
@@ -115,9 +119,10 @@ namespace QuanLyPhongKham.Winform
         {
             foreach (DataGridViewRow row in dgvdschokham.SelectedRows)
             {
+                // đổ dữ liệu vào textbox
                 int maphieu = (int)row.Cells[1].Value;
                 txttenbenhnhan.Text = row.Cells[2].Value.ToString();
-                PhieuKham_BenhNhanLamSang pk = libraryService.ThongTinPhieuKham(maphieu); ;
+                PhieuKham_BenhNhanLamSang pk = listphieukhambenhnhan.Where(b => b.MaPhieuKham == maphieu).Single();
                 txtmaphieukham.Text = pk.MaPhieuKham.ToString();
                 txtmabenhnhan.Text = pk.MaBN.ToString();
                 txtngaykham.Text = pk.NgayKham.ToString("dd/MM/yyyy");
@@ -154,9 +159,7 @@ namespace QuanLyPhongKham.Winform
                 listlskham = libraryService.LichSuKham(mabn);
                 for (int i = 0; i < listlskham.Count; i++)
                 {
-                    listlskham[i].STT = i + 1;
-                    listlskham[i].NgayKham = DateTime.ParseExact(listlskham[i].NgayKham.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-
+                    listlskham[i].STT = i + 1;                
                 }
                 dgvlichsukham.DataSource = listlskham;
                 dgvlichsukham.Columns[0].HeaderText = "STT"; dgvlichsukham.Columns[0].Width = 40;
@@ -164,6 +167,7 @@ namespace QuanLyPhongKham.Winform
                 dgvlichsukham.Columns[2].HeaderText = "Ngày khám"; dgvlichsukham.Columns[2].Width = 115;
                 dgvlichsukham.Columns[3].HeaderText = "Chuẩn đoán"; dgvlichsukham.Columns[3].Width = 255;
                 dgvlichsukham.Columns[4].HeaderText = "Kết quả"; dgvlichsukham.Columns[4].Width = 265;
+                dgvlichsukham.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
                 dgvlichsukham.RowHeadersVisible = false;
                 if (listlskham.Count > 0)
                 {
@@ -179,7 +183,7 @@ namespace QuanLyPhongKham.Winform
                 sttMaPhieu = (int)row.Cells[0].Value;
                 int maphieu = (int)row.Cells[0].Value;
                 txttenbenhnhan.Text = row.Cells[1].Value.ToString();
-                PhieuKham_BenhNhanLamSang pk = libraryService.ThongTinPhieuKham(maphieu);
+                PhieuKham_BenhNhanLamSang pk = listphieukhambenhnhan.Where(p => p.MaPhieuKham == maphieu).Single();
                 txtmaphieukham.Text = pk.MaPhieuKham.ToString();
                 txtmabenhnhan.Text = pk.MaBN.ToString();
                 txtngaykham.Text = pk.NgayKham.ToString("dd/MM/yyyy");
@@ -208,7 +212,7 @@ namespace QuanLyPhongKham.Winform
                 foreach (var item in sttListChiTietDonThuoc)
                 {
                     dgvdonthuoc.Rows.Add(stt++, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
-                    
+
                 }
 
 
@@ -220,10 +224,9 @@ namespace QuanLyPhongKham.Winform
                 for (int i = 0; i < listlskham.Count; i++)
                 {
                     listlskham[i].STT = i + 1;
-                    listlskham[i].NgayKham = DateTime.Parse(listlskham[i].NgayKham.ToString("MM/dd/yyyy"));
-
                 }
                 dgvlichsukham.DataSource = listlskham;
+                dgvlichsukham.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
                 dgvlichsukham.Columns[0].HeaderText = "STT"; dgvlichsukham.Columns[0].Width = 40;
                 dgvlichsukham.Columns[1].HeaderText = "Mã phiếu"; dgvlichsukham.Columns[1].Width = 85;
                 dgvlichsukham.Columns[2].HeaderText = "Ngày khám"; dgvlichsukham.Columns[2].Width = 115;
@@ -260,25 +263,25 @@ namespace QuanLyPhongKham.Winform
                 TaoDonThuoc(dt);
                 try
                 {   
-                foreach (ChiTietDonThuoc i in DanhSachDonThuoc())
-                {
-                    if (libraryService.TaoChiTietDonThuoc(i, dt.MAPHIEUKHAM) == 0)
+                    foreach (ChiTietDonThuoc i in DanhSachDonThuoc())
                     {
-                            MessageBox.Show("Lưu đơn thuốc không thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
-                            listdonthuoc = libraryService.DanhSachChiTietDonThuoc(dt.MAPHIEUKHAM);
-                            dgvdonthuoc.Rows.Clear();
-                            for (int j = 0; j < listdonthuoc.Count; j++)
-                            {
-                                listdonthuoc[j].STT = j + 1;
-                            }
-                            foreach (var item in listdonthuoc)
-                            {
-                                dgvdonthuoc.Rows.Add(item.STT, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
-                            }
-                            break;
+                        if (libraryService.TaoChiTietDonThuoc(i, dt.MAPHIEUKHAM) == 0)
+                        {
+                                MessageBox.Show("Lưu đơn thuốc không thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
+                                listdonthuoc = libraryService.DanhSachChiTietDonThuoc(dt.MAPHIEUKHAM);
+                                dgvdonthuoc.Rows.Clear();
+                                for (int j = 0; j < listdonthuoc.Count; j++)
+                                {
+                                    listdonthuoc[j].STT = j + 1;
+                                }
+                                foreach (var item in listdonthuoc)
+                                {
+                                    dgvdonthuoc.Rows.Add(item.STT, item.MATHUOC, item.TENTHUOC, item.SOLUONG, item.HUONGDAN);
+                                }
+                                break;
+                        }
                     }
-                }
                 }
                 catch
                 {
@@ -307,7 +310,7 @@ namespace QuanLyPhongKham.Winform
             {
                 //đổ dữ liệu lên thông tin phiếu khám + panel lâm sàng
                 int maphieu = (int)row.Cells[1].Value;
-                PhieuKham_BenhNhanLamSang pk = libraryService.ThongTinPhieuKham(maphieu);
+                PhieuKham_BenhNhanLamSang pk = listphieukhambenhnhan.Where(p => p.MaPhieuKham == maphieu).Single();
                 txtmaphieukham.Text = pk.MaPhieuKham.ToString();
                 txtmabenhnhan.Text = pk.MaBN.ToString();
                 txtngaykham.Text = pk.NgayKham.ToString("dd/MM/yyyy");
@@ -360,7 +363,7 @@ namespace QuanLyPhongKham.Winform
                 //đổ dữ liệu lên thông tin phiếu khám + panel lâm sàng
                 txttenbenhnhan.Text = f.tenbn;
                 PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
-                pk = libraryService.ThongTinPhieuKham(f.maphieu);
+                pk = listphieukhambenhnhan.Where(p => p.MaPhieuKham == f.maphieu).Single();
                 txtmaphieukham.Text = pk.MaPhieuKham.ToString();
                 txtmabenhnhan.Text = pk.MaBN.ToString();
                 txtngaykham.Text = pk.NgayKham.ToString("dd/MM/yyyy");
@@ -398,8 +401,7 @@ namespace QuanLyPhongKham.Winform
                 listlskham = libraryService.LichSuKham(mabn);
                 for (int i = 0; i < listlskham.Count; i++)
                 {
-                    listlskham[i].STT = i + 1;
-                    listlskham[i].NgayKham = DateTime.Parse(listlskham[i].NgayKham.ToString("dd/MM/yyyy"));
+                    listlskham[i].STT = i + 1;            
                 }
                 dgvlichsukham.DataSource = listlskham;
                 dgvlichsukham.Columns[0].HeaderText = "STT"; dgvlichsukham.Columns[0].Width = 40;
@@ -407,6 +409,7 @@ namespace QuanLyPhongKham.Winform
                 dgvlichsukham.Columns[2].HeaderText = "Ngày khám"; dgvlichsukham.Columns[2].Width = 115;
                 dgvlichsukham.Columns[3].HeaderText = "Chuẩn đoán"; dgvlichsukham.Columns[3].Width = 255;
                 dgvlichsukham.Columns[4].HeaderText = "Kết quả"; dgvlichsukham.Columns[4].Width = 265;
+                dgvlichsukham.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
                 dgvlichsukham.RowHeadersVisible = false;
 
             }
@@ -466,7 +469,7 @@ namespace QuanLyPhongKham.Winform
             {
                 int soluong = int.Parse(txtsoluongthuoc.Text);
                 if (soluong > 0)
-                {                   
+                {
                     int maphieu = int.Parse(txtmaphieukham.Text);
                     int stt = dgvdonthuoc.Rows.Count;
                     List<ChiTietDonThuoc_Thuoc> listdonthuoc = new List<ChiTietDonThuoc_Thuoc>();
@@ -693,19 +696,32 @@ namespace QuanLyPhongKham.Winform
             mItem.Click += MItem_Click;
             ctx.MenuItems.Add(mItem);
 
+
+        private void dgvdonthuoc_MouseClick(object sender, MouseEventArgs e)
+        {
+            ContextMenu ctx = new ContextMenu();
+            MenuItem mItem = new MenuItem();
+            mItem.Text = "Xóa thuốc";
+            mItem.Click += MItem_Click;
+            ctx.MenuItems.Add(mItem);
+
+
             if (e.Button == MouseButtons.Right)
             {
                 System.Drawing.Point pt = new System.Drawing.Point(e.X, e.Y);
                 ctx.Show(dgvdonthuoc, pt);
             }
         }
+
         private void MItem_Click(object sender, EventArgs e)
         {
             int maThuoc = (int)dgvdonthuoc.SelectedRows[0].Cells[1].Value;
             dgvdonthuoc.Rows.RemoveAt(dgvdonthuoc.CurrentRow.Index);
 
+
             if (dgvdonthuoc.SelectedRows.Count > 0)
             {
+
 
                 var dt = sttListChiTietDonThuoc.Find(p => p.MATHUOC == maThuoc);
                 if (dt != null)
@@ -720,6 +736,7 @@ namespace QuanLyPhongKham.Winform
                 }
             }
         }
+
         #endregion
 
         #region Method
@@ -892,27 +909,21 @@ namespace QuanLyPhongKham.Winform
             for (int i = 0; i < list.Count; i++)
             {
                 list[i].STT = i + 1;
-                list[i].NgayKham = DateTime.ParseExact(list[i].NgayKham.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
             dgvdschokham.DataSource = list;
             dgvdschokham.Columns[0].HeaderText = "STT"; dgvdschokham.Columns[0].Width = 30;
             dgvdschokham.Columns[1].HeaderText = "Mã phiếu"; dgvdschokham.Columns[1].Width = 40;
             dgvdschokham.Columns[2].HeaderText = "Tên bệnh nhân"; dgvdschokham.Columns[2].Width = 110;
             dgvdschokham.Columns[3].HeaderText = "Ngày khám"; dgvdschokham.Columns[3].Width = 75;
+            dgvdschokham.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvdschokham.RowHeadersVisible = false;
             //Load danh sách phiếu khám
-            List<PhieuKham_BenhNhanTimKiem> listtimkiem = new List<PhieuKham_BenhNhanTimKiem>();
-
-            listtimkiem = libraryService.DanhSachPhieuKham(manv);
-            for (int i = 0; i < listtimkiem.Count; i++)
-            {
-                listtimkiem[i].NgayKham = DateTime.ParseExact(listtimkiem[i].NgayKham.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            }
             dgvdsphieukham.DataSource = listtimkiem;
             dgvdsphieukham.Columns[0].HeaderText = "Mã phiếu"; dgvdsphieukham.Columns[0].Width = 40;
             dgvdsphieukham.Columns[1].HeaderText = "Tên bệnh nhân"; dgvdsphieukham.Columns[1].Width = 105;
             dgvdsphieukham.Columns[2].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[2].Width = 70;
             dgvdsphieukham.Columns[3].HeaderText = "Đã Khám"; dgvdsphieukham.Columns[3].Width = 40;
+            dgvdsphieukham.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvdsphieukham.RowHeadersVisible = false;
 
         }
@@ -936,6 +947,7 @@ namespace QuanLyPhongKham.Winform
             return listdt;
         }
 
+
         /// <summary>
         /// Hàm thêm đơn thuốc vào database
         /// </summary>
@@ -946,6 +958,10 @@ namespace QuanLyPhongKham.Winform
             return libraryService.ThemDonThuoc(donthuoc);
         }
 
+
+
         #endregion
+
+
     }
 }

@@ -15,7 +15,7 @@ namespace QuanLyPhongKham.Repository.ADO
         {
             List<ChiTietDonThuoc_Thuoc> list = new List<ChiTietDonThuoc_Thuoc>();
 
-            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachChiTietDonThuoc @MAPHIEU",new object[] { maphieu });
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_DanhSachChiTietDonThuoc @MAPHIEU",new object[] {maphieu});
 
 
 

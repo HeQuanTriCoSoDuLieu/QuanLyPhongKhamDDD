@@ -31,7 +31,7 @@ namespace QuanLyPhongKham.Model.DTO
             this.MaBn = (int)row["MABN"];
             this.MaPhieuKham = (int)row["MAPHIEUKHAM"];
             this.HoTen = row["HOTEN"].ToString();             
-            this.NgayKham = (DateTime)row["NGAYKHAM"];
+            this.NgayKham =(DateTime) row["NGAYKHAM"];
             this.DaThanhToan = (bool)row["DATHANHTOAN"];
         }
 
