@@ -21,7 +21,6 @@ namespace QuanLyPhongKham.Winform
     {
         #region bien toan cuc
         private LibraryService libraryService;
-        private static List<PhieuKham_BenhNhanTimKiem> listtimkiem;
         private static List<PhieuKham_BenhNhanLamSang> listphieukhambenhnhan;
 
         int manv, sttMaPhieu;
@@ -44,7 +43,6 @@ namespace QuanLyPhongKham.Winform
             InitializeComponent();
             libraryService = ServiceFactory.GetLibraryService(LibraryParameter.persistancestrategy);
             //khởi tạo list
-            listtimkiem = libraryService.DanhSachPhieuKham(manv);
             listphieukhambenhnhan = libraryService.ThongTinPhieuKham();
             //add parent 
             panellamsang.Parent = panelchinh;
@@ -515,7 +513,15 @@ namespace QuanLyPhongKham.Winform
             }
             catch
             {
-                MessageBox.Show("Số lượng không hợp lệ!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtmaphieukham.Text == "")
+                {
+                    MessageBox.Show("Chưa chọn phiếu khám!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    MessageBox.Show("Số lượng không hợp lệ!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -918,7 +924,7 @@ namespace QuanLyPhongKham.Winform
             dgvdschokham.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvdschokham.RowHeadersVisible = false;
             //Load danh sách phiếu khám
-            dgvdsphieukham.DataSource = listtimkiem;
+            dgvdsphieukham.DataSource = libraryService.DanhSachPhieuKham(manv); ;
             dgvdsphieukham.Columns[0].HeaderText = "Mã phiếu"; dgvdsphieukham.Columns[0].Width = 40;
             dgvdsphieukham.Columns[1].HeaderText = "Tên bệnh nhân"; dgvdsphieukham.Columns[1].Width = 105;
             dgvdsphieukham.Columns[2].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[2].Width = 70;
