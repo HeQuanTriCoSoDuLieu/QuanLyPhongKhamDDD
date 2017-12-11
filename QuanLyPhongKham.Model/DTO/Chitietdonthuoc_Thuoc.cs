@@ -19,6 +19,16 @@ namespace QuanLyPhongKham.Model.DTO
             this.HUONGDAN = row["HUONGDAN"].ToString();
         }
 
+        public ChiTietDonThuoc_Thuoc() { }
+        public ChiTietDonThuoc_Thuoc(int stt, int mathuoc, string tenthuoc, int soluong, string huongdan)
+        {
+            this.STT = stt;
+            this.MATHUOC = mathuoc;
+            this.TENTHUOC = tenthuoc;
+            this.SOLUONG = soluong;
+            this.HUONGDAN = huongdan;
+        }
+
         public int STT { get; set; }
         public int MATHUOC { get; set; }
         public string  TENTHUOC { get; set; }

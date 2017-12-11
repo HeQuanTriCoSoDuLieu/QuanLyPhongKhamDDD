@@ -53,16 +53,16 @@ namespace QuanLyPhongKham.Repository.ADO
         /// </summary>
         /// <param name="maphieu"></param>
         /// <returns></returns>
-        public PhieuKham_BenhNhanLamSang ThongTinPhieuKham(int maphieu)
+        public List<PhieuKham_BenhNhanLamSang> ThongTinPhieuKham()
         {
-            PhieuKham_BenhNhanLamSang pk = new PhieuKham_BenhNhanLamSang();
-            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_Search_Phieukham_By_Id @ID", new object[] { maphieu });
+            List<PhieuKham_BenhNhanLamSang> listpk = new List<PhieuKham_BenhNhanLamSang>();
+            DataTable table = DataProvider.Instane.ExecuteReader("EXECUTE dbo.SP_Search_All_Phieukham_BenhNhan ", new object[] {});
 
             foreach (DataRow row in table.Rows)
             {
-                pk = new PhieuKham_BenhNhanLamSang(row);
+                listpk.Add(new PhieuKham_BenhNhanLamSang(row));
             }
-            return pk;
+            return listpk;
         }
 
         /// <summary>

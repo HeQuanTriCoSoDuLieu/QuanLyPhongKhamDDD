@@ -44,8 +44,18 @@ namespace QuanLyPhongKham.Winform
                     cot = "MAPHIEUKHAM";
                     break;
                 case 3:
-                    cot = "NGAYKHAM"; 
+                    cot = "NGAYKHAM";
+                    try
+                    {
+                        DateTime date = DateTime.Parse(value);
+                        value = date.ToString("yyyy-MM-dd");
+                    }
+                    catch
+                    {
+                        break;
+                    }
                     break;
+
             }
             if (StringToInt(value,cot)==false)
             {
@@ -64,7 +74,6 @@ namespace QuanLyPhongKham.Winform
                     for (int i = 0; i < listlskham.Count; i++)
                     {
                         listlskham[i].STT = i + 1;
-                        listlskham[i].NgayKham = DateTime.Parse(listlskham[i].NgayKham.ToString("dd/MM/yyyy"));
                     }
                     dgvdsphieukham.DataSource = listlskham;
                     dgvdsphieukham.Columns[0].HeaderText = "STT"; dgvdsphieukham.Columns[0].Width = 40;
@@ -73,6 +82,7 @@ namespace QuanLyPhongKham.Winform
                     dgvdsphieukham.Columns[3].HeaderText = "Họ tên bệnh nhân"; dgvdsphieukham.Columns[3].Width = 120;
                     dgvdsphieukham.Columns[4].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[4].Width = 90;
                     dgvdsphieukham.Columns[5].HeaderText = "Đã thanh toán"; dgvdsphieukham.Columns[5].Width = 85;
+                    dgvdsphieukham.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
                     dgvdsphieukham.RowHeadersVisible = false;
                 }
             } 
@@ -87,7 +97,6 @@ namespace QuanLyPhongKham.Winform
             for (int i = 0; i < listlskham.Count; i++)
             {
                 listlskham[i].STT = i + 1;
-                listlskham[i].NgayKham = DateTime.Parse(listlskham[i].NgayKham.ToString("dd/MM/yyyy"));
             }
             dgvdsphieukham.DataSource = listlskham;
             dgvdsphieukham.Columns[0].HeaderText = "STT"; dgvdsphieukham.Columns[0].Width = 40;
@@ -96,6 +105,7 @@ namespace QuanLyPhongKham.Winform
             dgvdsphieukham.Columns[3].HeaderText = "Họ tên bệnh nhân"; dgvdsphieukham.Columns[3].Width = 120;
             dgvdsphieukham.Columns[4].HeaderText = "Ngày khám"; dgvdsphieukham.Columns[4].Width = 90;
             dgvdsphieukham.Columns[5].HeaderText = "Đã thanh toán"; dgvdsphieukham.Columns[5].Width = 85;
+            dgvdsphieukham.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvdsphieukham.RowHeadersVisible = false;
         }
 

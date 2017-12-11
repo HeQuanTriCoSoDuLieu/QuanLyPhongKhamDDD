@@ -157,10 +157,9 @@ namespace QuanLyPhongKham.Services
         {
             return phieuKhamRepository.KetQuaTimPhieuKham(ten, manv);
         }
-
-        public PhieuKham_BenhNhanLamSang ThongTinPhieuKham(int maphieu)
+        public List<PhieuKham_BenhNhanLamSang> ThongTinPhieuKham()
         {
-            return phieuKhamRepository.ThongTinPhieuKham(maphieu);
+            return phieuKhamRepository.ThongTinPhieuKham();
         }
 
         public int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn)

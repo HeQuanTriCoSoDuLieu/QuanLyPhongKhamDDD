@@ -13,8 +13,9 @@ namespace QuanLyPhongKham.Model.Interfaces
 
         List<PhieuKham_BenhNhanTimKiem> DanhSachPhieuKham(int manv);
 
-        PhieuKham_BenhNhanLamSang ThongTinPhieuKham(int maphieu);
+        
 
+        List<PhieuKham_BenhNhanLamSang> ThongTinPhieuKham();
         int LuuPhieuKham(PhieuKham_BenhNhanLamSang pkbn);
 
         List<PhieuKham_LichSuKham> LichSuKham(int mabn);

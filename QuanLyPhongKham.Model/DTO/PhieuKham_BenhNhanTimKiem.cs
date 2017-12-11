@@ -16,7 +16,7 @@ namespace QuanLyPhongKham.Model.DTO
         public int HoanThanh { get; set; }
         public PhieuKham_BenhNhanTimKiem() { }
 
-        public PhieuKham_BenhNhanTimKiem(int maphieukham,string ten,DateTime ngaykham, int hoanthanh)
+        public PhieuKham_BenhNhanTimKiem(int maphieukham,string ten, DateTime ngaykham, int hoanthanh)
         {
             MaPhieuKham = maphieukham;           
             HOTEN = ten;
@@ -26,10 +26,10 @@ namespace QuanLyPhongKham.Model.DTO
 
         public PhieuKham_BenhNhanTimKiem(DataRow row)
         {
-            MaPhieuKham = (int)row["MAPHIEUKHAM"];           
-            HOTEN = row["HOTEN"].ToString();
-            NgayKham =(DateTime) row["NGAYKHAM"];
-            HoanThanh = (int)row["HOANTHANH"];//  ? "True" : "False";
+            this.MaPhieuKham = (int)row["MAPHIEUKHAM"];
+            this.HOTEN = row["HOTEN"].ToString();
+            this.NgayKham =(DateTime) row["NGAYKHAM"];
+            HoanThanh = (int)row["HOANTHANH"];
         }
     }
 }
