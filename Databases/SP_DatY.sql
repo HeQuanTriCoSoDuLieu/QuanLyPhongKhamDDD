@@ -22,6 +22,8 @@ GO
 
 --2. BẢNG TAIKHOAN
 --2.1 SPINSERT_TAIKHOAN
+DROP PROC dbo.SP_INSERT_TAIKHOAN
+GO
 CREATE PROC SP_INSERT_TAIKHOAN
 	@TENDANGNHAP VARCHAR(50),
 	@MATKHAU VARCHAR(50),
@@ -49,6 +51,8 @@ GO
 
 --2.2 SP_LOGIN
 
+Drop PROC SP_LOGIN
+GO
 
 CREATE PROC SP_LOGIN
 	@TenDangNhap VARCHAR(50),
@@ -74,6 +78,9 @@ GO
 
 
 --3.1  SP_DanhSachBenhNhan
+DROP  PROC SP_DanhSachBenhNhan
+GO
+
 CREATE  PROC SP_DanhSachBenhNhan
 AS
 BEGIN
@@ -90,6 +97,9 @@ GO
 
  
 -- 3.2 SP_TimKiemBenhNhan
+DROP PROC SP_TimKiemBenhNhan_fTIepNhanBenhNhan
+GO
+
 CREATE PROC SP_TimKiemBenhNhan_fTIepNhanBenhNhan
 	@TruongDuLieu VARCHAR(20),
 	@ThongTin NVARCHAR(250)
@@ -112,6 +122,8 @@ CREATE PROC SP_TimKiemBenhNhan_fTIepNhanBenhNhan
 
  --- sp them benh nhan
 
+ DROP PROC SP_InsertBenhNhan
+ GO
  
  CREATE PROC SP_InsertBenhNhan
 	@HOTEN nvarchar(50),
@@ -141,7 +153,9 @@ CREATE PROC SP_TimKiemBenhNhan_fTIepNhanBenhNhan
 
 
  -- SP_UPDATE_BENHNHAN
-
+ DROP PROC SP_UpdateBenhNhan
+ GO
+ 
 CREATE PROC SP_UpdateBenhNhan
 	@MABN INT,
 	@HOTEN NVARCHAR(50),
@@ -166,6 +180,9 @@ GO
  
 
  -- sp danhsach nhanvien
+ DROP PROC SP_DanhSachNhanVien
+ GO
+
  CREATE PROC SP_DanhSachNhanVien
  AS
  BEGIN
@@ -177,6 +194,9 @@ GO
  
 
  --sp danh sach hinh thuc kham
+  DROP PROC SP_DanhSachHinhThucKham
+  GO
+  
  CREATE PROC SP_DanhSachHinhThucKham
  AS
  BEGIN
@@ -207,7 +227,8 @@ EXECUTE dbo.SP_DanhSachKham_fKhamBenNhan
 
 
 -- code cho phần thêm phiếu khám, hủy phiếu khám, và cập nhật phiếu khám
-
+DROP PROC InsertPhieuKham
+GO
 
 CREATE PROC InsertPhieuKham
 		 @MABN  INT,
